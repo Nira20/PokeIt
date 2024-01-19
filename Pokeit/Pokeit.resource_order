@@ -1,0 +1,16 @@
+{
+  "FolderOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"Sprite5","order":2,"path":"sprites/Sprite5/Sprite5.yy",},
+    {"name":"scr_addToInventory","order":1,"path":"scripts/scr_addToInventory/scr_addToInventory.yy",},
+    {"name":"spr_button","order":2,"path":"sprites/spr_button/spr_button.yy",},
+    {"name":"obj_slime","order":1,"path":"objects/obj_slime/obj_slime.yy",},
+    {"name":"spr_storePlaceholder","order":3,"path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},
+    {"name":"scr_displayInventory","order":3,"path":"scripts/scr_displayInventory/scr_displayInventory.yy",},
+    {"name":"obj_playerInventory","order":4,"path":"objects/obj_playerInventory/obj_playerInventory.yy",},
+    {"name":"spr_slimeCore","order":1,"path":"sprites/spr_slimeCore/spr_slimeCore.yy",},
+    {"name":"obj_store","order":2,"path":"objects/obj_store/obj_store.yy",},
+    {"name":"obj_storeGui","order":3,"path":"objects/obj_storeGui/obj_storeGui.yy",},
+    {"name":"scr_removeFromInventory","order":2,"path":"scripts/scr_removeFromInventory/scr_removeFromInventory.yy",},
+  ],
+}
