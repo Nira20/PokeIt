@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_addToInventory(itemName, quantity){
     //check to see if the item exists in inventory
-    var index = ds_list_find_index(playerInventory, itemName)
+    var index = ds_list_find_index(global.playerInventory, itemName)
     if (index == -1)
     {
     //Item doesn't exist, add it to the inventory with quantity 
