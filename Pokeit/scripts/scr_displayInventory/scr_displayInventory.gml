@@ -9,7 +9,7 @@ function scr_displayInventory(){
         for(var i = 0; i < inventorySize; i += 2)
         {
             var itemName = ds_list_find_value(global.playerInventory, i) ;
-            var global.currentQuantity = ds_list_find_value(global.playerInventory, i+1);
+            var currentQuantity = ds_list_find_value(global.playerInventory, i+1);
             draw_set_color(c_aqua)
             draw_text(inventoryX, inventoryY +1 * itemHeight, itemName + ":" + string(global.currentQuantity));
         }
