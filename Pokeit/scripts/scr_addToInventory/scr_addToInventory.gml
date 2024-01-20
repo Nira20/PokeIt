@@ -6,7 +6,7 @@ function scr_addToInventory(itemName, quantity){
     if (index == -1)
     {
     //Item doesn't exist, add it to the inventory with quantity 
-    ds_list_add(playerInventory, itemName);
+    ds_list_add(global.playerInventory, itemName);
     ds_list_add(global.playerInventory, quantity); 
     } else {
     //Item already exists, update its quantity
