@@ -2,6 +2,6 @@
 // You can write your code in this editor
 
 
-scr_addToInventory("sword,1")
+scr_addToInventory("sword",1)
 
 
