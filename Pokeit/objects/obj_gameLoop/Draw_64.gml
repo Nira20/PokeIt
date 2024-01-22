@@ -5,9 +5,11 @@ draw_rectangle(0,0,100,50,c_blue)
 draw_set_color(c_white) 
 draw_text(0,0, "clicks: " + string(global.Counter))
 draw_sprite(spr_arcanePlatform,1, room_height/3,room_width/3)
-if inventoryOpen = true
-{scr_displayInventory()}
+//if inventoryOpen = true
+
 
 //debugging
+draw_text (20,40 *2, "Auto click Sd " + string(autoClickerSpeed))
+draw_text(20,40*3, "auto clicker " +  string(autoClicker))
 
 draw_text(20,40, "slimescore =" + string(global.slimescore))

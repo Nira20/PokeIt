@@ -10,16 +10,14 @@ var spriteToDraw = spr_slimebase;
 var baseSize = 64; // Adjust this to your preferred base size
 
 // Calculate the size multiplier based on the player's score
-var sizeMultiplier = global.slimescore * .1;
+var sizeMultiplier = global.slimescore * .01;
 
 // Calculate the final size of the sprite
 var finalSize = (baseSize * sizeMultiplier);
 draw_set_font (fn_arialBig)
 
 // Draw the sprite at the player's position with the calculated size
-draw_sprite_stretched(spriteToDraw, 1, x, y, finalSize, finalSize);
+draw_sprite_stretched(spriteToDraw, 1, room_height/3,room_width/3, finalSize, finalSize);
 
-draw_text (20,40 *2, "final size " + string(finalSize))
-draw_text(20,40*3, "size multiplier " +  string(sizeMultiplier))
 
 }

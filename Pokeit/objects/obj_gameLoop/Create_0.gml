@@ -2,11 +2,7 @@
 // create slime and base tables
 global.slimescore = 1
 global.Counter = 0
-inventory = [];
+alarm[0] = room_speed * 5; 
 inventoryOpen = false
-// Define a struct for item details
-item_struct = {
-    id: -1,
-    name: "",
-    quantity: 0
-}
+autoClicker = 1
+autoClickerSpeed = 5
