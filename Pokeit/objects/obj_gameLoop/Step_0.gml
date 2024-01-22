@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-global.slimescore = round(global.Counter/3) 
+global.slimescore = global.Counter 

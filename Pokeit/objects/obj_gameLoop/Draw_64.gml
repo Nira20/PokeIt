@@ -10,5 +10,4 @@ if inventoryOpen = true
 
 //debugging
 
-draw_text(20,20, "slimescore =" + string(global.slimescore))
- 
+draw_text(20,40, "slimescore =" + string(global.slimescore))

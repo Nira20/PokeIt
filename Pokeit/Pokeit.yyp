@@ -49,6 +49,7 @@
     {"id":{"name":"scr_removeFromInventory","path":"scripts/scr_removeFromInventory/scr_removeFromInventory.yy",},},
     {"id":{"name":"spr_arcanePlatform","path":"sprites/spr_arcanePlatform/spr_arcanePlatform.yy",},},
     {"id":{"name":"spr_rmBg","path":"sprites/spr_rmBg/spr_rmBg.yy",},},
+    {"id":{"name":"fn_arialBig","path":"fonts/fn_arialBig/fn_arialBig.yy",},},
     {"id":{"name":"scr_buttonCheck","path":"scripts/scr_buttonCheck/scr_buttonCheck.yy",},},
     {"id":{"name":"rm_mainLoop","path":"rooms/rm_mainLoop/rm_mainLoop.yy",},},
   ],

@@ -1,7 +1,12 @@
 /// @description Creates the variables to spawn in
 // create slime and base tables
-
-global.playerInventory = ds_list_create();
+global.slimescore = 1
 global.Counter = 0
+playerInventory = [];
 inventoryOpen = false
-global.slimeScore = 1
+// Define a struct for item details
+itemDetails = {
+    Item: "",
+    Inventory: 0,
+    Description: ""
+};
