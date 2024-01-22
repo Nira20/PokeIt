@@ -35,6 +35,7 @@
   "resources": [
     {"id":{"name":"scr_addToInventory","path":"scripts/scr_addToInventory/scr_addToInventory.yy",},},
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
+    {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},},
     {"id":{"name":"obj_gameLoop","path":"objects/obj_gameLoop/obj_gameLoop.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
     {"id":{"name":"Readme","path":"scripts/Readme/Readme.yy",},},

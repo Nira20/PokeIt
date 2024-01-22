@@ -2,11 +2,11 @@
 // create slime and base tables
 global.slimescore = 1
 global.Counter = 0
-playerInventory = [];
+inventory = [];
 inventoryOpen = false
 // Define a struct for item details
-itemDetails = {
-    Item: "",
-    Inventory: 0,
-    Description: ""
-};
+item_struct = {
+    id: -1,
+    name: "",
+    quantity: 0
+}
