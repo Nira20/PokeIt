@@ -4,3 +4,4 @@
 global.playerInventory = ds_list_create();
 global.Counter = 0
 inventoryOpen = false
+global.slimeScore = 1

@@ -10,9 +10,10 @@ function scr_addToInventory(itemName, quantity){
     ds_list_add(global.playerInventory, quantity); 
     } else {
     //Item already exists, update its quantity
-    currentQuantity = ds_list_find_index(global.playerInventory, index +1  );
-    ds_list_replace(global.playerInventory, index +1 , currentQuantity + quantity);
+    currentQuantity = ds_list_find_index(global.playerInventory, index +1  ) + quantity;
+    ds_list_replace(global.playerInventory, index +1 , currentQuantity);
     
+
     }
 
 }
