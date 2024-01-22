@@ -11,3 +11,4 @@ if inventoryOpen = true
 //debugging
 
 draw_text(20,20, "slimescore =" + string(global.slimescore))
+ 
