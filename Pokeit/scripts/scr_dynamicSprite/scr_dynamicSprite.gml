@@ -16,8 +16,8 @@ var sizeMultiplier = global.slimescore * .01;
 var finalSize = (baseSize * sizeMultiplier);
 draw_set_font (fn_arialBig)
 
-// Draw the sprite at the player's position with the calculated size
-draw_sprite_stretched(spriteToDraw, 1, room_height/3,room_width/3, finalSize, finalSize);
+// Draw the sprite at arcane bases center with the calculated size
+draw_sprite_stretched(spriteToDraw, 1, x,y, finalSize, finalSize);
 
 
 }

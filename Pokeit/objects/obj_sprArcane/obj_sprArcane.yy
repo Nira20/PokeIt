@@ -1,11 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_slime",
+  "name": "obj_sprArcane",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -30,12 +28,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_slimebase",
-    "path": "sprites/spr_slimebase/spr_slimebase.yy",
+    "name": "spr_arcanePlatform",
+    "path": "sprites/spr_arcanePlatform/spr_arcanePlatform.yy",
   },
-  "spriteMaskId": {
-    "name": "spr_slimebase",
-    "path": "sprites/spr_slimebase/spr_slimebase.yy",
-  },
+  "spriteMaskId": null,
   "visible": true,
 }

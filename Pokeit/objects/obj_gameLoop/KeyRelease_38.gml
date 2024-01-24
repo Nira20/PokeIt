@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+scr_addToInventory(autoclicker, 1) 
 
-autoClicker +=1
 
 

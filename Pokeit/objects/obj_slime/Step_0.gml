@@ -12,6 +12,24 @@ if (button_pressed = true)
 }
 
 
+var sizeMultiplier = global.slimescore * .01;
+//x = x+global.slimescore
+image_xscale =sizeMultiplier
+image_yscale =sizeMultiplier
 
 
+switch (obj_slime.apprentice) {
+    case 0:
+        draw_sprite(spr_apprenticeSticks, 2, x, y); // Draw sprite 0
+        break;
+    
+    case 1:
+        draw_sprite(spr_apprenticeSticks, 3, x, y); // Draw sprite 1
+        break;
 
+    // Add more cases as needed
+
+    default:
+        draw_sprite(spr_apprenticeSticks, 1, x, y); // Default sprite if variable doesn't match any case
+        break;
+}

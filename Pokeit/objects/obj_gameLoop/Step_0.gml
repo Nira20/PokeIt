@@ -1,4 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-global.slimescore = global.Counter 
+global.slimescore += global.Counter 
+
+
