@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings": [
     {"name":"Sprite Objects","order":5,"path":"folders/Objects/Sprite Objects.yy",},
+    {"name":"SetPieces","order":8,"path":"folders/Sprites/SetPieces.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_button","order":1,"path":"sprites/spr_button/spr_button.yy",},

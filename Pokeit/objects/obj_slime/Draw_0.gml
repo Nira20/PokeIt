@@ -18,7 +18,7 @@ switch (obj_slime.apprentice) {
         break;
 }
 
- draw_text(50, 50,string(apprentice));
+ 
 
 
 
