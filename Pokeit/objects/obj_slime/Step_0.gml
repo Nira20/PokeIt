@@ -12,7 +12,7 @@ if (button_pressed = true)
 }
 
 
-var sizeMultiplier = global.slimescore * .01;
+var sizeMultiplier = global.Counter* .01;
 //x = x+global.slimescore
 image_xscale =sizeMultiplier
 image_yscale =sizeMultiplier

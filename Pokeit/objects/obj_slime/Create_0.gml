@@ -3,7 +3,7 @@
 spriteWidth = sprite_width
 spriteHeight= sprite_height
 button_pressed = false
-var sizeMultiplier = global.slimescore * .01;
+var sizeMultiplier = global.Counter * .01;
 
 image_speed = .25
 

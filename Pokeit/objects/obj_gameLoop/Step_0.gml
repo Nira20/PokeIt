@@ -1,6 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-global.slimescore += global.Counter 
-
-
+totalMoney = global.Counter *10
+playerMoney = totalMoney - spentMoney

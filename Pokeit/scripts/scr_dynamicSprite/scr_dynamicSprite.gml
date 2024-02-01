@@ -1,13 +1,13 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_dynamicSprite(){
+function scr_dynamicSprite(sprite, size){
 	
 
 // Define the sprite to draw 
 var spriteToDraw = spr_slimebase;
 
 // Define the base size of the sprite
-var baseSize = 64; // Adjust this to your preferred base size
+var baseSize = size; // Adjust this to your preferred base size
 
 // Calculate the size multiplier based on the player's score
 var sizeMultiplier = global.slimescore * .01;
