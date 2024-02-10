@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if ( mouse_check_button_pressed(mb_left))
-{scr_buttonCheck(obj_store)}
+{scr_buttonCheck(obj_store,image_xscale,image_yscale)}
 
 if (button_pressed = true) && !instance_exists(obj_storeGui)
 { 

@@ -3,7 +3,7 @@
 spriteWidth = sprite_width
 spriteHeight= sprite_height
 button_pressed = false
-var sizeMultiplier = global.Counter * .01;
+var sizeMultiplier =4+ global.Counter* .01;
 
 image_speed = .25
 
