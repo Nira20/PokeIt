@@ -1,7 +1,5 @@
 draw_sprite_stretched(spr_rmBg,1,0,0,room_width,room_height)
 draw_set_font (fn_arialBig)
-if inventoryOpen = true
-{scr_displayInventory()}
 
 if (instance_exists(obj_slime) && instance_exists(obj_cageBox))
 {

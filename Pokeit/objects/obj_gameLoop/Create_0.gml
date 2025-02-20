@@ -10,3 +10,6 @@ autoClickerSpeed = 1
 playerMoney = 0;
 spentMoney= 0;
 totalMoney = 0
+store_inventory= [
+0,1,2,3,4,5,6,7,8,9,10
+]
