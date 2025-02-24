@@ -30,5 +30,5 @@
     "path": "sprites/spr_width/spr_width.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

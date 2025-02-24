@@ -10,3 +10,4 @@ if SW >= CW
 
 draw_text(20,y,"Current Cash: $" + string(playerMoney))
 draw_text(20,y + 45,"Total Earned: $" + string(totalMoney))
+drawClickers()
