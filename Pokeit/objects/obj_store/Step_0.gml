@@ -17,3 +17,20 @@ if (instance_exists(obj_storeGui))
 	} else {visible = true} 
 	
 	
+ if (point_in_rectangle(mouse_x, mouse_y, x+ 60,
+y+120,
+room_width/2,
+room_height/3)) {
+ 
+is_hovered = true
+        
+        
+       
+    }
+	else { 
+		is_hovered = false}
+		
+		if (is_hovered) {
+ scr_zoom(1.4);
+} else {scr_zoomReset()}
+	

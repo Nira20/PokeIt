@@ -11,3 +11,4 @@ inventory[1] ="autoclick speed"
 inventory[2] ="slime pacifier" 
 
 button_pressed = false
+is_hovered = false
