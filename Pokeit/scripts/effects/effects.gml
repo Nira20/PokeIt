@@ -49,7 +49,7 @@ function zoom(hover_scale_factor){
     image_yscale = hover_scale_factor; // Increase vertical scale
 } 
 	
-function scr_zoomReset(){
+function zoomReset(){
 
 
     image_xscale = 1 

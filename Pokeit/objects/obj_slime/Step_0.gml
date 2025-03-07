@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+x =room_width/2
+y =room_width *.4
 sizeMultiplier = 4 +global.Counter *.01
 //x = x+global.slimescore
 image_xscale =sizeMultiplier

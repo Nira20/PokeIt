@@ -7,5 +7,3 @@ if keyboard_check_released(ord("I")) && !inventoryOpen {
   instance_create_depth(0,0,100,obj_storeGui)
 } else 
 { inventoryOpen = false}
-
-

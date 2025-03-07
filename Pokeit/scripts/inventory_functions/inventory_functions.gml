@@ -35,20 +35,19 @@ function inventoryAdd (rootObject, itemType)
 	
 }
 	
-	function inventorySwap(objectFrom, slotFrom, objectTo, slotTo)
+function inventorySwap(objectFrom, slotFrom, objectTo, slotTo)
 {var _itemFrom = objectFrom.inventory[slotFrom]
 	objectFrom.inventory[slotFrom] = objectTo.inventory[slotTo];
 	objectTo.inventory[slotTo] = _itemFrom
 	
 }
 	
-	
-	function scr_buttonCheck(object,image_xscale,image_yscale)
+function scr_buttonCheck(object,image_xscale,image_yscale)
 {
 //check if the left mouse button is pressed 
 
 //debugging
-draw_rectangle(x,y, x + image_xscale, y + image_yscale, c_grey)
+draw_rectangle(mouse_x,mouse_y, mouse_x +60,mouse_y+60, 0)
 var mouseX = mouse_x;
 var mouseY = mouse_y;
 
@@ -56,4 +55,4 @@ var mouseY = mouse_y;
 	//check if the mouse click is within the buttons area
 	object.button_pressed = true 
 	}
-}
+}	

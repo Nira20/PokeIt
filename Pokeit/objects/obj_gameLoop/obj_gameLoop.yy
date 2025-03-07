@@ -31,7 +31,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_slimeCore",
+    "path": "sprites/spr_slimeCore/spr_slimeCore.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
