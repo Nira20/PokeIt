@@ -1,6 +1,7 @@
 /// @description Creates the variables to spawn in
 // create slime and base tables
-global.acspeed =0
+globalVars()
+
 global.Counter = 10
 alarm[0] = room_speed * global.acspeed; 
 x=room_width/2

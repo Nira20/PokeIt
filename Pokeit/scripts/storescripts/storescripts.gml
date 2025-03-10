@@ -6,14 +6,15 @@ scroll_speed = 2;
 y_pos = room_height/3 
 
 inventory = [
-//[name, intitial quanity, sprite, base price, effect]
-    ["Price Up", 0 , spr_priceUp],
-    ["Helpers", 0, spr_apprenticeSticks],
-    ["Slimes", 1, spr_slimebase],
- 
-];
+//[name, intitial quanity, sprite, image_index, base price, current price, effect]
+    ["Error", 0 , spr_priceUp,0,0,0],
+    ["Motivate", 0, spr_priceUp,1,10,10],
+    ["Hire", 1, spr_priceUp,2,20,20],
+	["Market", 1 , spr_priceUp,3,30,30],
+    ["Split", 1, spr_priceUp,4,40,40],
+  ];
 
-
+hovered_slot = 0
 mouseX = mouse_y
 mouseY = mouse_x
 
@@ -27,48 +28,94 @@ image_xscale = 1
 image_yscale = 1
 
 spr = spr_button
+xx =0
+yy=0
 }
+function drawInventory() {
+    inventory_slots = array_length(inventory);
 
-function drawCurrentInventory(){
-	inventory_slots = array_length(inventory);
-	
-draw_sprite_stretched(spr_button,
-0,
-55,
-	room_height/3 +30,
-	room_width/2 -50,
-	12+(((inventory_slots -1)div rowLength)+1)*36);
-	
-	
-	
-for (var i =0; i < inventory_slots ; i++)
-{var xx = 60+(i mod rowLength ) * 36 +2;
-var yy = room_height/3 +(i div rowLength) * 36 + 2;
+    // Check if inventory is less than or equal to 0
+    if (inventory_slots <= 0) {
+        // Draw spr_priceup with sprite index 0
+        draw_sprite(spr_priceUp, 0, room_width / 2, room_height / 2);
+        return; // Exit the function early
+    }
 
-	if inventory[i] != -1
-{
+    draw_sprite_stretched(spr_button, 0, 50, room_height / 3, room_width / 2 - 50, 12 + (((inventory_slots - 1) div rowLength) + 1) * 36);
 
-draw_text(xx-5 ,yy+5 +(16) ,string(inventory[i]))
+    for (var i = 0; i < array_length(inventory); i++) {
+        xx = 60 + (i mod rowLength) * 36 + 2;
+        yy = room_height / 3 + (i div rowLength) * 36 + 2;
+		var col =c_white
+		if inventory[i][5] > playerMoney {
+		col = c_red}
+		else 
+		{col= c_white}
+        draw_sprite_ext(inventory[i][2], inventory[i][3], xx, yy, .5, .5, 0, c_white, 1);
+        draw_text_color(xx + 64, yy, string(inventory[i][0]) + " - " + string(inventory[i][1]),col,col,col,col,1);
 
+        // Calculate the width of the text
+        var text_width = string_width(string(inventory[i][0]) + " - " + string(inventory[i][1]));
+        
+       	// Check if the mouse is hovering over the inventory slot or text
+        if (mouse_x >= xx && mouse_x <= xx + 64 + text_width && mouse_y >= yy && mouse_y <= yy + 36) {
+            // Draw a grey rectangle around the slot and text
+            draw_set_color(c_gray);
+            draw_rectangle(xx - 2, yy - 2, xx + 64 + text_width + 2, yy + 36 + 2, true);
+            draw_set_color(c_white); // Reset color to white for other drawings
 
+            // Update the hovered slot
+            hovered_slot = i;
 
+            // Check if the left mouse button is released and the item can be afforded
+            if (mouse_check_button_released(mb_left) && col == c_white) {
+                whatsHovered();
+    }}}
+        }
+    
 
+function whatsHovered() {
+    switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
+        case "Error":
+            // Handle the 'Error' item effect
+            show_debug_message("Error item effect applied");
+            break;
+
+        case "Motivate":
+            // Handle the 'Motivate' item effect
+            show_debug_message("Motivate item effect applied");
+            break;
+
+        case "Hire":
+            global.acq +=1
+			spentMoney = spentMoney+ inventory[hovered_slot][5]
+           
+            break;
+
+        case "Market":
+            // Handle the 'Market' item effect
+            show_debug_message("Market item effect applied");
+            break;
+
+        case "Split":
+            // Handle the 'Split' item effect
+            show_debug_message("Split item effect applied");
+            break;
+
+        default:
+            // Handle unknown item
+            show_debug_message("Unknown item: " + inventory[hovered_slot][0]);
+            break;
+    }
 }
-}
-}
-function drawInventory(){
-	inventory_slots = array_length(inventory);
-draw_sprite_stretched(spr_button,
-0,
-50,
-	room_height/3,
-	room_width/2 -50,
-	12+(((inventory_slots -1)div rowLength)+1)*36);
-
-for (var i = 0; i < array_length(inventory); i++) {
 	
-	var xx = 60+(i mod rowLength ) * 36 +2;
-	var yy = room_height/3 +(i div rowLength) * 36 + 2;
-    draw_sprite_ext(inventory[i][2], 0, xx, yy,.5,.5,0,c_white,1);
-    draw_text(xx +64 , yy, string(inventory[i][0]) + " - " + string(inventory[i][1]));
-    }}
+	
+function money(){
+// Calculate the middle of the room
+// Calculate the middle of the room
+var middle_x = room_width / 2;
+
+// Create the instance within 64 pixels of the middle of the room
+instance_create_depth(irandom_range(middle_x - 64, middle_x + 64), room_height/3, obj_slime.depth - 10, obj_money);}
+
+	
