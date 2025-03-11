@@ -2,7 +2,8 @@
 // Step Event
 // Make the sprite drift upwards
 y -= 1;
+var counter =0
+counter ++
 
-
-wiggle(5,.3)
+wiggle(wiggleFrecuency,wiggleAmpliitude)
 

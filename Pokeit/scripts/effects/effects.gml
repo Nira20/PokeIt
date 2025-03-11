@@ -1,9 +1,9 @@
 //slowly rapidly a sprite, put this in the step event
 function wiggle(wiggle_frequency,wiggle_amplitude){
    var wiggle_offset = wiggle_amplitude * sin(wiggle_frequency * current_time); // Calculate wiggle offset
-    x += wiggle_offset; // Apply wiggle offset to x position
+ 
+    x += wiggle_offset; // Apply wiggle offset to x position}
 }
-
 
 //slowly Rotates a sprite, put this in the step event
 function rotate(rotation_angle,rotation_speed){
@@ -55,3 +55,4 @@ function zoomReset(){
     image_xscale = 1 
     image_yscale = 1 
 }
+

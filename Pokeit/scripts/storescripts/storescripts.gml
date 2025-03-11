@@ -7,11 +7,11 @@ y_pos = room_height/3
 
 inventory = [
 //[name, intitial quanity, sprite, image_index, base price, current price, effect]
-    ["Error", 0 , spr_priceUp,0,0,0],
-    ["Motivate", 0, spr_priceUp,1,10,10],
-    ["Hire", 1, spr_priceUp,2,20,20],
-	["Market", 1 , spr_priceUp,3,30,30],
-    ["Split", 1, spr_priceUp,4,40,40],
+    ["Error", 0 , spr_priceUp,0,0,0,1],
+    ["Motivate", 0, spr_priceUp,1,10,10,0],
+    ["Hire", 1, spr_priceUp,2,20,20,1],
+	["Market", 1 , spr_priceUp,3,30,30,1],
+    ["Split", 1, spr_priceUp,4,40,40,1],
   ];
 
 hovered_slot = 0
@@ -31,6 +31,7 @@ spr = spr_button
 xx =0
 yy=0
 }
+
 function drawInventory() {
     inventory_slots = array_length(inventory);
 
@@ -41,7 +42,7 @@ function drawInventory() {
         return; // Exit the function early
     }
 
-    draw_sprite_stretched(spr_button, 0, 50, room_height / 3, room_width / 2 - 50, 12 + (((inventory_slots - 1) div rowLength) + 1) * 36);
+    draw_sprite_stretched(spr_button, 0, 50, room_height / 3 , room_width -100, 12 + (((inventory_slots - 1) div rowLength) + 1) * 36);
 
     for (var i = 0; i < array_length(inventory); i++) {
         xx = 60 + (i mod rowLength) * 36 + 2;
@@ -52,16 +53,14 @@ function drawInventory() {
 		else 
 		{col= c_white}
         draw_sprite_ext(inventory[i][2], inventory[i][3], xx, yy, .5, .5, 0, c_white, 1);
-        draw_text_color(xx + 64, yy, string(inventory[i][0]) + " - " + string(inventory[i][1]),col,col,col,col,1);
+        draw_text_color(xx + 64, yy, string(inventory[i][0]) + " - " + string(inventory[i][5])+ " - " + string(inventory[i][6]),col,col,col,col,1);
 
-        // Calculate the width of the text
-        var text_width = string_width(string(inventory[i][0]) + " - " + string(inventory[i][1]));
-        
+               
        	// Check if the mouse is hovering over the inventory slot or text
-        if (mouse_x >= xx && mouse_x <= xx + 64 + text_width && mouse_y >= yy && mouse_y <= yy + 36) {
+        if (mouse_x >= xx && mouse_x <= xx + 64 + room_width / 2 -50 && mouse_y >= yy && mouse_y <= yy + 36) {
             // Draw a grey rectangle around the slot and text
             draw_set_color(c_gray);
-            draw_rectangle(xx - 2, yy - 2, xx + 64 + text_width + 2, yy + 36 + 2, true);
+            draw_rectangle(xx - 2, yy - 2, xx + 64 + room_width / 2 - 50 + 2, yy + 36 + 2, true);
             draw_set_color(c_white); // Reset color to white for other drawings
 
             // Update the hovered slot
@@ -70,36 +69,42 @@ function drawInventory() {
             // Check if the left mouse button is released and the item can be afforded
             if (mouse_check_button_released(mb_left) && col == c_white) {
                 whatsHovered();
+				show_debug_message("Mouse Check Here") 
     }}}
         }
-    
+		
+		
+    function purchase(){
+				spentMoney = spentMoney+ inventory[hovered_slot][5]
+				inventory[hovered_slot][5] = inventory[hovered_slot][5] *2
+				inventory[hovered_slot][6] += 1
+           }
 
 function whatsHovered() {
     switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
         case "Error":
-            // Handle the 'Error' item effect
-            show_debug_message("Error item effect applied");
+            purchase()
             break;
 
         case "Motivate":
-            // Handle the 'Motivate' item effect
-            show_debug_message("Motivate item effect applied");
+		global.acspeed = global.acspeed -.10
+            purchase()
             break;
 
         case "Hire":
             global.acq +=1
-			spentMoney = spentMoney+ inventory[hovered_slot][5]
+			purchase()
            
             break;
 
         case "Market":
-            // Handle the 'Market' item effect
-            show_debug_message("Market item effect applied");
+		 global.acamount +=.5
+           purchase()
             break;
 
         case "Split":
-            // Handle the 'Split' item effect
-            show_debug_message("Split item effect applied");
+				
+          purchase()
             break;
 
         default:
