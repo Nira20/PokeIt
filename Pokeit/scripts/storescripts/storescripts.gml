@@ -74,7 +74,7 @@ function drawInventory() {
         }
 		
 		
-    function purchase(){
+function purchase(){
 				spentMoney = spentMoney+ inventory[hovered_slot][5]
 				inventory[hovered_slot][5] = inventory[hovered_slot][5] *2
 				inventory[hovered_slot][6] += 1
@@ -87,7 +87,7 @@ function whatsHovered() {
             break;
 
         case "Motivate":
-		global.acspeed = global.acspeed -.10
+			motivate()
             purchase()
             break;
 
@@ -123,4 +123,17 @@ var middle_x = room_width / 2;
 // Create the instance within 64 pixels of the middle of the room
 instance_create_depth(irandom_range(middle_x - 64, middle_x + 64), room_height/3, obj_slime.depth - 10, obj_money);}
 
-	
+function motivate(){
+var motiveCounter =0
+var originalACSpeed = global.acspeed
+
+if motiveCounter <= room_speed *60
+{
+global.acspeed = global.acspeed *.5
+motiveCounter ++
+}else {
+motiveCounter =0
+global.acspeed = originalACSpeed
+}
+
+}	
