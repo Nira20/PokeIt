@@ -17,7 +17,9 @@ function drawClickers(){
 		
 xx= x + cos(angle) *radius
 yy= y + sin(angle) *radius	
-var rot = point_direction(obj_slime.x,obj_slime.y,xx,yy)
+ var rot = point_direction(xx, yy, x, y);
+ rot -= 90; 
+
 draw_sprite_ext(spr_apprenticeSticks,0,xx,yy,1,1,rot,c_white,1)
 draw_text(xx,yy,string(rot))
 
