@@ -8,8 +8,14 @@ counter ++
 wiggle(wiggleFrecuency,wiggleAmpliitude)
 
 var colorCounter = 0
-alph -= .01
+
 colorCounter ++
+var alphC =0
+
+alphC ++
+if alphC <=15
+{alph -= .01}
+
 if alph <=0
 {instance_destroy(self)}
 if colorCounter >= 15 
