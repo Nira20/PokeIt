@@ -8,9 +8,10 @@ counter ++
 wiggle(wiggleFrecuency,wiggleAmpliitude)
 
 var colorCounter = 0
-
+alph -= .01
 colorCounter ++
-
+if alph <=0
+{instance_destroy(self)}
 if colorCounter >= 15 
 
 {randomize();

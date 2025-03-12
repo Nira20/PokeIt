@@ -55,6 +55,7 @@ function drawInventory() {
         draw_sprite_ext(inventory[i][2], inventory[i][3], xx, yy, .5, .5, 0, c_white, 1);
         draw_text_color(xx + 64, yy, string(inventory[i][0]) + " - " + string(inventory[i][5])+ " - " + string(inventory[i][6]),col,col,col,col,1);
 
+			
                
        	// Check if the mouse is hovering over the inventory slot or text
         if (mouse_x >= xx && mouse_x <= xx + 64 + room_width / 2 -50 && mouse_y >= yy && mouse_y <= yy + 36) {
@@ -64,13 +65,17 @@ function drawInventory() {
             draw_set_color(c_white); // Reset color to white for other drawings
 
             // Update the hovered slot
-            hovered_slot = i;
+            hovered_slot = i
+	
+			
 
             // Check if the left mouse button is released and the item can be afforded
-            if (mouse_check_button_released(mb_left) && col == c_white) {
+			if (mouse_check_button_released(mb_left) && col == c_white) {
                 whatsHovered();
-				show_debug_message("Mouse Check Here") 
-    }}}
+				
+			
+    }
+            }}
         }
 		
 		
@@ -83,6 +88,7 @@ function purchase(){
 function whatsHovered() {
     switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
         case "Error":
+		show_debug_message("Error click");
             purchase()
             break;
 
@@ -137,3 +143,4 @@ global.acspeed = originalACSpeed
 }
 
 }	
+	
