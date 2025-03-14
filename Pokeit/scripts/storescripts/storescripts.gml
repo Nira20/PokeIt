@@ -12,6 +12,7 @@ inventory = [
     ["Hire", 1, spr_priceUp,2,20,20,1],
 	["Market", 1 , spr_priceUp,3,30,30,1],
     ["Split", 1, spr_priceUp,4,40,40,1],
+	["Bigger Cage", 1, spr_priceUp, 5, 120,120,1],
   ];
 
 hovered_slot = 0
@@ -77,14 +78,13 @@ function drawInventory() {
     }
             }}
         }
-		
-		
+
 function purchase(){
 				spentMoney = spentMoney+ inventory[hovered_slot][5]
 				inventory[hovered_slot][5] = inventory[hovered_slot][5] *2
 				inventory[hovered_slot][6] += 1
            }
-
+	
 function whatsHovered() {
     switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
         case "Error":
@@ -112,14 +112,18 @@ function whatsHovered() {
 				
           purchase()
             break;
-
-        default:
+			
+		case "Bigger Cage":
+		global.pXScale ++
+		purchase()
+			break;
+       
+	   default:
             // Handle unknown item
             show_debug_message("Unknown item: " + inventory[hovered_slot][0]);
             break;
     }
 }
-	
 	
 function money(){
 /// Calculate the middle of the room
@@ -145,4 +149,3 @@ global.acspeed = originalACSpeed
 }
 
 }	
-	

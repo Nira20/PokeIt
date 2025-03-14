@@ -6,3 +6,5 @@ image_speed = .25
 depth = -1
 AutoClickerSetup()
 
+
+

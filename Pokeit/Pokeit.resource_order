@@ -15,6 +15,7 @@
     {"name":"Sprite13","order":2,"path":"sprites/Sprite13/Sprite13.yy",},
     {"name":"storescripts","order":3,"path":"scripts/storescripts/storescripts.yy",},
     {"name":"obj_money","order":6,"path":"objects/obj_money/obj_money.yy",},
+    {"name":"spr_gem","order":2,"path":"sprites/spr_gem/spr_gem.yy",},
     {"name":"spr_effect","order":9,"path":"sprites/spr_effect/spr_effect.yy",},
     {"name":"spr_width","order":7,"path":"sprites/spr_width/spr_width.yy",},
     {"name":"spr_storePlaceholder","order":2,"path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},

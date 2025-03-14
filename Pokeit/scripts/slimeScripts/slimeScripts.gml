@@ -35,3 +35,4 @@ slider_value = 0; // Initial value of the slider
 
 
 }
+	

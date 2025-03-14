@@ -11,5 +11,5 @@ playerMoney = 0;
 spentMoney= 0;
 totalMoney = 0
 
-createStore()
+createStore();
 

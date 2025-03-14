@@ -48,6 +48,7 @@
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
     {"id":{"name":"storescripts","path":"scripts/storescripts/storescripts.yy",},},
     {"id":{"name":"obj_money","path":"objects/obj_money/obj_money.yy",},},
+    {"id":{"name":"spr_gem","path":"sprites/spr_gem/spr_gem.yy",},},
     {"id":{"name":"spr_effect","path":"sprites/spr_effect/spr_effect.yy",},},
     {"id":{"name":"spr_width","path":"sprites/spr_width/spr_width.yy",},},
     {"id":{"name":"spr_storePlaceholder","path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},},
