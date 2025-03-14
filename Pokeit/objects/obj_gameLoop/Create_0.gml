@@ -1,8 +1,8 @@
 /// @description Creates the variables to spawn in
 // create slime and base tables
 instance_create_depth(x,y,depth -10, obj_slime)
+globalVars();
 
-globalVars()
 
 global.Counter = 10
 alarm[0] = room_speed * global.acspeed; 

@@ -9,14 +9,17 @@ click = false
 
 function drawClickers(){
 if (radius >= (obj_slime.spriteWidth * obj_slime.sizeMultiplier)) {
-        radiusDirection = -0; // Start decreasing radius
+        radiusDirection = -1; // Start decreasing radius
     } else if (radius <= 0) {
         radiusDirection = 1; // Start increasing radius
     } 	
 var clickTimer = 0
+var clickReset = 0
 if click =true {
 clickTimer = clickTimer *global.acspeed
- radius += radiusDirection +global.acspeed
+ radius += radiusDirection *global.acspeed
+ 
+ }
 }
 
 if click = false {
@@ -24,7 +27,7 @@ if click = false {
 radius = (obj_slime.spriteWidth*obj_slime.sizeMultiplier)
 }
 
-if clickTimer >=10
+if clickTimer >=10{
 {
 clickTimer =0
 click = false}
@@ -44,7 +47,7 @@ yy= y + sin(angle) *radius
 draw_sprite_ext(spr_gem,0,xx,yy,2,2,rot,c_white,1)
 draw_sprite_ext(spr_apprenticeSticks,0,xx,yy,2,2,rot,c_white,1)
 
-}
+}}
 
 
 
