@@ -1,5 +1,7 @@
 /// @description Creates the variables to spawn in
 // create slime and base tables
+instance_create_depth(x,y,depth -10, obj_slime)
+
 globalVars()
 
 global.Counter = 10
