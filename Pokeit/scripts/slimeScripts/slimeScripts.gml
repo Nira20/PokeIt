@@ -35,4 +35,18 @@ slider_value = 0; // Initial value of the slider
 
 
 }
-	
+function createAnger(){
+angerMax =100
+angerTimer = 0
+
+
+}
+function angerGenerate(){
+	angerTimer ++ 
+	if angerTimer >= angerMax{
+	angerTimer =0
+	global.Counter += global.angerCounter
+	}
+
+
+}

@@ -2,10 +2,6 @@
 // create slime and base tables
 instance_create_depth(x,y,depth -10, obj_slime)
 globalVars();
-
-
-global.Counter = 10
-alarm[0] = room_speed * global.acspeed; 
 x=room_width/2
 y=room_height/3
 inventoryOpen = false

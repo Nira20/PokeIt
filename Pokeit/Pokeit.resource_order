@@ -5,6 +5,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"spr_button","order":1,"path":"sprites/spr_button/spr_button.yy",},
+    {"name":"spr_surround","order":11,"path":"sprites/spr_surround/spr_surround.yy",},
     {"name":"effects","order":2,"path":"scripts/effects/effects.yy",},
     {"name":"slimeScripts","order":4,"path":"scripts/slimeScripts/slimeScripts.yy",},
     {"name":"AutoClicker","order":1,"path":"scripts/AutoClicker/AutoClicker.yy",},

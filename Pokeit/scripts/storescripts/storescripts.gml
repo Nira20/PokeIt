@@ -43,11 +43,11 @@ function drawInventory() {
         return; // Exit the function early
     }
 
-    draw_sprite_stretched(spr_button, 0, 50, room_height / 3 , room_width -100, 12 + (((inventory_slots - 1) div rowLength) + 1) * 36);
+    draw_sprite_stretched(spr_button, 0, 50, room_height / 3 , room_width -100, 12 + (((inventory_slots - 1) div rowLength) + 1) * (32 +16));
 
     for (var i = 0; i < array_length(inventory); i++) {
         xx = 60 + (i mod rowLength) * 36 + 2;
-        yy = room_height / 3 + (i div rowLength) * 36 + 2;
+        yy = room_height / 3 + (i div rowLength) * (32 +16) + 2;
 		var col =c_white
 		if inventory[i][5] > playerMoney {
 		col = c_red}
@@ -62,7 +62,7 @@ function drawInventory() {
         if (mouse_x >= xx && mouse_x <= xx + 64 + room_width / 2 -50 && mouse_y >= yy && mouse_y <= yy + 36) {
             // Draw a grey rectangle around the slot and text
             draw_set_color(c_gray);
-            draw_rectangle(xx - 2, yy - 2, xx + 64 + room_width / 2 - 50 + 2, yy + 36 + 2, true);
+            draw_sprite_stretched(spr_surround, 0, 50 , yy -2 , room_width -100, 46);
             draw_set_color(c_white); // Reset color to white for other drawings
 
             // Update the hovered slot
@@ -104,12 +104,12 @@ function whatsHovered() {
             break;
 
         case "Market":
-		 global.acamount +=.5
+		 global.acamount += global.acamount
            purchase()
             break;
 
         case "Split":
-				
+				split()
           purchase()
             break;
 			
@@ -149,3 +149,7 @@ global.acspeed = originalACSpeed
 }
 
 }	
+function split(){
+global.slimeSizeCounter = global.slimeSizeCounter/2
+global.jarred +=1
+}

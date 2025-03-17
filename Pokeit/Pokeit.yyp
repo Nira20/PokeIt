@@ -38,6 +38,7 @@
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
     {"id":{"name":"obj_gameLoop","path":"objects/obj_gameLoop/obj_gameLoop.yy",},},
     {"id":{"name":"inventory_functions","path":"scripts/inventory_functions/inventory_functions.yy",},},
+    {"id":{"name":"spr_surround","path":"sprites/spr_surround/spr_surround.yy",},},
     {"id":{"name":"effects","path":"scripts/effects/effects.yy",},},
     {"id":{"name":"slimeScripts","path":"scripts/slimeScripts/slimeScripts.yy",},},
     {"id":{"name":"AutoClicker","path":"scripts/AutoClicker/AutoClicker.yy",},},

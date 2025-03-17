@@ -18,13 +18,14 @@ if alphC <=15
 
 if alph <=0
 {instance_destroy(self)}
-if colorCounter >= 15 
+if colorCounter >= 15
 
 {randomize();
 	col = irandom_range(0,4)
 	colorCounter =0}
 	
-
+if point_in_rectangle(x,y,obj_slime.x,obj_slime.y-68,sprite_get_width(spr_funnel),0)
+{instance_destroy(self)}
 
 
 switch(col) { // Use the item name from the inventory
