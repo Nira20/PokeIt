@@ -19,6 +19,7 @@
     {"name":"spr_gem","order":2,"path":"sprites/spr_gem/spr_gem.yy",},
     {"name":"spr_effect","order":9,"path":"sprites/spr_effect/spr_effect.yy",},
     {"name":"spr_width","order":7,"path":"sprites/spr_width/spr_width.yy",},
+    {"name":"spr_Jar","order":12,"path":"sprites/spr_Jar/spr_Jar.yy",},
     {"name":"spr_storePlaceholder","order":2,"path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},
     {"name":"spr_apprenticeSticks","order":6,"path":"sprites/spr_apprenticeSticks/spr_apprenticeSticks.yy",},
     {"name":"spr_arcanePlatform","order":3,"path":"sprites/spr_arcanePlatform/spr_arcanePlatform.yy",},

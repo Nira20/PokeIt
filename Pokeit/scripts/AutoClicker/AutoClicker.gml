@@ -58,12 +58,12 @@ if  point_in_rectangle(xx, yy, obj_slime.bbox_left, obj_slime.bbox_top, obj_slim
 function drawJars(){
   for (var ii = 0; ii < global.jarred; ii++) {
         
-        jx = 32 *ii
+        jx = (32 + 16) *ii
         jy = 120
 
        
 
-        draw_sprite(spr_gem, 0, jx, jy);
+        draw_sprite(spr_Jar, 0, jx , jy);
   
     }
 

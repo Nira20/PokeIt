@@ -52,6 +52,7 @@
     {"id":{"name":"spr_gem","path":"sprites/spr_gem/spr_gem.yy",},},
     {"id":{"name":"spr_effect","path":"sprites/spr_effect/spr_effect.yy",},},
     {"id":{"name":"spr_width","path":"sprites/spr_width/spr_width.yy",},},
+    {"id":{"name":"spr_Jar","path":"sprites/spr_Jar/spr_Jar.yy",},},
     {"id":{"name":"spr_storePlaceholder","path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},},
     {"id":{"name":"spr_slimeCore","path":"sprites/spr_slimeCore/spr_slimeCore.yy",},},
     {"id":{"name":"spr_funnel","path":"sprites/spr_funnel/spr_funnel.yy",},},
