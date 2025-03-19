@@ -7,7 +7,7 @@ y_pos = room_height/3
 
 inventory = [
 //[name, intitial quanity, sprite, image_index, base price, current price, effect]
-    ["Error", 0 , spr_priceUp,0,0,0,1],
+    ["Restart", 0 , spr_priceUp,0,0,0,1],
     ["Motivate", 0, spr_priceUp,1,10,10,0],
     ["Hire", 1, spr_priceUp,2,20,20,1],
 	["Market", 1 , spr_priceUp,3,30,30,1],
@@ -87,8 +87,8 @@ function purchase(){
 	
 function whatsHovered() {
     switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
-        case "Error":
-		show_debug_message("Error click");
+        case "Restart":
+		error()
             purchase()
             break;
 
@@ -141,7 +141,7 @@ var originalACSpeed = global.acspeed
 
 if motiveCounter <= room_speed *60
 {
-global.acspeed = global.acspeed *.5
+global.acspeed = global.acspeed *1.5
 motiveCounter ++
 }else {
 motiveCounter =0
@@ -152,4 +152,8 @@ global.acspeed = originalACSpeed
 function split(){
 global.slimeSizeCounter = global.slimeSizeCounter/2
 global.jarred +=1
+}
+
+function error(){
+game_restart()
 }
