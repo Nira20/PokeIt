@@ -8,6 +8,7 @@
     {"name":"spr_surround","order":11,"path":"sprites/spr_surround/spr_surround.yy",},
     {"name":"effects","order":2,"path":"scripts/effects/effects.yy",},
     {"name":"slimeScripts","order":4,"path":"scripts/slimeScripts/slimeScripts.yy",},
+    {"name":"spr_koin","order":13,"path":"sprites/spr_koin/spr_koin.yy",},
     {"name":"AutoClicker","order":1,"path":"scripts/AutoClicker/AutoClicker.yy",},
     {"name":"spr_slimebase","order":5,"path":"sprites/spr_slimebase/spr_slimebase.yy",},
     {"name":"Readme","order":1,"path":"scripts/Readme/Readme.yy",},

@@ -50,19 +50,21 @@ if  point_in_rectangle(xx, yy, obj_slime.bbox_left, obj_slime.bbox_top, obj_slim
         rot = point_direction(xx, yy, x, y);
         rot -= 90;
 
-        draw_sprite_ext(spr_gem, 0, xx, yy, 2, 2, rot, c_white, 1);
-        draw_sprite_ext(spr_apprenticeSticks, 0, xx, yy, 2, 2, rot, c_white, 1);
+        draw_sprite_ext(spr_gem, 0, xx, yy, 1, 1, rot, c_white, 1);
+        draw_sprite_ext(spr_apprenticeSticks, 0, xx, yy, 1, 1, rot, c_white, 1);
     }
 }
 
 function drawJars(){
   for (var ii = 0; ii < global.jarred; ii++) {
         
-        jx = (32 + 16) *ii
+        jx = 50 + ((32 +16) *ii)
         jy = 120
-
-       
-
+		draw_set_color(c_lime)
+		draw_rectangle(jx+2,jy +10,jx+35,jy+59,0)
+		draw_set_color(c_gray)
+		draw_rectangle(jx+1,jy +24,jx+36,jy+40,0)
+		draw_set_color(c_white)
         draw_sprite(spr_Jar, 0, jx , jy);
   
     }

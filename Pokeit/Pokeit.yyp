@@ -41,6 +41,7 @@
     {"id":{"name":"spr_surround","path":"sprites/spr_surround/spr_surround.yy",},},
     {"id":{"name":"effects","path":"scripts/effects/effects.yy",},},
     {"id":{"name":"slimeScripts","path":"scripts/slimeScripts/slimeScripts.yy",},},
+    {"id":{"name":"spr_koin","path":"sprites/spr_koin/spr_koin.yy",},},
     {"id":{"name":"AutoClicker","path":"scripts/AutoClicker/AutoClicker.yy",},},
     {"id":{"name":"spr_slimebase","path":"sprites/spr_slimebase/spr_slimebase.yy",},},
     {"id":{"name":"Readme","path":"scripts/Readme/Readme.yy",},},
