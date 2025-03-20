@@ -1,6 +1,3 @@
-
-// Step Event
-// Make the sprite drift upwards
 y -= 1;
 var counter =0
 counter ++
@@ -21,7 +18,7 @@ if alph <=0
 if colorCounter >= 15
 
 {randomize();
-	col = irandom_range(0,4)
+	col = irandom_range(0,5)
 	colorCounter =0}
 	
 if point_in_rectangle(x,y,obj_slime.x,obj_slime.y-68,sprite_get_width(spr_funnel),0)
@@ -34,20 +31,24 @@ switch(col) { // Use the item name from the inventory
             break;
 
         case 1:
-		color = c_red
+		color = #fff400
             break;
 
         case 2:
-          color = c_yellow
+          color = #ffe802
             break;
 
         case 3:
-		color = c_purple
+		color = #ffce00
             break;
 
         case 4:
 				
-         color = c_teal
+         color = #fdbf00
             break;
+			
+		case 5: 
+		color = #ffb400
+		break; 
 
 }

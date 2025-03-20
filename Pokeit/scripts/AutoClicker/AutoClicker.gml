@@ -1,4 +1,4 @@
-function AutoClickerSetup(){
+function autoClickerSetup(){
 radiusDirection = 1;
 radius = (obj_slime.spriteWidth*obj_slime.sizeMultiplier)
 angle =0
@@ -55,22 +55,6 @@ if  point_in_rectangle(xx, yy, obj_slime.bbox_left, obj_slime.bbox_top, obj_slim
     }
 }
 
-function drawJars(){
-  for (var ii = 0; ii < global.jarred; ii++) {
-        
-        jx = 50 + ((32 +16) *ii)
-        jy = 120
-		draw_set_color(c_lime)
-		draw_rectangle(jx+2,jy +10,jx+35,jy+59,0)
-		draw_set_color(c_gray)
-		draw_rectangle(jx+1,jy +24,jx+36,jy+40,0)
-		draw_set_color(c_white)
-        draw_sprite(spr_Jar, 0, jx , jy);
-  
-    }
-
-}
-
 function anger(){
 global.slimeSizeCounter ++
 global.angerCounter ++
@@ -93,5 +77,21 @@ global.pXScale = 3
 global.jarred = 0
 global.slimeSizeCounter = 1
 global.angerCounter = 0
+global.slimeColor = c_white
 
 }
+	
+function sMouseCheck(){
+	
+	if (mouse_check_button_released(mb_left)) {
+    // Check if the mouse click is within the boundaries of the sprite
+    if (point_in_rectangle(mouse_x, mouse_y,bbox_left,bbox_top,bbox_right, bbox_bottom)) {
+        // Increase global counter by 1
+        global.Counter += global.acamount 
+		anger()
+		money()
+        
+       
+    }
+}
+	}

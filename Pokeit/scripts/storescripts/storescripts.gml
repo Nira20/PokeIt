@@ -4,7 +4,10 @@ rowLength =1;
 randomize()
 scroll_speed = 2; 
 y_pos = room_height/3 
+slimeJars = [//color, size, value
 
+
+]
 inventory = [
 //[name, intitial quanity, sprite, image_index, base price, current price, effect]
     ["Restart", 0 , spr_priceUp,0,0,0,1],
@@ -149,10 +152,6 @@ global.acspeed = originalACSpeed
 }
 
 }	
-function split(){
-global.slimeSizeCounter = global.slimeSizeCounter/2
-global.jarred +=1
-}
 
 function error(){
 game_restart()
