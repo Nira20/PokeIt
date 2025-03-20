@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings": [
-    {"name":"SetPieces","order":8,"path":"folders/Sprites/SetPieces.yy",},
     {"name":"Core Objects","order":7,"path":"folders/Objects/Core Objects.yy",},
     {"name":"inventory","order":14,"path":"folders/Sprites/inventory.yy",},
+    {"name":"SetPieces","order":8,"path":"folders/Sprites/SetPieces.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_button","order":2,"path":"sprites/spr_button/spr_button.yy",},
