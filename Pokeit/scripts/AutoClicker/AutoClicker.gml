@@ -83,8 +83,31 @@ global.hcounter = 0;
 global.elapsed_time = 0;
 global.dcounter =0;
 global.pause = 0
+createColors()
 }
-	
+
+function createColors(){
+global.colors = [
+ 	#fc3032,
+	#01cce9,
+	#0dde01,
+	#faf016,
+	#ff00ff,
+	#76167c,
+	#130505,
+	#d297dd,
+	#88f4e1,
+    #2b3256,
+	#fc3032,
+	#7400ff,
+	#00fffe,
+	#004aff,
+	#00ffc4,
+	#ff0000,
+	];
+
+
+}
 function sMouseCheck(){
 	
 	if (mouse_check_button_released(mb_left)) {

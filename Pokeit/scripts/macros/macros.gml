@@ -9,13 +9,14 @@
 
 function timeCounter(){
 // Step Event
-elapsed_time += delta_time / 1000000; // Add real-world seconds passed
-if (elapsed_time >= 40) {
-    hcounter += 1; // Increase counter by 1
-    elapsed_time -= 40; // Reset elapsed time, keeping any overflow
+global.elapsed_time += delta_time / 1000000; // Add real-world seconds passed
+if (global.elapsed_time >= 40) {
+    global.hcounter += 1; // Increase counter by 1
+	global.elapsed_time -= 40; // Reset elapsed time, keeping any overflow
 }
-if (hcounter >= 24) {
-    dcounter += 1; // Increase counter by 1
-    hcounter -= 24; // Reset elapsed time, keeping any overflow 
+if (global.hcounter >= 24) {
+    global.dcounter += 1; // Increase counter by 1
+    global.hcounter -= 24; // Reset elapsed time, keeping any overflow 
 	
-}}
+}
+}
