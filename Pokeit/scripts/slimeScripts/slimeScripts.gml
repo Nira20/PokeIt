@@ -81,4 +81,7 @@ image_yscale =sizeMultiplier
 
 }
 
-//functions
+
+function slimeAttack(){
+global.platform -= global.slimeSizeCounter
+}

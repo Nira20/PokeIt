@@ -19,7 +19,6 @@
     {"name":"macros","order":7,"path":"scripts/macros/macros.yy",},
     {"name":"eventManager","order":6,"path":"scripts/eventManager/eventManager.yy",},
     {"name":"spr_priceUp","order":1,"path":"sprites/spr_priceUp/spr_priceUp.yy",},
-    {"name":"Sprite13","order":2,"path":"sprites/Sprite13/Sprite13.yy",},
     {"name":"storescripts","order":3,"path":"scripts/storescripts/storescripts.yy",},
     {"name":"spr_shelf","order":3,"path":"sprites/spr_shelf/spr_shelf.yy",},
     {"name":"obj_money","order":2,"path":"objects/obj_money/obj_money.yy",},
