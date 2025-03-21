@@ -13,8 +13,9 @@ global.elapsed_time += delta_time / 1000000; // Add real-world seconds passed
 if (global.elapsed_time >= 40) {
     global.hcounter += 1; // Increase counter by 1
 	global.elapsed_time -= 40; // Reset elapsed time, keeping any overflow
-	slimeattack();
+	
 }
+
 if (global.hcounter >= 24) {
     global.dcounter += 1; // Increase counter by 1
     global.hcounter -= 24; // Reset elapsed time, keeping any overflow 

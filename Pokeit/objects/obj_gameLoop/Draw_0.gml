@@ -3,7 +3,9 @@ draw_set_font (fn_arialBig)
 draw_sprite(spr_effect,0,64,64)
 
 draw_sprite_ext(spr_koin,0,64,64,.6,.6,0,c_gold,1)
-draw_text(116,44,string(playerMoney))
+draw_text(116,44,string(global.sAttackCounter))
+draw_text(116,44 *2,string(global.cage))
+
 drawJars()
 drawInventory()
 

@@ -16,6 +16,8 @@ inventory = [
 	["Market", 1 , spr_priceUp,3,3,3,1],
     ["Split", 1, spr_priceUp,4,4,4,1],
 	["Bigger Cage", 1, spr_priceUp, 5, 1,1,1],
+	["Fix Cage", 0, spr_priceUp, 5, 1,1,1],
+	["Pacify", 0, spr_priceUp, 1, 1,1,1]
   ];
 
 hovered_slot = 0
@@ -120,6 +122,16 @@ function whatsHovered() {
 		global.pXScale ++
 		purchase()
 			break;
+			
+		 case "Fix Cage":
+			fixCage()
+            purchase()
+            break;
+			
+		case "Pacify":
+		pacify()
+		purchase();
+		break;
        
 	   default:
             // Handle unknown item
@@ -127,7 +139,13 @@ function whatsHovered() {
             break;
     }
 }
+		function pacify(){
+	global.angerCounter = round(global.angerCounter/2)
+	}
 	
+	function fixCage(){
+	global.cage += 50
+	}
 function money(){
 /// Calculate the middle of the room
 // Calculate the middle of the room

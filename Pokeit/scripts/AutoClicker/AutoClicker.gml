@@ -77,6 +77,7 @@ global.pXScale = 3
 global.jarred = 0
 global.slimeSizeCounter = 1
 global.angerCounter = 0
+global.sAttackCounter =0
 global.slimeColor = c_white
 global.gState = "initialize" 
 global.hcounter = 0;
@@ -84,6 +85,7 @@ global.elapsed_time = 0;
 global.dcounter =0;
 global.pause = 0
 global.cage = 100
+
 createColors()
 }
 

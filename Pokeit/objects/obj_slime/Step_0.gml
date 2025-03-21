@@ -1,3 +1,4 @@
 sizeUpdate()
 sMouseCheck()
 angerGenerate()
+attackCounter()

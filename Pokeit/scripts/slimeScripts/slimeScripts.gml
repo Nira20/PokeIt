@@ -83,5 +83,19 @@ image_yscale =sizeMultiplier
 
 
 function slimeAttack(){
-global.platform -= global.slimeSizeCounter
+global.cage -= global.slimeSizeCounter
+}
+
+
+function attackCounter(){
+global.sAttackCounter ++
+	if global.sAttackCounter >= angerMax - global.angerCounter
+	{
+	slimeAttack()
+	global.sAttackCounter =0
+	global.angerCounter --
+	}
+
+
+
 }
