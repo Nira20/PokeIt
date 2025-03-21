@@ -11,11 +11,11 @@ slimeJars = [//color, size, value
 inventory = [
 //[name, intitial quanity, sprite, image_index, base price, current price, effect]
     ["Restart", 0 , spr_priceUp,0,0,0,1],
-    ["Motivate", 0, spr_priceUp,1,10,10,0],
-    ["Hire", 1, spr_priceUp,2,20,20,1],
-	["Market", 1 , spr_priceUp,3,30,30,1],
-    ["Split", 1, spr_priceUp,4,40,40,1],
-	["Bigger Cage", 1, spr_priceUp, 5, 120,120,1],
+    ["Motivate", 0, spr_priceUp,1,1,1,0],
+    ["Hire", 1, spr_priceUp,2,2,2,1],
+	["Market", 1 , spr_priceUp,3,3,3,1],
+    ["Split", 1, spr_priceUp,4,4,4,1],
+	["Bigger Cage", 1, spr_priceUp, 5, 1,1,1],
   ];
 
 hovered_slot = 0

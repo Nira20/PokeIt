@@ -16,6 +16,7 @@
     {"name":"autoClicker","order":1,"path":"scripts/autoClicker/autoClicker.yy",},
     {"name":"spr_slimebase","order":8,"path":"sprites/spr_slimebase/spr_slimebase.yy",},
     {"name":"Readme","order":1,"path":"scripts/Readme/Readme.yy",},
+    {"name":"macros","order":7,"path":"scripts/macros/macros.yy",},
     {"name":"eventManager","order":6,"path":"scripts/eventManager/eventManager.yy",},
     {"name":"spr_priceUp","order":1,"path":"sprites/spr_priceUp/spr_priceUp.yy",},
     {"name":"Sprite13","order":2,"path":"sprites/Sprite13/Sprite13.yy",},

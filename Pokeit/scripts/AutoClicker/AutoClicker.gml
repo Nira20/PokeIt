@@ -79,6 +79,10 @@ global.slimeSizeCounter = 1
 global.angerCounter = 0
 global.slimeColor = c_white
 global.gState = "initialize" 
+global.hcounter = 0;
+global.elapsed_time = 0;
+global.dcounter =0;
+global.pause = 0
 }
 	
 function sMouseCheck(){
