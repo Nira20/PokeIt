@@ -85,7 +85,7 @@ global.elapsed_time = 0;
 global.dcounter =0;
 global.pause = 0
 global.cage = 100
-
+global.oacspeed = 1
 createColors()
 }
 

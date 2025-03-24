@@ -5,11 +5,16 @@ spriteWidth = sprite_width
 spriteHeight= sprite_height
 button_pressed = false
 sizeMultiplier =0
-
+rpulse =3
+ppulse =-0.001
+acolor = c_white
 image_speed = .25
 depth = -1
 autoClickerSetup()
-
+col1 = #fc3032
+col2 = #76167c
+col3 = #00fffe
+col4 = #08ff2e
 createAnger()
 
 }
@@ -58,9 +63,22 @@ draw_rectangle(x1, y1, x1 + fill_width, y1 + slider_height, false)
 draw_set_color(c_white)
 }
 function drawPlatforms(){
+// Update rpulse based on ppulse
+rpulse += ppulse;
+// Check the bounds and reverse the direction of ppulse accordingly
+if (rpulse >= 3.1) { 
+    ppulse = -0.001; // Start decreasing radius
+} else if (rpulse <= 2.95) {
+    ppulse = 0.001; // Start increasing radius
+}
+ draw_sprite_ext(spr_funnel,0,x,y-86,3,3,0,c_white,1)
+draw_sprite_general(spr_funnelRunes,0,0,0,sprite_get_width(spr_funnelRunes),sprite_get_height(spr_funnelRunes),x-80,y -286, rpulse,rpulse,0,col1,col2,col3,col4,1)
+
 draw_self()
-draw_sprite_ext(spr_funnel,0,x,y-86,3,3,0,c_white,1)
+
+
 draw_sprite_ext(spr_arcanePlatform,0,x,y,global.pXScale,global.pYScale,0,c_white,1)
+
 }
 // Step events
 function angerGenerate(){
@@ -99,3 +117,4 @@ global.sAttackCounter ++
 
 
 }
+	
