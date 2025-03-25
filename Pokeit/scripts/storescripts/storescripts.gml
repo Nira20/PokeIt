@@ -2,7 +2,7 @@ function createStore(){
 inventory_slots = 0
 rowLength =1;
 randomize()
-maxPlatformHP = 100
+global.maxPlatformHP = 100
 scroll_speed = 2; 
 y_pos = room_height/3 
 motiveCounter = 0
@@ -42,8 +42,6 @@ yy=0
 }
 
 function drawInventory() {
- draw_text(0, 200, string(global.acamount))
-
  inventory_slots = array_length(inventory);
 if spdup = true {
 {motiveCounter ++
@@ -134,7 +132,7 @@ function whatsHovered() {
             break;
 			
 		case "Upgrade Cage":
-		maxPlatformHP +=50
+		global.maxPlatformHP +=50
 		purchase()
 			break;
 			
@@ -163,9 +161,10 @@ function pacify(){
 	global.angerCounter = round(global.angerCounter/2)
 	}
 function fixCage(){
-	if global.cage <= maxPlatformHP -50
-	{global.cage += 50}
-	else{ global.cage = maxPlatformHP
+	var p = global.cage/global.maxPlatformHP *100
+	if p <= 90
+	{global.cage += global.maxPlatformHP/10}
+	else{ global.cage = global.maxPlatformHP
 	}}
 function money(){
 /// Calculate the middle of the room

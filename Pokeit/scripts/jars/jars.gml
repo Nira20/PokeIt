@@ -6,10 +6,7 @@ function drawJars(){
         jy = 120
 		var tcolor = slimeJars[ii][0]
 		draw_set_color(tcolor)
-		draw_rectangle(jx+2,jy +10,jx+35,jy+59,0)
-		draw_set_color(c_gray)
-		draw_rectangle(jx+1,jy +24,jx+36,jy+40,0)
-		draw_set_color(c_white)
+			draw_set_color(c_white)
         draw_sprite(spr_Jar, 0, jx , jy);
   
     }
