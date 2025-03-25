@@ -11,3 +11,4 @@ totalMoney = 0
 
 createStore();
 
+
