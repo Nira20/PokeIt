@@ -1,25 +1,18 @@
 sizeUpdate()
 sMouseCheck()
+angerGenerate()
 
-attackCounter()
 platformHPPercent = global.cage/global.maxPlatformHP
 subindex =  sprite_get_number(spr)
-if attacking = true {
-spr = spr_slimeAttack
-if subbed >= subindex -1
-{subbed =0
-	spr=spr_slimebase
-	attacking = false
-	angerGenerate()
-	}
+// Add this to the Step Event
+if (attacking) {
+    subindex = sprite_get_number(spr);
+    if (subbed >= subindex - 1) { // Check if attack animation is complete
+        resetSlimeState(); // Reset after animation
+    }
 }
 
-
-
-
-// Step Event
 timer += 1;
-
 if (timer >= increment * fpss) {
     subbed += 1;
     timer = 0;

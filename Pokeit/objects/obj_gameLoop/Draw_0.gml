@@ -10,3 +10,5 @@ draw_text(116,44,string(playerMoney))
 drawJars()
 drawInventory()
 
+
+draw_text(80,80, string(debugging))

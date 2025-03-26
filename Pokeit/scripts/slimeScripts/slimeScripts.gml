@@ -18,15 +18,27 @@ angerTimer = 0
 
 
 }
-function angerGenerate(){
-	angerTimer ++ 
-	if angerTimer >= angerMax{
-	angerTimer =0
-	global.Counter += global.angerCounter
-	}
-angerTimer = 0
 
+function angerGenerate() {
+    if (!attacking) {
+        angerTimer++;
+        if (angerTimer >= angerMax) {
+            angerTimer = 0;
+            global.Counter += global.angerCounter;
+            slimeAttack(); // Trigger attack when anger is generated
+        }
+    }
 }
+function resetSlimeState() {
+    attacking = false;
+    spr = spr_slimebase; // Reset to idle sprite
+    angerTimer = 0; // Reset anger timer
+    global.sAttackCounter = 0; // Reset attack counter
+    global.angerCounter = 0; // Reset anger counter
+}
+
+
+
 function sizeUpdate(){
 x =room_width/2
 y =room_width *.4
@@ -35,20 +47,12 @@ image_xscale =sizeMultiplier
 image_yscale =sizeMultiplier
 
 }
-function slimeAttack(){
-global.cage -= global.slimeSizeCounter
-attacking = true
+function slimeAttack() {
+    if (!attacking) {
+        global.cage -= global.slimeSizeCounter;
+        attacking = true;
+        spr = spr_slimeAttack; // Play attack animation
+        subbed = 0; // Reset animation frame tracker
+    }
 }
-function attackCounter(){
-global.sAttackCounter ++
-	if global.sAttackCounter >= angerMax
-	{
-	slimeAttack()
-	global.sAttackCounter =0
-	global.angerCounter =0
-	}
 
-
-
-}
-	

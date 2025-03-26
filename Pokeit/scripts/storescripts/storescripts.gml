@@ -6,22 +6,27 @@ global.maxPlatformHP = 100
 scroll_speed = 2; 
 y_pos = room_height/3 
 motiveCounter = 0
-slimeJars = [//color, size, value
+slimeJars = [//color,	 size,	value
+			// 0		1		2
 
 
 ]
 inventory = [
-//[name, intitial quanity, sprite, image_index, base price, current price, effect]
-    ["Restart", 0 , spr_priceUp,0,0,0,1,0],
-    ["Motivate", 0, spr_priceUp,1,1,1,0,1],
-    ["Hire", 1, spr_priceUp,2,2,2,1,0],
-	["Market", 1 , spr_priceUp,3,3,3,1,0],
-    ["Split", 1, spr_priceUp,4,4,4,1,0],
-	["Fix Cage", 0, spr_priceUp, 5,1,1,1,0],
-	["Upgrade Cage", 0, spr_priceUp, 1,1,1,1,0],
-	["Pacify", 0, spr_priceUp, 1, 1,1,1,0],
-	["Upgrade Hires", 0, spr_priceUp,1,1,1,1,0]
-  ];
+    // [name,         initial quantity, sprite,       image_index, base price, current price, effect, isPowerUp]
+    // [0,            1,                2,            3,           4,          5,             6,      7]
+    ["Restart",      0,                spr_priceUp,  0,           0,          0,             1,      0],
+    ["Motivate",     0,                spr_priceUp,  1,           1,          1,             0,      1],
+    ["Hire",         0,                spr_priceUp,  2,           2,          2,             1,      0],
+    ["Market",       0,                spr_priceUp,  3,           3,          1,             1,      0],
+    ["Split",        0,                spr_priceUp,  4,           4,          4,             1,      0],
+    ["Fix Cage 10%", 0,                spr_priceUp,  5,           1,          1,             1,      0],
+	["Fix Cage 30%", 0,                spr_priceUp,  5,           3,          1,             1,      0],
+	["Fix Cage 50%", 0,                spr_priceUp,  5,           5,          1,             1,      0],
+	["Fix Cage 80%", 0,                spr_priceUp,  5,           8,          1,             1,      0],
+    ["Upgrade Cage", 0,                spr_priceUp,  1,           1,          1,             1,      0],
+    ["Pacify",       0,                spr_priceUp,  1,           1,          1,             1,      0],
+    ["Upgrade Hires",0,                spr_priceUp,  1,           1,          1,             1,      0]
+];
 
 hovered_slot = 0
 mouseX = mouse_y
@@ -73,7 +78,7 @@ if motiveCounter >= 100
 		
 		
         draw_sprite_ext(inventory[i][2], inventory[i][3], xx, yy, .5, .5, 0, c_white, 1);
-        draw_text_color(xx + 64, yy, string(inventory[i][0]) + " - " + string(inventory[i][5])+ " - " + string(inventory[i][6]),col,col,col,col,1);
+        draw_text_color(xx + 64, yy, string(inventory[i][0]) + " - " + string(inventory[i][5])+ " - " + string(inventory[i][1]),col,col,col,col,1);
 
 			
                
@@ -98,57 +103,86 @@ if motiveCounter >= 100
             }}
         }
 
-function purchase(){
+function purchasePlus(){
 				spentMoney = spentMoney+ inventory[hovered_slot][5]
-				inventory[hovered_slot][5] = inventory[hovered_slot][5] *2
-				inventory[hovered_slot][6] += 1
+				inventory[hovered_slot][5] = inventory[hovered_slot][4] + inventory[hovered_slot][1]
+				inventory[hovered_slot][1] += 1
            }
+		   
+function purchaseMult(){
+				spentMoney = spentMoney+ inventory[hovered_slot][5]
+				inventory[hovered_slot][5] = inventory[hovered_slot][4] * inventory[hovered_slot][1]
+				inventory[hovered_slot][1] += 1
+           }
+		   
+function purchaseExp(){
+				spentMoney = spentMoney+ inventory[hovered_slot][5]
+				inventory[hovered_slot][5] = power(inventory[hovered_slot][4], inventory[hovered_slot][1])
+				inventory[hovered_slot][1] += 1
+           }
+		   
+		   
 function whatsHovered() {
     switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
         case "Restart":
 		error()
-            purchase()
+            purchasePlus()
             break;
 
         case "Motivate":
 			motivate()
-            purchase()
+            purchaseMult()
             break;
 
         case "Hire":
             global.acq +=1
-			purchase()
+			purchasePlus()
            
             break;
 
         case "Market":
 		 global.acamount += global.acamount
-           purchase()
+           purchasePlus()
             break;
 
         case "Split":
 				split()
-          purchase()
+          purchasePlus()
             break;
 			
 		case "Upgrade Cage":
 		global.maxPlatformHP +=50
-		purchase()
+		purchaseMult()
 			break;
 			
-		 case "Fix Cage":
-			fixCage()
-            purchase()
+		 case "Fix Cage 10%":
+			fixCage(10)
+            purchaseMult()
+            break;
+			
+			case "Fix Cage 30%":
+			fixCage(30)
+            purchaseMult()
+            break;
+			
+			case "Fix Cage 50%":
+			fixCage(50)
+            purchaseMult()
+            break;
+			
+			case "Fix Cage 80%":
+			fixCage(80)
+            purchaseMult()
             break;
 			
 		case "Pacify":
 		pacify()
-		purchase();
+		purchaseMult();
 		break;
 		
 		case "Upgrade Hires":
        improveHirelings();
-	   purchase();
+	   purchaseMult();
 	   break;
 	   
 	   default:
@@ -160,10 +194,10 @@ function whatsHovered() {
 function pacify(){
 	global.angerCounter = round(global.angerCounter/2)
 	}
-function fixCage(){
+function fixCage(amount){
 	var p = global.cage/global.maxPlatformHP *100
-	if p <= 90
-	{global.cage += global.maxPlatformHP/10}
+	if p <= ( 100 - amount )
+	{global.cage += global.maxPlatformHP/amount}
 	else{ global.cage = global.maxPlatformHP
 	}}
 function money(){

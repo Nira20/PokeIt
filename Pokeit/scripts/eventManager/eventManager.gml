@@ -31,3 +31,5 @@ function checkState() {
         // Optional: Freeze gameplay or return to the main menu
     }
 }
+
+

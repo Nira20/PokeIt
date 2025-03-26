@@ -45,9 +45,7 @@ function drawPlatforms(){
     var shimmer_color = get_shimmer_color();
   
 
-    draw_self();
-
-    // Draw Event
+       // Draw Event
     if (!surface_exists(shimmer_surface)) {
         shimmer_surface = surface_create(room_width, room_height);
     }

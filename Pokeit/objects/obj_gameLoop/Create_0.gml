@@ -11,4 +11,4 @@ totalMoney = 0
 
 createStore();
 
-
+debugging = instance_number(obj_slime)
