@@ -1,4 +1,4 @@
 drawPlatforms()
 drawClickers()
-draw_self()
+draw_sprite(spr,subbed,x,y)
 

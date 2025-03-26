@@ -37,15 +37,15 @@ image_yscale =sizeMultiplier
 }
 function slimeAttack(){
 global.cage -= global.slimeSizeCounter
-
+attacking = true
 }
 function attackCounter(){
 global.sAttackCounter ++
-	if global.sAttackCounter >= angerMax - global.angerCounter
+	if global.sAttackCounter >= angerMax
 	{
 	slimeAttack()
 	global.sAttackCounter =0
-	global.angerCounter --
+	global.angerCounter =0
 	}
 
 

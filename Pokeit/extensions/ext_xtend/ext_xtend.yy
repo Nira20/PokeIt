@@ -2,7 +2,7 @@
   "resourceType": "GMExtension",
   "resourceVersion": "1.2",
   "name": "ext_xtend",
-  "androidactivityinject": null,
+  "androidactivityinject": "",
   "androidclassname": "Xtend",
   "androidcodeinjection": "",
   "androidinject": "",
