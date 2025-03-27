@@ -26,6 +26,7 @@
     {"name":"spr_fiellld","order":8,"path":"sprites/spr_fiellld/spr_fiellld.yy",},
     {"name":"spr_funnelRunes","order":4,"path":"sprites/spr_funnelRunes/spr_funnelRunes.yy",},
     {"name":"obj_money","order":2,"path":"objects/obj_money/obj_money.yy",},
+    {"name":"spr_slimeSlime","order":13,"path":"sprites/spr_slimeSlime/spr_slimeSlime.yy",},
     {"name":"spr_gem","order":2,"path":"sprites/spr_gem/spr_gem.yy",},
     {"name":"spr_effect","order":3,"path":"sprites/spr_effect/spr_effect.yy",},
     {"name":"spr_Jar","order":4,"path":"sprites/spr_Jar/spr_Jar.yy",},

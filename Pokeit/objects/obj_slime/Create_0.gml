@@ -8,4 +8,4 @@ attacking = false
 spr = spr_slimebase
 subindex = 0
 subbed = 0
-
+subinsl =0
