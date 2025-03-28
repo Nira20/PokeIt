@@ -24,7 +24,7 @@ inventory = [
 	["Fix Cage 50%", 0,                spr_priceUp,  5,           5,          1,             1,      0],
 	["Fix Cage 80%", 0,                spr_priceUp,  5,           8,          1,             1,      0],
     ["Upgrade Cage", 0,                spr_priceUp,  1,           1,          1,             1,      0],
-    ["Pacify",       0,                spr_priceUp,  1,           1,          1,             1,      0],
+    ["Pacify",       0,                spr_priceUp,  1,           1,          1,             1,      1],
     ["Upgrade Hires",0,                spr_priceUp,  1,           1,          1,             1,      0]
 ];
 
@@ -194,12 +194,26 @@ function whatsHovered() {
 function pacify(){
 	global.angerCounter = round(global.angerCounter/2)
 	}
-function fixCage(amount){
+	
+	
+/*function fixCage(amount){
 	var p = global.cage/global.maxPlatformHP *100
 	if p <= ( 100 - amount )
 	{global.cage += global.maxPlatformHP/amount}
 	else{ global.cage = global.maxPlatformHP
-	}}
+	}}*/
+	
+	function fixCage(amount) {
+    // Calculate the new cage value based on the percentage increase
+    var increment = global.maxPlatformHP * (amount / 100);
+    global.cage += increment;
+    
+    // If the updated cage value exceeds maxPlatformHP, cap it
+    if (global.cage > global.maxPlatformHP) {
+        global.cage = global.maxPlatformHP;
+    }
+}
+
 function money(){
 /// Calculate the middle of the room
 // Calculate the middle of the room

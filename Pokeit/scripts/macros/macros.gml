@@ -6,6 +6,40 @@
 #macro c_honeyGlow make_color_rgb(255, 207, 64)   // #ffcf40
 #macro c_softSaffron make_color_rgb(255, 220, 115) // #ffdc73
 
+#macro xt 0
+#macro yt 0
+#macro xr room_width 
+#macro yb room_height 
+
+#macro xm room_width/2
+#macro ym room_height/2
+
+#macro tl_x xt         // Top-left X position
+#macro tl_y yt         // Top-left Y position
+
+#macro tr_x xm         // Top-right X position
+#macro tr_y yt         // Top-right Y position
+
+#macro bl_x xt         // Bottom-left X position
+#macro bl_y ym         // Bottom-left Y position
+
+#macro br_x xm         // Bottom-right X position
+#macro br_y ym         // Bottom-right Y position
+
+#macro tr_mid_x (xm + xr) / 2    // Midpoint X of top-right quadrant
+#macro tr_mid_y (yt + ym) / 2    // Midpoint Y of top-right quadrant
+#macro tr_mid_u_y (yt + ym)     // Midpoint Y of top-right quadrant
+
+/// Positions in the room with their coordinates:
+// Top Left: (xt, yt)
+// Middle Top: (xm, yt)
+// Top Right: (xr, yt)
+// Middle Left: (xt, ym)
+// Middle Middle: (xm, ym)
+// Middle Right: (xr, ym)
+// Bottom Left: (xt, yb)
+// Bottom Middle: (xm, yb)
+// Bottom Right: (xr, yb)
 
 function timeCounter(){
 // Step Event

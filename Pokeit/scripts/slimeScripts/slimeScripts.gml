@@ -56,3 +56,24 @@ function slimeAttack() {
     }
 }
 
+
+function calculateDanger() {
+    return angerTimer / angerMax; // Adjust these variables based on your game logic
+}
+function draw_radial_progress(pos_x, pos_y, progress, radius, color, thickness) {
+    var angle_step = 360 * progress; // Calculate the angle based on progress (0 to 1)
+    var start_angle = 90; // Starting angle
+
+    draw_set_colour(color);
+    draw_set_alpha(1);
+
+    for (var angle = 0; angle < angle_step; angle++) {
+        var x1 = pos_x + lengthdir_x(radius, angle + start_angle);
+        var y1 = pos_y + lengthdir_y(radius, angle + start_angle);
+        var x2 = pos_x + lengthdir_x(radius - thickness, angle + start_angle);
+        var y2 = pos_y + lengthdir_y(radius - thickness, angle + start_angle);
+
+        draw_line(x1, y1, x2, y2); // Draw line for each radial segment
+    }
+	    draw_set_colour(c_white);
+}

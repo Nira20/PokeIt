@@ -5,7 +5,7 @@ function drawJars() {
         
         var columns = 4; // Number of jars per row
         var spacingX = 32 + 8; // Horizontal spacing between jars
-        var spacingY = 32 + 16; // Vertical spacing between rows
+        var spacingY = 32 + 32; // Vertical spacing between rows
         var rows = 1
 		
         var jx = 50 + (spacingX * (ii % columns)); // X-position for jars

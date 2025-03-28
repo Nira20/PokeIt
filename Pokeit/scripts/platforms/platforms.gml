@@ -62,7 +62,7 @@ function drawPlatforms(){
 	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
                         x - 80, y - 286, 3, 3, 0, shimmer_color, shimmer_color, shimmer_color, shimmer_color, rpulse);
 	draw_sprite_ext(spr_field, 0, x, y-80, global.pXScale, global.pYScale, 0, hcolor, rpulse);
-
+	draw_radial_progress(tr_mid_x , tr_mid_u_y, platformHPPercent, 50, hcolor, 50);
 }
 
 function lerp_color(color1, color2, t) {

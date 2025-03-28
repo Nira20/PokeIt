@@ -70,14 +70,17 @@
     {"id":{"name":"spr_apprenticeSticks","path":"sprites/spr_apprenticeSticks/spr_apprenticeSticks.yy",},},
     {"id":{"name":"spr_arcanePlatform","path":"sprites/spr_arcanePlatform/spr_arcanePlatform.yy",},},
     {"id":{"name":"spr_rmBg","path":"sprites/spr_rmBg/spr_rmBg.yy",},},
+    {"id":{"name":"spr_danger","path":"sprites/spr_danger/spr_danger.yy",},},
     {"id":{"name":"spr_field","path":"sprites/spr_field/spr_field.yy",},},
     {"id":{"name":"fn_arialBig","path":"fonts/fn_arialBig/fn_arialBig.yy",},},
     {"id":{"name":"spr_slimeAttack","path":"sprites/spr_slimeAttack/spr_slimeAttack.yy",},},
+    {"id":{"name":"rm_mainLoop2","path":"rooms/rm_mainLoop2/rm_mainLoop2.yy",},},
     {"id":{"name":"spr_markings","path":"sprites/spr_markings/spr_markings.yy",},},
     {"id":{"name":"rm_mainLoop","path":"rooms/rm_mainLoop/rm_mainLoop.yy",},},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_mainLoop","path":"rooms/rm_mainLoop/rm_mainLoop.yy",},},
+    {"roomId":{"name":"rm_mainLoop2","path":"rooms/rm_mainLoop2/rm_mainLoop2.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
