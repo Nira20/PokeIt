@@ -1,10 +1,19 @@
-//color Macros
+//color Macros Gold
 #macro c_gold  #bf9b30
 #macro c_goldenEarth make_color_rgb(166, 124, 0)  // #a67c00
 #macro c_desertAmber make_color_rgb(191, 155, 48) // #bf9b30
 #macro c_blazingSun make_color_rgb(255, 191, 0)   // #ffbf00
 #macro c_honeyGlow make_color_rgb(255, 207, 64)   // #ffcf40
 #macro c_softSaffron make_color_rgb(255, 220, 115) // #ffdc73
+
+#macro c_vibrantRed      #fc3032  // Bright, eye-catching red
+#macro c_deepPurple      #76167c  // Rich, dark purple
+#macro c_luminousBlue     #00fffe  // Luminous aqua blue
+#macro c_neonLime  #08ff2e  // Radiant lime green
+
+
+
+
 
 #macro xt 0
 #macro yt 0
@@ -28,7 +37,7 @@
 
 #macro tr_mid_x (xm + xr) / 2    // Midpoint X of top-right quadrant
 #macro tr_mid_y (yt + ym) / 2    // Midpoint Y of top-right quadrant
-#macro tr_mid_u_y (yt + ym)     // Midpoint Y of top-right quadrant
+#macro tr_mid_u_y (yt + ym) - tr_mid_y    // Midpoint Y of top-right quadrant
 
 /// Positions in the room with their coordinates:
 // Top Left: (xt, yt)

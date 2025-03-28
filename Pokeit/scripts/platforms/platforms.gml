@@ -1,12 +1,9 @@
 function platformCreate(){
     // Create Event
     shimmer_surface = -1;
-    shimmer_speed = 0.002;  // Slower shimmer movement (reduce the speed)
+    /*shimmer_speed = 0.002;  // Slower shimmer movement (reduce the speed)
     shimmer_offset = 0;
-    col1 = #fc3032;
-    col2 = #76167c;
-    col3 = #00fffe;
-    col4 = #08ff2e;
+    */
 	hcolor = c_white
     rpulse = 3;
     ppulse = -0.001;
@@ -14,9 +11,10 @@ function platformCreate(){
 	platformHPPercent = 0
 }
 
-// Function to calculate "rolling" shimmer color
-function get_shimmer_color(){
-    shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) mod 1; // Cycle continuously between 0 and 1
+function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3, col4,) {
+    // Increment and cycle shimmer_color_cycle continuously between 0 and 1
+    shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) % 1;
+
     if (shimmer_color_cycle < 0.25) {
         return lerp_color(col1, col2, shimmer_color_cycle * 4); // Between col1 and col2
     } else if (shimmer_color_cycle < 0.5) {
@@ -27,6 +25,21 @@ function get_shimmer_color(){
         return lerp_color(col4, col1, (shimmer_color_cycle - 0.75) * 4); // Between col4 and back to col1
     }
 }
+
+// Function to calculate "rolling" shimmer color
+/*function get_shimmer_color(c2c, col1,col2,col3,col4,shimmer_speed){
+	var c2c = argument0
+    shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) mod 1; // Cycle continuously between 0 and 1
+    if (shimmer_color_cycle < 0.25) {
+        return lerp_color(col1, col2, shimmer_color_cycle * 4); // Between col1 and col2
+    } else if (shimmer_color_cycle < 0.5) {
+        return lerp_color(col2, col3, (shimmer_color_cycle - 0.25) * 4); // Between col2 and col3
+    } else if (shimmer_color_cycle < 0.75) {
+        return lerp_color(col3, col4, (shimmer_color_cycle - 0.5) * 4); // Between col3 and col4
+    } else {
+        return lerp_color(col4, col1, (shimmer_color_cycle - 0.75) * 4); // Between col4 and back to col1
+    }
+} */
 
 function drawPlatforms(){
     // Update rpulse based on ppulse
@@ -42,14 +55,17 @@ function drawPlatforms(){
     draw_sprite_ext(spr_funnel, 0, x, y - 86, 3, 3, 0, c_white, 1);
   
     // Apply shimmer color only to funnel runes
-    var shimmer_color = get_shimmer_color();
-  
+    var shimmer_color = get_shimmer_color(0,.002,#fc3032,#76167c,#00fffe,#08ff2e);
+    var col1 = get_shimmer_color(0,.002,c_neonLime,c_deepPurple,c_luminousBlue,c_vibrantRed);
+	var col2 = get_shimmer_color(0,.002,c_vibrantRed,c_luminousBlue,c_neonLime,c_deepPurple);
+	var col3 = get_shimmer_color(0,.002,c_vibrantRed,c_deepPurple,c_luminousBlue,c_neonLime);
+	var col4 = get_shimmer_color(0,.002,c_gold,c_goldenEarth,c_softSaffron,c_desertAmber)
 
        // Draw Event
     if (!surface_exists(shimmer_surface)) {
         shimmer_surface = surface_create(room_width, room_height);
     }
-	hcolor =merge_color(col1,col4,platformHPPercent)
+	hcolor =merge_color(c_vibrantRed,c_neonLime,platformHPPercent)
     surface_set_target(shimmer_surface);
     draw_clear_alpha(c_black, 0);
     surface_reset_target();
@@ -60,7 +76,7 @@ function drawPlatforms(){
 	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
                         x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, 1);
 	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
-                        x - 80, y - 286, 3, 3, 0, shimmer_color, shimmer_color, shimmer_color, shimmer_color, rpulse);
+                        x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, rpulse);
 	draw_sprite_ext(spr_field, 0, x, y-80, global.pXScale, global.pYScale, 0, hcolor, rpulse);
 	draw_radial_progress(tr_mid_x , tr_mid_u_y, platformHPPercent, 50, hcolor, 50);
 }
