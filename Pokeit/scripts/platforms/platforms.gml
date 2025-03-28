@@ -11,6 +11,9 @@ function platformCreate(){
 	platformHPPercent = 0
 }
 
+
+
+
 function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3, col4,) {
     // Increment and cycle shimmer_color_cycle continuously between 0 and 1
     shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) % 1;
@@ -26,20 +29,6 @@ function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3,
     }
 }
 
-// Function to calculate "rolling" shimmer color
-/*function get_shimmer_color(c2c, col1,col2,col3,col4,shimmer_speed){
-	var c2c = argument0
-    shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) mod 1; // Cycle continuously between 0 and 1
-    if (shimmer_color_cycle < 0.25) {
-        return lerp_color(col1, col2, shimmer_color_cycle * 4); // Between col1 and col2
-    } else if (shimmer_color_cycle < 0.5) {
-        return lerp_color(col2, col3, (shimmer_color_cycle - 0.25) * 4); // Between col2 and col3
-    } else if (shimmer_color_cycle < 0.75) {
-        return lerp_color(col3, col4, (shimmer_color_cycle - 0.5) * 4); // Between col3 and col4
-    } else {
-        return lerp_color(col4, col1, (shimmer_color_cycle - 0.75) * 4); // Between col4 and back to col1
-    }
-} */
 
 function drawPlatforms(){
     // Update rpulse based on ppulse
@@ -70,7 +59,9 @@ function drawPlatforms(){
     draw_clear_alpha(c_black, 0);
     surface_reset_target();
     draw_surface(shimmer_surface, 0, 0);
-
+draw_set_color(c_black)
+	draw_circle(tr_mid_x , tr_mid_u_y, 52,0)
+	draw_set_color(c_white) 
     draw_sprite_ext(spr_arcanePlatform, 0, x, y, global.pXScale, global.pYScale, 0, c_white, 1);
 	
 
@@ -78,6 +69,7 @@ function drawPlatforms(){
                         x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, rpulse);
 	draw_sprite_ext(spr_field, 0, x, y-80, global.pXScale, global.pYScale, 0, hcolor, rpulse);
 	draw_radial_progress(tr_mid_x , tr_mid_u_y, platformHPPercent, 50, hcolor, 50);
+	
 }
 
 
