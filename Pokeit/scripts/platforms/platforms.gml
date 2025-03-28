@@ -56,10 +56,10 @@ function drawPlatforms(){
   
     // Apply shimmer color only to funnel runes
     var shimmer_color = get_shimmer_color(0,.002,#fc3032,#76167c,#00fffe,#08ff2e);
-    var col1 = get_shimmer_color(0,.002,c_neonLime,c_deepPurple,c_luminousBlue,c_vibrantRed);
-	var col2 = get_shimmer_color(0,.002,c_vibrantRed,c_luminousBlue,c_neonLime,c_deepPurple);
-	var col3 = get_shimmer_color(0,.002,c_vibrantRed,c_deepPurple,c_luminousBlue,c_neonLime);
-	var col4 = get_shimmer_color(0,.002,c_gold,c_goldenEarth,c_softSaffron,c_desertAmber)
+    var col1 = get_shimmer_color(1,.04,c_neonLime,c_deepPurple,c_luminousBlue,c_vibrantRed);
+	var col2 = get_shimmer_color(1,.032,c_vibrantRed,c_luminousBlue,c_neonLime,c_deepPurple);
+	var col3 = get_shimmer_color(1,.042,c_vibrantRed,c_deepPurple,c_luminousBlue,c_neonLime);
+	var col4 = get_shimmer_color(1,.092,c_gold,c_goldenEarth,c_softSaffron,c_desertAmber)
 
        // Draw Event
     if (!surface_exists(shimmer_surface)) {
@@ -73,13 +73,14 @@ function drawPlatforms(){
 
     draw_sprite_ext(spr_arcanePlatform, 0, x, y, global.pXScale, global.pYScale, 0, c_white, 1);
 	
-	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
-                        x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, 1);
+
 	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
                         x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, rpulse);
 	draw_sprite_ext(spr_field, 0, x, y-80, global.pXScale, global.pYScale, 0, hcolor, rpulse);
 	draw_radial_progress(tr_mid_x , tr_mid_u_y, platformHPPercent, 50, hcolor, 50);
 }
+
+
 
 function lerp_color(color1, color2, t) {
     // Extract RGB components of color1 and color2

@@ -20,15 +20,18 @@ angerTimer = 0
 }
 
 function angerGenerate() {
-    if (!attacking) {
-        angerTimer++;
+    // Check if pacify is active or attacking
+    if (!global.pacify && !attacking) {
+        angerTimer++; // Increment anger timer
+
         if (angerTimer >= angerMax) {
-            angerTimer = 0;
-            global.Counter += global.angerCounter;
-            slimeAttack(); // Trigger attack when anger is generated
+            angerTimer = 0; // Reset anger timer
+            global.Counter += global.angerCounter; // Increase global counter
+            slimeAttack(); // Trigger slime attack
         }
     }
 }
+
 function resetSlimeState() {
     attacking = false;
     spr = spr_slimebase; // Reset to idle sprite
@@ -37,19 +40,22 @@ function resetSlimeState() {
     global.angerCounter = 0; // Reset anger counter
 }
 
-
-
-function sizeUpdate(){
+function posUpdate(){
 x =room_width/2
 y =room_width *.4
-sizeMultiplier = 4 + (global.slimeSizeCounter * .1)
+}
+
+function sizeUpdate(){
+if global.slimeSizeCounter >= 30 {
+sizeMultiplier = 4 + (global.slimeSizeCounter * .01)}
+else {sizeMultiplier = 4 + (30 * .01)}
 image_xscale =sizeMultiplier
 image_yscale =sizeMultiplier
 
 }
 function slimeAttack() {
     if (!attacking) {
-        global.cage -= global.slimeSizeCounter;
+        global.cage -= (global.slimeSizeCounter + global.angerCounter);
         attacking = true;
         spr = spr_slimeAttack; // Play attack animation
         subbed = 0; // Reset animation frame tracker
@@ -77,3 +83,14 @@ function draw_radial_progress(pos_x, pos_y, progress, radius, color, thickness) 
     }
 	    draw_set_colour(c_white);
 }
+	
+function updatePacify(){
+
+if (global.pacify) {
+        global.pacifyCounter -= 1; // Decrease the timer by 1 frame
+
+        // If the timer reaches 0, reset the speed
+        if (global.pacifyCounter <= 0) {
+            global.pacify = false; // Clear the speed-up flag
+            global.pacifyCounter = 0; // Ensure the timer is reset
+			}}}

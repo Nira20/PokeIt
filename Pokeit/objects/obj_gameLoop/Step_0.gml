@@ -4,3 +4,4 @@ totalMoney = global.Counter
 playerMoney = totalMoney - spentMoney
 timeCounter()
 checkContainment()
+updatePacify()

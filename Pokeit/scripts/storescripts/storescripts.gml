@@ -2,7 +2,7 @@ function createStore(){
 inventory_slots = 0
 rowLength =1;
 randomize()
-global.maxPlatformHP = 100
+
 scroll_speed = 2; 
 y_pos = room_height/3 
 motiveCounter = 0
@@ -12,20 +12,20 @@ slimeJars = [//color,	 size,	value
 
 ]
 inventory = [
-    // [name,         initial quantity, sprite,       image_index, base price, current price, effect, isPowerUp]
-    // [0,            1,                2,            3,           4,          5,             6,      7]
-    ["Restart",      0,                spr_priceUp,  0,           0,          0,             1,      0],
-    ["Motivate",     0,                spr_priceUp,  1,           1,          1,             0,      1],
-    ["Hire",         0,                spr_priceUp,  2,           2,          2,             1,      0],
-    ["Market",       0,                spr_priceUp,  3,           3,          1,             1,      0],
-    ["Split",        0,                spr_priceUp,  4,           4,          4,             1,      0],
-    ["Fix Cage 10%", 0,                spr_priceUp,  5,           1,          1,             1,      0],
-	["Fix Cage 30%", 0,                spr_priceUp,  5,           3,          1,             1,      0],
-	["Fix Cage 50%", 0,                spr_priceUp,  5,           5,          1,             1,      0],
-	["Fix Cage 80%", 0,                spr_priceUp,  5,           8,          1,             1,      0],
-    ["Upgrade Cage", 0,                spr_priceUp,  1,           1,          1,             1,      0],
-    ["Pacify",       0,                spr_priceUp,  1,           1,          1,             1,      1],
-    ["Upgrade Hires",0,                spr_priceUp,  1,           1,          1,             1,      0]
+    // [name,         initial quantity, sprite,       image_index, base price, current price, effect, isPowerUp, price increase]
+    // [0,            1,                2,            3,           4,          5,             6,      7,         8]
+    ["Restart",      0,                spr_priceUp,  0,           1,          1,             1,      0,         0],   // No price increase
+    ["Motivate",     0,                spr_priceUp,  1,           50,         50,            0,      1,         10],  // Encouraging power-up
+    ["Hire",         0,                spr_priceUp,  2,           100,        100,           1,      0,         20],  // Important gameplay impact
+    ["Market",       0,                spr_priceUp,  3,           75,         75,            1,      0,         15],  // Helps boost income
+    ["Split",        0,                spr_priceUp,  4,           200,        200,           1,      0,         50],  // Strong effect
+    ["Fix Cage 10%", 0,                spr_priceUp,  5,           25,         25,            1,      0,         5],   // Gradual improvement
+    ["Fix Cage 30%", 0,                spr_priceUp,  5,           75,         75,            1,      0,         15],  // Gradual improvement
+    ["Fix Cage 50%", 0,                spr_priceUp,  5,           150,        150,           1,      0,         25],  // Mid-tier improvement
+    ["Fix Cage 80%", 0,                spr_priceUp,  5,           300,        300,           1,      0,         50],  // Major boost
+    ["Upgrade Cage", 0,                spr_priceUp,  1,           500,        500,           1,      0,         100], // High-cost upgrade
+    ["Pacify",       0,                spr_priceUp,  1,           50,         50,            1,      1,         10],  // Temporary effect
+    ["Upgrade Hires",0,                spr_priceUp,  1,           250,        250,           1,      0,         50]   // Long-term investment
 ];
 
 hovered_slot = 0
@@ -48,23 +48,14 @@ yy=0
 
 function drawInventory() {
  inventory_slots = array_length(inventory);
-if spdup = true {
-{motiveCounter ++
-	global.acspeed = global.oacspeed /2
-}
-if motiveCounter >= 100
-	{motiveCounter = 0
-		spdup = false
-		global.acspeed = global.oacspeed
-	}
-}
+
     // Check if inventory is less than or equal to 0
     if (inventory_slots <= 0) {
         // Draw spr_priceup with sprite index 0
         draw_sprite(spr_priceUp, 0, room_width / 2, room_height / 2);
         return; // Exit the function early
     }
-
+update_motivation()
     draw_sprite_stretched(spr_button, 0, 50, room_height / 3 , room_width -100, 12 + (((inventory_slots - 1) div rowLength) + 1) * (32 +16));
 
     for (var i = 0; i < array_length(inventory); i++) {
@@ -103,24 +94,17 @@ if motiveCounter >= 100
             }}
         }
 
-function purchasePlus(){
-				spentMoney = spentMoney+ inventory[hovered_slot][5]
-				inventory[hovered_slot][5] = inventory[hovered_slot][4] + inventory[hovered_slot][1]
-				inventory[hovered_slot][1] += 1
-           }
-		   
-function purchaseMult(){
-				spentMoney = spentMoney+ inventory[hovered_slot][5]
-				inventory[hovered_slot][5] = inventory[hovered_slot][4] * inventory[hovered_slot][1]
-				inventory[hovered_slot][1] += 1
-           }
-		   
-function purchaseExp(){
-				spentMoney = spentMoney+ inventory[hovered_slot][5]
-				inventory[hovered_slot][5] = power(inventory[hovered_slot][4], inventory[hovered_slot][1])
-				inventory[hovered_slot][1] += 1
-           }
-		   
+function purchasePlus() {
+    // Add the current price to the total spent money
+    spentMoney += inventory[hovered_slot][5];
+
+    // Increase the current price by the price increase
+    inventory[hovered_slot][5] += inventory[hovered_slot][8]; // Current price + Price increase
+
+    // Increase the item's quantity
+    inventory[hovered_slot][1] += 1;
+}
+
 		   
 function whatsHovered() {
     switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
@@ -131,7 +115,7 @@ function whatsHovered() {
 
         case "Motivate":
 			motivate()
-            purchaseMult()
+            purchasePlus()
             break;
 
         case "Hire":
@@ -152,37 +136,37 @@ function whatsHovered() {
 			
 		case "Upgrade Cage":
 		global.maxPlatformHP +=50
-		purchaseMult()
+		purchasePlus()
 			break;
 			
 		 case "Fix Cage 10%":
 			fixCage(10)
-            purchaseMult()
+           purchasePlus()
             break;
 			
 			case "Fix Cage 30%":
 			fixCage(30)
-            purchaseMult()
+          purchasePlus()
             break;
 			
 			case "Fix Cage 50%":
 			fixCage(50)
-            purchaseMult()
+           purchasePlus()
             break;
 			
 			case "Fix Cage 80%":
 			fixCage(80)
-            purchaseMult()
+           purchasePlus()
             break;
 			
 		case "Pacify":
 		pacify()
-		purchaseMult();
+	purchasePlus()
 		break;
 		
 		case "Upgrade Hires":
        improveHirelings();
-	   purchaseMult();
+	 purchasePlus()
 	   break;
 	   
 	   default:
@@ -191,19 +175,15 @@ function whatsHovered() {
             break;
     }
 }
-function pacify(){
-	global.angerCounter = round(global.angerCounter/2)
-	}
+function pacify() {
+    global.pacify = true; // Activate pacify
+    global.pacifyCounter = room_speed * 10; // Set pacify duration (10 seconds)
+}
+
+
 	
-	
-/*function fixCage(amount){
-	var p = global.cage/global.maxPlatformHP *100
-	if p <= ( 100 - amount )
-	{global.cage += global.maxPlatformHP/amount}
-	else{ global.cage = global.maxPlatformHP
-	}}*/
-	
-	function fixCage(amount) {
+
+function fixCage(amount) {
     // Calculate the new cage value based on the percentage increase
     var increment = global.maxPlatformHP * (amount / 100);
     global.cage += increment;
@@ -223,14 +203,32 @@ var middle_x = room_width / 2;
 instance_create_depth(irandom_range(middle_x - 64, middle_x + 64), obj_slime.y, obj_slime.depth - 10, obj_money);
 
 }
-function motivate(){
 
-spdup = true
 
-}	
+function motivate() {
+    spdup = true; // Set the speed-up flag
+    global.acspeed *= 2; // Double the pokespeed of hirelings
+    global.motivate_timer = room_speed * 30; // Set the timer for 30 seconds (room_speed determines frames per second)
+}
+
+
 function error(){
 game_restart()
 }
 function improveHirelings(){
 global.acamount ++
+}
+	
+function update_motivation() {
+    // Check if the motivation effect is active
+    if (spdup) {
+        global.motivate_timer -= 1; // Decrease the timer by 1 frame
+
+        // If the timer reaches 0, reset the speed
+        if (global.motivate_timer <= 0) {
+            global.acspeed /= 2; // Reset the pokespeed to its original value
+            spdup = false; // Clear the speed-up flag
+            global.motivate_timer = 0; // Ensure the timer is reset
+        }
+    }
 }
