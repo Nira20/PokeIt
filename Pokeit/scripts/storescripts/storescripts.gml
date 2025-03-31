@@ -15,16 +15,16 @@ inventory = [
     // [name,         initial quantity, sprite,       image_index, base price, current price, buyable, isPowerUp, price increase]
     // [0,            1,                2,            3,           4,          5,             6,      7,         8]
     ["Restart",      0,                spr_priceUp,  0,           2,          2,             1,      0,         0],   // Low impact, slightly higher starting price
-    ["Motivate",     0,                spr_priceUp,  1,           5,         5,            1,      1,         5],   // Short boost, affordable for early use
+    ["Motivate",     0,                spr_priceUp,  1,           5,          5,             1,      1,         5],   // Short boost, affordable for early use
     ["Hire",         0,                spr_priceUp,  2,           10,         10,            1,      0,         10],  // Scales well with `global.acamount`
     ["Market",       0,                spr_priceUp,  3,           15,         15,            1,      0,         12],  // Boosts income, balanced cost
     ["Split",        0,                spr_priceUp,  4,           30,         30,            1,      0,         30],  // High impact, higher cost
-    ["Fix Cage 10%", 0,                spr_priceUp,  5,           5,         5,            1,      0,         5],   // Early-game affordability
-    ["Fix Cage 30%", 0,                spr_priceUp,  5,           8,         8,            1,      0,         10],  // Scaled price for mid-game
+    ["Fix Cage 10%", 0,                spr_priceUp,  5,           5,          5,             1,      0,         5],   // Early-game affordability
+    ["Fix Cage 30%", 0,                spr_priceUp,  5,           8,          8,             1,      0,         10],  // Scaled price for mid-game
     ["Fix Cage 50%", 0,                spr_priceUp,  5,           16,         16,            1,      0,         15],  // Mid-tier repair, balanced
     ["Fix Cage 80%", 0,                spr_priceUp,  5,           32,         32,            1,      0,         20],  // Significant repair, premium cost
-    ["Upgrade Cage", 0,                spr_priceUp,  1,           50,        50,           1,      0,         50],  // High-cost upgrade for lasting impact
-    ["Pacify",       0,                spr_priceUp,  1,           5,         5,            1,      1,         5],   // Temporary effect, reasonable cost
+    ["Upgrade Cage", 0,                spr_priceUp,  1,           50,         50,            1,      0,         50],  // High-cost upgrade for lasting impact
+    ["Pacify",       0,                spr_priceUp,  1,           5,          5,             1,      1,         5],   // Temporary effect, reasonable cost
     ["Upgrade Hires",0,                spr_priceUp,  1,           10,         10,            1,      0,         15]   // Long-term investment, adjusted to fairer scaling
 ];
 hovered_slot = 0
