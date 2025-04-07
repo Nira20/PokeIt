@@ -39,6 +39,7 @@
   },
   "resources": [
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
+    {"id":{"name":"spr_shieldGlif","path":"sprites/spr_shieldGlif/spr_shieldGlif.yy",},},
     {"id":{"name":"jars","path":"scripts/jars/jars.yy",},},
     {"id":{"name":"obj_gameLoop","path":"objects/obj_gameLoop/obj_gameLoop.yy",},},
     {"id":{"name":"spr_runes","path":"sprites/spr_runes/spr_runes.yy",},},
@@ -73,9 +74,11 @@
     {"id":{"name":"spr_danger","path":"sprites/spr_danger/spr_danger.yy",},},
     {"id":{"name":"spr_field","path":"sprites/spr_field/spr_field.yy",},},
     {"id":{"name":"fn_arialBig","path":"fonts/fn_arialBig/fn_arialBig.yy",},},
+    {"id":{"name":"spr_shieldGlifEffects","path":"sprites/spr_shieldGlifEffects/spr_shieldGlifEffects.yy",},},
     {"id":{"name":"spr_slimeAttack","path":"sprites/spr_slimeAttack/spr_slimeAttack.yy",},},
     {"id":{"name":"rm_mainLoop2","path":"rooms/rm_mainLoop2/rm_mainLoop2.yy",},},
     {"id":{"name":"spr_markings","path":"sprites/spr_markings/spr_markings.yy",},},
+    {"id":{"name":"spr_button1","path":"sprites/spr_button1/spr_button1.yy",},},
     {"id":{"name":"rm_mainLoop","path":"rooms/rm_mainLoop/rm_mainLoop.yy",},},
   ],
   "RoomOrderNodes": [

@@ -5,3 +5,4 @@ playerMoney = totalMoney - spentMoney
 timeCounter()
 checkContainment()
 updatePacify()
+menuButtons()
