@@ -37,7 +37,6 @@
     {"name":"spr_rmBg","order":7,"path":"sprites/spr_rmBg/spr_rmBg.yy",},
     {"name":"spr_danger","order":14,"path":"sprites/spr_danger/spr_danger.yy",},
     {"name":"spr_field","order":6,"path":"sprites/spr_field/spr_field.yy",},
-    {"name":"spr_shieldGlifEffects","order":11,"path":"sprites/spr_shieldGlifEffects/spr_shieldGlifEffects.yy",},
     {"name":"spr_slimeAttack","order":12,"path":"sprites/spr_slimeAttack/spr_slimeAttack.yy",},
     {"name":"rm_mainLoop2","order":1,"path":"rooms/rm_mainLoop2/rm_mainLoop2.yy",},
     {"name":"spr_markings","order":6,"path":"sprites/spr_markings/spr_markings.yy",},

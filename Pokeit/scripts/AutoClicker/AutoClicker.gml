@@ -42,17 +42,27 @@ if  point_in_rectangle(xx, yy, obj_slime.bbox_left, obj_slime.bbox_top, obj_slim
 
 
 
-    for (i = 0; i < global.acq; i++) {
-        angle = (i / global.acq) * 2 * pi;
-        xx = x + cos(angle) * radius;
-        yy = y + sin(angle) * radius;
+   for (i = 0; i < global.acq; i++) {
+    angle = (i / global.acq) * 2 * pi;
+    xx = x + cos(angle) * radius;
+    yy = y + sin(angle) * radius;
 
-        rot = point_direction(xx, yy, x, y);
-        rot -= 90;
+    rot = point_direction(xx, yy, x, y);
+    rot -= 90;
 
-        draw_sprite_ext(spr_gem, 0, xx, yy, 1, 1, rot, c_white, 1);
-        draw_sprite_ext(spr_apprenticeSticks, 0, xx, yy, 1, 1, rot, c_white, 1);
-    }
+    // Draw the gems
+    draw_sprite_ext(spr_gem, 0, xx, yy, 1, 1, rot, c_white, 1);
+    draw_sprite_ext(spr_gem, 1, xx, yy, 1, 1, rot, c_white, 1);
+    draw_sprite_ext(spr_gem, 3, xx, yy, 1, 1, rot, c_white, 1);
+
+    // Calculate new position for apprentice sticks to align with gem ends
+    var apprentice_xx = xx + cos(angle) * sprite_get_width(spr_gem); // Adjust 'gem_length' as needed
+    var apprentice_yy = yy + sin(angle) * sprite_get_width(spr_gem); // Adjust 'gem_length' as needed
+
+    // Draw the apprentice sticks at the adjusted position
+    draw_sprite_ext(spr_apprenticeSticks, 0, apprentice_xx, apprentice_yy, 1, 1, rot, c_white, 1);
+}
+    
 }
 
 function anger(){

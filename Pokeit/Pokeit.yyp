@@ -74,7 +74,6 @@
     {"id":{"name":"spr_danger","path":"sprites/spr_danger/spr_danger.yy",},},
     {"id":{"name":"spr_field","path":"sprites/spr_field/spr_field.yy",},},
     {"id":{"name":"fn_arialBig","path":"fonts/fn_arialBig/fn_arialBig.yy",},},
-    {"id":{"name":"spr_shieldGlifEffects","path":"sprites/spr_shieldGlifEffects/spr_shieldGlifEffects.yy",},},
     {"id":{"name":"spr_slimeAttack","path":"sprites/spr_slimeAttack/spr_slimeAttack.yy",},},
     {"id":{"name":"rm_mainLoop2","path":"rooms/rm_mainLoop2/rm_mainLoop2.yy",},},
     {"id":{"name":"spr_markings","path":"sprites/spr_markings/spr_markings.yy",},},
