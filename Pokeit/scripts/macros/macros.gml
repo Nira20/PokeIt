@@ -11,7 +11,71 @@
 #macro c_luminousBlue     #00fffe  // Luminous aqua blue
 #macro c_neonLime  #08ff2e  // Radiant lime green
 
+// Glowstoat → Lumen Slime
+#macro c_softCyan #6FE7DB
+#macro c_paleLavender #C2B9FF
+#macro c_charcoalGray #333333
+#macro c_warmCream #FFF6E5
 
+#macro c_brightCyan #00CFC1
+#macro c_whiteGlow #FFFFFF
+#macro c_deepIndigo #4B0082
+#macro c_silverSparkle #B0BEC5
+
+// Ashclaw → Ember Slime
+#macro c_obsidianBlack #0D0D0D
+#macro c_moltenOrange #FF6B00
+#macro c_smolderingRed #D72638
+#macro c_lavaGray #5A5A5A
+
+#macro c_fieryRed #E63946
+#macro c_brightGold #FFD700
+#macro c_coalBlack #1C1C1C
+#macro c_ashGray #B2B2B2
+
+// Whimwhisker → Fortune Slime
+#macro c_dustyRose #D46A6A
+#macro c_softBeige #F5E6CC
+#macro c_mistyBlue #84A9C0
+#macro c_midnightPlum #4C2A4B
+
+#macro c_amethystPurple #9966CC
+#macro c_paleGold #F4E285
+#macro c_tealGreen #009688
+#macro c_matteBlack #212121
+
+// Dustmew → Veil Slime
+#macro c_smokyGray #8E8E8E
+#macro c_midnightBlue #2E3B55
+#macro c_faintSilver #D9D9D9
+#macro c_dullViolet #7A6FA7
+
+#macro c_stormGray #595959
+#macro c_ghostWhite #F8F8FF
+#macro c_deepPurple #5D3FD3
+#macro c_mistBlue #A2C4E0
+
+// Skelpling → Mirebone Slime
+#macro c_boneWhite #EDEAE0
+#macro c_paleCyan #AEEEEE
+#macro c_glowingLime #BFFF00
+#macro c_softPink #E49B9B
+
+#macro c_boneGray #D6D6D6
+#macro c_toxicGreen #7FFF00
+#macro c_dullCyan #76C7C0
+#macro c_deathBlack #0A0A0A
+
+// Inkpecker → Script Slime
+#macro c_inkBlack #1C1C1C
+#macro c_iridescentBlue #3F88C5
+#macro c_glossyWhite #FAFAFA
+#macro c_burntGold #CC9933
+
+#macro c_deepBlack #0D0D0D
+#macro c_electricBlue #00BFFF
+#macro c_antiqueGold #D4AF37
+#macro c_vividWhite #FFFFFF
 
 
 
