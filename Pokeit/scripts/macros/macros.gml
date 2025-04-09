@@ -52,7 +52,6 @@
 
 #macro c_stormGray #595959
 #macro c_ghostWhite #F8F8FF
-#macro c_deepPurple #5D3FD3
 #macro c_mistBlue #A2C4E0
 
 // Skelpling → Mirebone Slime
