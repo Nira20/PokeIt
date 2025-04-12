@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "petScripts",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Pets",
-    "path": "folders/Scripts/Pets.yy",
+  "$GMScript":"v1",
+  "%Name":"petScripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"petScripts",
+  "parent":{
+    "name":"Pets",
+    "path":"folders/Scripts/Pets.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

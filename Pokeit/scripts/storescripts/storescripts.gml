@@ -49,12 +49,12 @@ function drawInventory() {
    inventory_slots = array_length(inventory);
 
 // Check if inventory is empty
-if (inventory_slots <= 0) {
+/*if (inventory_slots <= 0) {
     // Draw the 'spr_priceUp' sprite at the center of the screen
     draw_sprite(spr_priceUp, 0, room_width / 2, room_height / 2);
 	
     return; // Exit early
-}
+}*/
 
 update_motivation();
 
@@ -134,8 +134,7 @@ for (var i = 0; i < array_length(inventory); i++) {
 }
    
 }
-        
-		
+ 
 		
 		
 		

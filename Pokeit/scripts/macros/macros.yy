@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "macros",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "MainGame",
-    "path": "folders/Scripts/MainGame.yy",
+  "$GMScript":"v1",
+  "%Name":"macros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"macros",
+  "parent":{
+    "name":"MainGame",
+    "path":"folders/Scripts/MainGame.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

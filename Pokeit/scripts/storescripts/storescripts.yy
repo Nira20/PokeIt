@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "storescripts",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "MainGame",
-    "path": "folders/Scripts/MainGame.yy",
+  "$GMScript":"v1",
+  "%Name":"storescripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"storescripts",
+  "parent":{
+    "name":"MainGame",
+    "path":"folders/Scripts/MainGame.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

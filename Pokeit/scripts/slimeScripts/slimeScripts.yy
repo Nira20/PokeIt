@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "slimeScripts",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "MainGame",
-    "path": "folders/Scripts/MainGame.yy",
+  "$GMScript":"v1",
+  "%Name":"slimeScripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"slimeScripts",
+  "parent":{
+    "name":"MainGame",
+    "path":"folders/Scripts/MainGame.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
