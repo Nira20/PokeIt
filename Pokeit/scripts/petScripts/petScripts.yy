@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "platforms",
+  "name": "petScripts",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "MainGame",
-    "path": "folders/Scripts/MainGame.yy",
+    "name": "Pets",
+    "path": "folders/Scripts/Pets.yy",
   },
 }
