@@ -72,7 +72,7 @@
 #macro c_burntGold #CC9933
 
 #macro c_deepBlack #0D0D0D
-#macro c_electricBlue #00BFFF
+#macro c_electricBlue #00BFF6
 #macro c_antiqueGold #D4AF37
 #macro c_vividWhite #FFFFFF
 
@@ -112,7 +112,6 @@
 // Bottom Left: (xt, yb)
 // Bottom Middle: (xm, yb)
 // Bottom Right: (xr, yb)
-
 function timeCounter(){
 // Step Event
 global.elapsed_time += delta_time / 1000000; // Add real-world seconds passed

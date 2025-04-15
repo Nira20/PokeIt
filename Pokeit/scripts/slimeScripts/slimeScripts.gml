@@ -3,7 +3,69 @@ spriteWidth = sprite_width
 spriteHeight= sprite_height
 button_pressed = false
 sizeMultiplier =0
+idle_sprite = noone; // Variable for idle sprite
+attack_sprite = noone; // Variable for attack sprite
+color1 = noone; // First color
+color2 = noone; // Second color
+color3 = noone; // Third color
+color4 = noone; // Fourth color
+  // Set attributes based on global.pet
+    switch (global.pet) {
+        case "Glowstoat":
+            idle_sprite = spr_stoutIdle;
+            attack_sprite = spr_stoutAttack; // Example attack sprite
+            color1 = c_blue;
+            color2 = c_green;
+            color3 = c_purple;
+            color4 = c_white;
+            break;
 
+        case "Ashclaw":
+            idle_sprite = spr_crestedGeckoIdle;
+            attack_sprite = spr_crestedGeckoAttack;
+            color1 = c_orange;
+            color2 = c_red;
+            color3 = c_black;
+            color4 = c_white;
+            break;
+
+        case "Whimwhisker":
+            idle_sprite = spr_rabbitIdle;
+            attack_sprite = spr_rabbitAttack;
+            color1 = c_gold;
+            color2 = c_silver;
+            color3 = c_white;
+            color4 = c_gray;
+            break;
+
+        case "Dustmew":
+            idle_sprite = spr_catIdle;
+            attack_sprite = spr_catAttack;
+            color1 = c_gray;
+            color2 = c_black;
+            color3 = c_silver;
+            color4 = c_white;
+            break;
+
+        case "Skelpling":
+            idle_sprite = spr_shrewIdle;
+            attack_sprite = spr_shrewAttack;
+            color1 = c_black;
+            color2 = c_white;
+            color3 = c_gray;
+            color4 = c_red;
+            break;
+
+        case "Inkpecker":
+            idle_sprite = spr_crowIdle;
+            attack_sprite = spr_crowAttack;
+            color1 = c_inkBlack;
+            color2 = c_iridescentBlue;
+            color3 = c_glossyWhite;
+            color4 = c_white;
+            break;
+
+    }
 acolor = c_white
 image_speed = .25
 depth = -10
@@ -12,6 +74,8 @@ platformCreate()
 createAnger()
 
 }
+
+
 function createAnger(){
 angerMax =100
 angerTimer = 0
@@ -34,7 +98,7 @@ function angerGenerate() {
 
 function resetSlimeState() {
     attacking = false;
-    spr = spr_scriptSlimeIdle; // Reset to idle sprite
+    spr = idle_sprite; // Reset to idle sprite
     angerTimer = 0; // Reset anger timer
     global.sAttackCounter = 0; // Reset attack counter
     global.angerCounter = 0; // Reset anger counter
@@ -57,7 +121,7 @@ function slimeAttack() {
     if (!attacking) {
         global.cage -= (global.slimeSizeCounter + global.angerCounter);
         attacking = true;
-        spr = spr_scriptSlimeAttack; // Play attack animation
+        spr = attack_sprite; // Play attack animation
         subbed = 0; // Reset animation frame tracker
     }
 }

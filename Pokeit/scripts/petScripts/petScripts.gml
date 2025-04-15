@@ -8,10 +8,14 @@ pets = [
     ["Skelpling", "Mirebone Slime", spr_shrew, "A rat-like creature with scruffy fur and a skull-like mask over its face. Immune to necrotic magic, it instinctively seeks out cursed or undead areas, making it a favored companion for necromancers and healers as a magical warning or detoxifier."],
     ["Inkpecker", "Script Slime", spr_crow, "A small, crow-like bird with iridescent black feathers that shimmer like oil spills. Its beak continuously drips magical ink, useful for spellwriting. Intelligent and mischievous, it’s a favorite among scribes and arcane researchers for both companionship and a sustainable source of ink."]
 ]
+
 }
 
 function createPets() {
     global.pet = noone;
+	global.slime = noone
+	global.idlesprite = noone
+	global.attacksprite = noone
     rows = 2;
     hovered_slot = -1;
     selected_slot = -1;

@@ -20,4 +20,3 @@ mireboneSlime = [c_boneGray, c_toxicGreen, c_dullCyan, c_deathBlack];
 
 // Inkpecker → Script Slime
 inkpeckerPet = [c_inkBlack, c_iridescentBlue, c_glossyWhite, c_burntGold];
-scriptSlime = [c_deepBlack, c_electricBlue, c_antiqueGold, c_vividWhite]; 
