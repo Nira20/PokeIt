@@ -9,6 +9,7 @@ color1 = noone; // First color
 color2 = noone; // Second color
 color3 = noone; // Third color
 color4 = noone; // Fourth color
+
   // Set attributes based on global.pet
     switch (global.pet) {
         case "Glowstoat":

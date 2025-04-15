@@ -11,7 +11,7 @@ if attacking {draw_sprite_ext(spr_slimeSlime,subbed,x,y,3,3,0,c_white,1)
 
 
 //Debugging Text Block
-//draw_text(50, 30, "pacify " + string(global.pacify))
-//draw_text(50 , 30 *2, "PC " + string(global.pacifyCounter))
+//draw_text(50, 30, "regenCounter " + string(global.rTimer))
+//draw_text(50 , 30 *2, "PC " + string(rTimer))
 //draw_text(50 , 30 *3, "Cage " + string(global.cage))
 //draw_text(50, 30 *4, "Dam " + string((global.slimeSizeCounter + global.angerCounter)))

@@ -21,3 +21,8 @@ if (timer >= increment * fpss) {
     subbed += 1;
     timer = 0;
 }
+
+rTimer += global.rTimer; 
+if rTimer >= room_speed 
+{regenerate()
+	rTimer =0}

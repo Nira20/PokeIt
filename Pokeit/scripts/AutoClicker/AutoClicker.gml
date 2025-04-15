@@ -77,6 +77,7 @@ anger()
 }
 
 function globalVars(){
+	global.rTimer =1
 global.Counter = 100
 global.acamount = 1
 global.maxPlatformHP = 100
@@ -100,7 +101,10 @@ global.oacspeed = 1
 global.motivate_timer =0
 global.pacify = false
 global.pacifyCounter = 0
+global.debt = 100000
+global.regen = 1
 createColors()
+
 }
 
 function createColors(){

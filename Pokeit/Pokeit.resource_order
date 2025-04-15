@@ -18,6 +18,7 @@
     {"name":"jars","order":4,"path":"scripts/jars/jars.yy",},
     {"name":"macros","order":5,"path":"scripts/macros/macros.yy",},
     {"name":"platforms","order":6,"path":"scripts/platforms/platforms.yy",},
+    {"name":"Script11","order":16,"path":"scripts/Script11/Script11.yy",},
     {"name":"slimeScripts","order":7,"path":"scripts/slimeScripts/slimeScripts.yy",},
     {"name":"storescripts","order":8,"path":"scripts/storescripts/storescripts.yy",},
     {"name":"spr_arcanePlatform","order":1,"path":"sprites/spr_arcanePlatform/spr_arcanePlatform.yy",},

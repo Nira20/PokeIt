@@ -11,4 +11,4 @@ drawJars()
 drawInventory()
 
 
-draw_text(80,80, string(debugging))
+

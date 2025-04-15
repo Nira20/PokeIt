@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_slimebase",
-    "path":"sprites/spr_slimebase/spr_slimebase.yy",
+    "name":"spr_catAttack",
+    "path":"sprites/spr_catAttack/spr_catAttack.yy",
   },
   "spriteMaskId":{
     "name":"spr_slimebase",
