@@ -40,6 +40,8 @@
     {"name":"spr_rabbit","order":3,"path":"sprites/spr_rabbit/spr_rabbit.yy",},
     {"name":"spr_rmBg","order":7,"path":"sprites/spr_rmBg/spr_rmBg.yy",},
     {"name":"spr_runes","order":5,"path":"sprites/spr_runes/spr_runes.yy",},
+    {"name":"spr_scriptSlimeAttack","order":6,"path":"sprites/spr_scriptSlimeAttack/spr_scriptSlimeAttack.yy",},
+    {"name":"spr_scriptSlimeIdle","order":7,"path":"sprites/spr_scriptSlimeIdle/spr_scriptSlimeIdle.yy",},
     {"name":"spr_shelf","order":3,"path":"sprites/spr_shelf/spr_shelf.yy",},
     {"name":"spr_shieldGlif","order":10,"path":"sprites/spr_shieldGlif/spr_shieldGlif.yy",},
     {"name":"spr_shrew","order":2,"path":"sprites/spr_shrew/spr_shrew.yy",},

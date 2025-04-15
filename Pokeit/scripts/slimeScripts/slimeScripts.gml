@@ -6,7 +6,7 @@ sizeMultiplier =0
 
 acolor = c_white
 image_speed = .25
-depth = -1
+depth = -10
 autoClickerSetup()
 platformCreate()
 createAnger()
@@ -34,7 +34,7 @@ function angerGenerate() {
 
 function resetSlimeState() {
     attacking = false;
-    spr = spr_slimebase; // Reset to idle sprite
+    spr = spr_scriptSlimeIdle; // Reset to idle sprite
     angerTimer = 0; // Reset anger timer
     global.sAttackCounter = 0; // Reset attack counter
     global.angerCounter = 0; // Reset anger counter
@@ -57,7 +57,7 @@ function slimeAttack() {
     if (!attacking) {
         global.cage -= (global.slimeSizeCounter + global.angerCounter);
         attacking = true;
-        spr = spr_slimeAttack; // Play attack animation
+        spr = spr_scriptSlimeAttack; // Play attack animation
         subbed = 0; // Reset animation frame tracker
     }
 }

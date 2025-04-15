@@ -83,6 +83,8 @@
     {"id":{"name":"spr_rabbit","path":"sprites/spr_rabbit/spr_rabbit.yy",},},
     {"id":{"name":"spr_rmBg","path":"sprites/spr_rmBg/spr_rmBg.yy",},},
     {"id":{"name":"spr_runes","path":"sprites/spr_runes/spr_runes.yy",},},
+    {"id":{"name":"spr_scriptSlimeAttack","path":"sprites/spr_scriptSlimeAttack/spr_scriptSlimeAttack.yy",},},
+    {"id":{"name":"spr_scriptSlimeIdle","path":"sprites/spr_scriptSlimeIdle/spr_scriptSlimeIdle.yy",},},
     {"id":{"name":"spr_shelf","path":"sprites/spr_shelf/spr_shelf.yy",},},
     {"id":{"name":"spr_shieldGlif","path":"sprites/spr_shieldGlif/spr_shieldGlif.yy",},},
     {"id":{"name":"spr_shrew","path":"sprites/spr_shrew/spr_shrew.yy",},},
