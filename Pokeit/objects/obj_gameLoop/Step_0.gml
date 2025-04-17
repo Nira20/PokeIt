@@ -6,3 +6,6 @@ timeCounter()
 checkContainment()
 updatePacify()
 menuButtons()
+if keyboard_check_released(ord("I")) {
+    visable = !visable;
+}

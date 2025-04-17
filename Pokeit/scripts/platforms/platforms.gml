@@ -13,7 +13,6 @@ function platformCreate(){
 
 
 
-
 function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3, col4,) {
     // Increment and cycle shimmer_color_cycle continuously between 0 and 1
     shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) % 1;

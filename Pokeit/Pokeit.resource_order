@@ -1,7 +1,6 @@
 {
   "FolderOrderSettings":[
-    {"name":"MainGame","order":10,"path":"folders/Scripts/MainGame.yy",},
-    {"name":"Pets","order":11,"path":"folders/Scripts/Pets.yy",},
+    {"name":"Pets","order":1,"path":"folders/Scripts/Pets.yy",},
     {"name":"inventory","order":14,"path":"folders/Sprites/inventory.yy",},
     {"name":"PetSprites","order":15,"path":"folders/Sprites/PetSprites.yy",},
     {"name":"SetPieces","order":8,"path":"folders/Sprites/SetPieces.yy",},
@@ -18,7 +17,6 @@
     {"name":"jars","order":4,"path":"scripts/jars/jars.yy",},
     {"name":"macros","order":5,"path":"scripts/macros/macros.yy",},
     {"name":"platforms","order":6,"path":"scripts/platforms/platforms.yy",},
-    {"name":"Script11","order":16,"path":"scripts/Script11/Script11.yy",},
     {"name":"slimeScripts","order":7,"path":"scripts/slimeScripts/slimeScripts.yy",},
     {"name":"storescripts","order":8,"path":"scripts/storescripts/storescripts.yy",},
     {"name":"spr_arcanePlatform","order":1,"path":"sprites/spr_arcanePlatform/spr_arcanePlatform.yy",},
@@ -41,6 +39,7 @@
     {"name":"spr_funnelRunes","order":4,"path":"sprites/spr_funnelRunes/spr_funnelRunes.yy",},
     {"name":"spr_gem","order":2,"path":"sprites/spr_gem/spr_gem.yy",},
     {"name":"spr_Jar","order":4,"path":"sprites/spr_Jar/spr_Jar.yy",},
+    {"name":"spr_kkoin","order":15,"path":"sprites/spr_kkoin/spr_kkoin.yy",},
     {"name":"spr_koin","order":5,"path":"sprites/spr_koin/spr_koin.yy",},
     {"name":"spr_markings","order":6,"path":"sprites/spr_markings/spr_markings.yy",},
     {"name":"spr_priceUp","order":1,"path":"sprites/spr_priceUp/spr_priceUp.yy",},

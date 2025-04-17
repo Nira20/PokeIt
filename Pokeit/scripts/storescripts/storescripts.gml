@@ -6,32 +6,33 @@ selected_slot =-1
 scroll_speed = 2; 
 y_pos = room_height/3 
 motiveCounter = 0
+ count_0 = 0;
+ count_1 = 0;
 slimeJars = [//color,	 size,	value
 			// 0		1		2
-
-
 ]
 inventory = [
-    // [name,          initial_quantity, sprite,         image_index, image_index_2, color,    base_price, current_price, buyable, isPowerUp, price_increase, text, 0 = permanent, 1 = temporary]
+    // [name,          initial_quantity, sprite,         image_index, image_index_2, color,    base_price, current_price, buyable, isPowerUp, price_increase, text, 0 = consumable, 1 = upgrade]
    // [0,					1				2				3				4			5			6			7			8			9		10
    ["Restart",       0,                 spr_priceUp,    0,           0,             c_white,  2,          2,             true,    false,      0, "restart the game", 0 ],   // Low impact, slightly higher starting price
     
-    ["Market",        0,                 spr_priceUp,    0,           0,             c_white,  15,         15,            true,    false,      12, "improve market price" ,0],  // Boosts income, balanced cost
-    ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",0],  // High impact, higher cost
+    ["Market",        0,                 spr_priceUp,    0,           0,             c_white,  15,         15,            true,    false,      12, "improve market price" ,1],  // Boosts income, balanced cost
+    ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",1],  // High impact, higher cost
     ["Fix Cage 10%",  0,                 spr_shieldGlif, 0,           1,            c_teal,  5,          5,             true,    false,      5, "restore 10% of your shields durability",0],   // Early-game affordability
     ["Fix Cage 30%",  0,                 spr_shieldGlif, 0,           1,             c_red,  8,          8,             true,    false,      10,"restore 30% of your shields durability",0],  // Scaled price for mid-game
     ["Fix Cage 50%",  0,                 spr_shieldGlif, 0,           1,             c_deepPurple,  16,         16,            true,    false,      15,"restore 50% of your shields durability",0],  // Mid-tier repair, balanced
     ["Fix Cage 80%",  0,                 spr_shieldGlif, 0,           1,             c_desertAmber,  32,         32,            true,    false,      20,"restore 80% of your shields durability",0],  // Significant repair, premium cost
-    ["Upgrade Cage",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase shields durability",0],  // High-cost upgrade for lasting impact
-    ["Calm Slime",        0,                 spr_priceUp,    0,           0,           c_white ,  5,          5,             true,    true,       5, "Calm down slime for a time",1 ],   // Temporary effect, reasonable cost
-    ["Motivate",      0,                 spr_gem,    0,           1,             c_white,  5,          5,             true,    true,       5, "Make your men work faster",1],   // Short boost, affordable for early use
-	["Hire",          0,                 spr_gem,    0,           1,             c_softSaffron,  10,         10,            true,    false,      10, "Hire another person",0],  // Scales well with `global.acamount`
-	["Upgrade Hires", 0,                 spr_gem,    0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Give your men better pokers",0]   // Long-term investment, adjusted to fairer scaling
+    ["Upgrade Cage",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase shields durability",1],  // High-cost upgrade for lasting impact
+    ["Calm Slime",    0,				 spr_priceUp,    0,           0,           c_white ,  5,          5,             true,    true,       5, "Calm down slime for a time",0 ],   // Temporary effect, reasonable cost
+    ["Motivate",      0,                 spr_gem,		 0,           1,             c_white,  5,          5,             true,    true,       5, "Make your men work faster",0],   // Short boost, affordable for early use
+	["Hire",          0,                 spr_gem,		 0,           1,             c_softSaffron,  10,         10,            true,    false,      10, "Hire another person",1],  // Scales well with `global.acamount`
+	["Upgrade Hires", 0,                 spr_gem,		0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Give your men better pokers",1]   // Long-term investment, adjusted to fairer scaling
 ];
+
 hovered_slot = 0
 mouseX = mouse_y
 mouseY = mouse_x
-
+visable = false
 button_pressed = false
 is_hovered = false
 spdup = false
@@ -48,13 +49,17 @@ yy=0
 function drawInventory() {
    inventory_slots = array_length(inventory);
 
-// Check if inventory is empty
-/*if (inventory_slots <= 0) {
-    // Draw the 'spr_priceUp' sprite at the center of the screen
-    draw_sprite(spr_priceUp, 0, room_width / 2, room_height / 2);
-	
-    return; // Exit early
-}*/
+for (var i = 0; i < array_length(inventory); i++) {
+    var status = inventory[i][12]; // Assuming column 12 is intended
+
+    if (status == 0) {
+        count_0 += 1;
+    } else if (status == 1) {
+        count_1 += 1;
+    } else if (status == 2) {
+        count_2 += 1;
+    }
+}
 
 update_motivation();
 
@@ -268,13 +273,16 @@ function update_motivation(){
     }
 }
 	
-function menuButtons() {    for (var ii = 0; ii < 4; ii++) {
-        var spw = xr / 4; // Divide the screen width into 4 equal parts
-        var sph = sprite_get_height(spr_button1); // Use the sprite's original height
-        var y_position = yb - sph * 6; // Position at the bottom of the
-        var x_position = ii * spw;
+function menuButtons() {    
+    var spw = xr; // Keep the button width the same
+    var sph = sprite_get_height(spr_button1); // Use the sprite's original height
+    var y_position = yb - (sph * 6 * 4) - (24 * 3); // Adjust overall position to fit all buttons
+    
+    for (var ii = 0; ii < 4; ii++) {
+        var x_position = xr / 2 - spw / 2; // Center the buttons horizontally
+        var current_y = y_position + ii * (sph * 6 + 24); // Stack vertically with 24px spacing
 
         // Draw the sprite stretched with the assigned color
-        draw_sprite_stretched_ext(spr_button1, 0, x_position, y_position, spw, sph *6, global.colors[ii], 1);
+        draw_sprite_stretched_ext(spr_button1, 0, x_position, current_y, spw, sph * 6, global.colors[ii], 1);
     }
 }

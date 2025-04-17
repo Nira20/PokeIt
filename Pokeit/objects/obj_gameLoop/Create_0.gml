@@ -8,7 +8,7 @@ inventoryOpen = false
 playerMoney = 0;
 spentMoney= 0;
 totalMoney = 0
-
+createColors()
 createStore();
 
 debugging = instance_number(obj_slime)

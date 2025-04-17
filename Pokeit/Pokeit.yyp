@@ -38,7 +38,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Pokeit",
   "resources":[
@@ -59,7 +59,6 @@
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
     {"id":{"name":"petScripts","path":"scripts/petScripts/petScripts.yy",},},
     {"id":{"name":"platforms","path":"scripts/platforms/platforms.yy",},},
-    {"id":{"name":"Script11","path":"scripts/Script11/Script11.yy",},},
     {"id":{"name":"slimeScripts","path":"scripts/slimeScripts/slimeScripts.yy",},},
     {"id":{"name":"storescripts","path":"scripts/storescripts/storescripts.yy",},},
     {"id":{"name":"spr_apprenticeSticks","path":"sprites/spr_apprenticeSticks/spr_apprenticeSticks.yy",},},
@@ -84,6 +83,7 @@
     {"id":{"name":"spr_funnelRunes","path":"sprites/spr_funnelRunes/spr_funnelRunes.yy",},},
     {"id":{"name":"spr_gem","path":"sprites/spr_gem/spr_gem.yy",},},
     {"id":{"name":"spr_Jar","path":"sprites/spr_Jar/spr_Jar.yy",},},
+    {"id":{"name":"spr_kkoin","path":"sprites/spr_kkoin/spr_kkoin.yy",},},
     {"id":{"name":"spr_koin","path":"sprites/spr_koin/spr_koin.yy",},},
     {"id":{"name":"spr_markings","path":"sprites/spr_markings/spr_markings.yy",},},
     {"id":{"name":"spr_priceUp","path":"sprites/spr_priceUp/spr_priceUp.yy",},},
