@@ -31,10 +31,14 @@ inventoryUpgrades  = [
 	["Upgrade Hires", 0,                 spr_gem,		0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Give your men better pokers",1],   // Long-term investment, adjusted to fairer scaling
     ["Upgrade Cage",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase shields durability",1],  // High-cost upgrade for lasting impact
     ["Market",        0,                 spr_priceUp,    0,           0,             c_white,  15,         15,            true,    false,      12, "improve market price" ,1],  // Boosts income, balanced cost
-    ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",1]  // High impact, higher cost
+    ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",1],  // High impact, higher cost
+   ["Improve Regen",         0,          spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "improve shield regeneration rate",1]
 ];
 
-activeQuests = ["noone"];
+activeQuests = [//quest name, description, prize, script
+//0,1,2,3,4
+["noone"]
+];
 
 hovered_slot = 0
 mouseX = mouse_y
@@ -53,6 +57,7 @@ spr = spr_button
 xx =0
 yy=0
 }
+	
 function drawInventory() {
    inventory_slots = array_length(inventoryToDraw);
 
@@ -90,8 +95,8 @@ var new_height = max(100, total_rows * 100); // Ensure height is not too small
 // Draw the background stretch for inventory slots
 draw_sprite_stretched(spr_button, 0, 50, room_height / 3, room_width - 100, new_height);
 
-
-
+if selectedType = 0 || selectedType = 1
+{
 for (var i = 0; i < array_length(inventoryToDraw); i++) {
     // Calculate row and column based on index
     var row = i div 6; // Determine the row number
@@ -163,7 +168,11 @@ for (var i = 0; i < array_length(inventoryToDraw); i++) {
     // Reset color to default (white)
     draw_set_color(c_white);
 }
-    }
+    } 
+
+} else if selectedType = 2 {
+} else if selectedType = 3 {
+}
 }
    
 
@@ -300,8 +309,6 @@ function update_motivation(){
         }
     }
 }
-	
-   
 function menuButtons() {    
     var spw = xr; // Keep the button width the same
     var sph = sprite_get_height(spr_button1); // Use the sprite's original height
@@ -344,4 +351,33 @@ function menuButtons() {
 		draw_set_valign(fa_left);
     }
 }
+function payDebt(){
+    var button_labels = ["Max", "Min", "100", "Other"];
+    var button_width = 120;
+    var button_height = 50;
+    var spacing = 20;
+    var start_x = (room_width - (button_width * 4 + spacing * 3)) / 2;
+    var start_y = room_height - 100;
 
+    for (var i = 0; i < 4; i++) {
+        var x_position = start_x + i * (button_width + spacing);
+        var y_position = start_y;
+
+        // Draw button background
+        draw_sprite_stretched(spr_button, 0, x_position, y_position, button_width, button_height);
+
+        // Draw button text centered
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        draw_text(x_position + button_width / 2, y_position + button_height / 2, button_labels[i]);
+    
+}
+
+if (selectedButton == "Max") {
+    pay = global.playerMoney; // Set pay to the total player money
+    global.playerMoney = 0; // Set player money to 0
+    global.playerMoneySpent += pay; // Add the amount spent to the total spent tracker
+	global.debt = -pay
+}
+
+}
