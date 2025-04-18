@@ -1,33 +1,40 @@
 function createStore(){
 inventory_slots = 0
+selectedType = -1
 rowLength =1;
 randomize()
 selected_slot =-1
 scroll_speed = 2; 
 y_pos = room_height/3 
 motiveCounter = 0
- count_0 = 0;
- count_1 = 0;
+inventoryToDraw = noone
+
 slimeJars = [//color,	 size,	value
 			// 0		1		2
 ]
-inventory = [
+inventoryConsumables= [
     // [name,          initial_quantity, sprite,         image_index, image_index_2, color,    base_price, current_price, buyable, isPowerUp, price_increase, text, 0 = consumable, 1 = upgrade]
    // [0,					1				2				3				4			5			6			7			8			9		10
-   ["Restart",       0,                 spr_priceUp,    0,           0,             c_white,  2,          2,             true,    false,      0, "restart the game", 0 ],   // Low impact, slightly higher starting price
-    
-    ["Market",        0,                 spr_priceUp,    0,           0,             c_white,  15,         15,            true,    false,      12, "improve market price" ,1],  // Boosts income, balanced cost
-    ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",1],  // High impact, higher cost
-    ["Fix Cage 10%",  0,                 spr_shieldGlif, 0,           1,            c_teal,  5,          5,             true,    false,      5, "restore 10% of your shields durability",0],   // Early-game affordability
+    ["Restart",       0,                 spr_priceUp,    0,           0,             c_white,  2,          2,             true,    false,      0, "restart the game", 0 ],   // Low impact, slightly higher starting price
+	["Fix Cage 10%",  0,                 spr_shieldGlif, 0,           1,            c_teal,  5,          5,             true,    false,      5, "restore 10% of your shields durability",0],   // Early-game affordability
     ["Fix Cage 30%",  0,                 spr_shieldGlif, 0,           1,             c_red,  8,          8,             true,    false,      10,"restore 30% of your shields durability",0],  // Scaled price for mid-game
     ["Fix Cage 50%",  0,                 spr_shieldGlif, 0,           1,             c_deepPurple,  16,         16,            true,    false,      15,"restore 50% of your shields durability",0],  // Mid-tier repair, balanced
     ["Fix Cage 80%",  0,                 spr_shieldGlif, 0,           1,             c_desertAmber,  32,         32,            true,    false,      20,"restore 80% of your shields durability",0],  // Significant repair, premium cost
-    ["Upgrade Cage",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase shields durability",1],  // High-cost upgrade for lasting impact
-    ["Calm Slime",    0,				 spr_priceUp,    0,           0,           c_white ,  5,          5,             true,    true,       5, "Calm down slime for a time",0 ],   // Temporary effect, reasonable cost
-    ["Motivate",      0,                 spr_gem,		 0,           1,             c_white,  5,          5,             true,    true,       5, "Make your men work faster",0],   // Short boost, affordable for early use
-	["Hire",          0,                 spr_gem,		 0,           1,             c_softSaffron,  10,         10,            true,    false,      10, "Hire another person",1],  // Scales well with `global.acamount`
-	["Upgrade Hires", 0,                 spr_gem,		0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Give your men better pokers",1]   // Long-term investment, adjusted to fairer scaling
+	["Calm Slime",    0,				 spr_priceUp,    0,           0,           c_white ,  5,          5,             true,    true,       5, "Calm down slime for a time",0 ],   // Temporary effect, reasonable cost
+    ["Motivate",      0,                 spr_gem,		 0,           1,             c_white,  5,          5,             true,    true,       5, "Make your men work faster",0]   // Short boost, affordable for early use
+
 ];
+
+
+inventoryUpgrades  = [
+	["Hire",          0,                 spr_gem,		 0,           1,             c_softSaffron,  10,         10,            true,    false,      10, "Hire another person",1],  // Scales well with `global.acamount`
+	["Upgrade Hires", 0,                 spr_gem,		0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Give your men better pokers",1],   // Long-term investment, adjusted to fairer scaling
+    ["Upgrade Cage",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase shields durability",1],  // High-cost upgrade for lasting impact
+    ["Market",        0,                 spr_priceUp,    0,           0,             c_white,  15,         15,            true,    false,      12, "improve market price" ,1],  // Boosts income, balanced cost
+    ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",1]  // High impact, higher cost
+];
+
+activeQuests = ["noone"];
 
 hovered_slot = 0
 mouseX = mouse_y
@@ -47,30 +54,45 @@ xx =0
 yy=0
 }
 function drawInventory() {
-   inventory_slots = array_length(inventory);
+   inventory_slots = array_length(inventoryToDraw);
 
-for (var i = 0; i < array_length(inventory); i++) {
-    var status = inventory[i][12]; // Assuming column 12 is intended
+switch (selectedType) {
+    case 1: // When selecting Upgrades
+        inventoryToDraw = inventoryUpgrades;
 
-    if (status == 0) {
-        count_0 += 1;
-    } else if (status == 1) {
-        count_1 += 1;
-    } else if (status == 2) {
-        count_2 += 1;
-    }
+        break;
+        
+    case 0: // When selecting Consumables
+        inventoryToDraw = inventoryConsumables;
+ 
+        break;
+  case 2: // When selecting Upgrades
+        inventoryToDraw = activeQuests;
+ 
+        break;
+		
+	case 3:
+	//something about paying off debt
+	
+	break;
+	
+    default:
+        inventoryToDraw = []; // Handle cases where selectedType is undefined or unexpected
+        break;
 }
+
 
 update_motivation();
 
-// Calculate the new height for the background stretch based on the number of rows
-var total_rows = (inventory_slots + 4) div 5; // Calculate rows (rounding up every 5 items)
-var new_height = total_rows * 100; // Adjust height based on row spacing
+var total_rows = (inventory_slots+ 4) div 5; // Round up every 5 items
+var new_height = max(100, total_rows * 100); // Ensure height is not too small
 
 // Draw the background stretch for inventory slots
 draw_sprite_stretched(spr_button, 0, 50, room_height / 3, room_width - 100, new_height);
-  // Loop through inventory items
-for (var i = 0; i < array_length(inventory); i++) {
+
+
+
+for (var i = 0; i < array_length(inventoryToDraw); i++) {
     // Calculate row and column based on index
     var row = i div 6; // Determine the row number
     var column = i mod 6; // Determine the column number
@@ -82,31 +104,31 @@ for (var i = 0; i < array_length(inventory); i++) {
     var col = c_white;
 
     // Determine color and availability logic for inventory item
-    if (inventory[i][7] > playerMoney || (inventory[i][9] == 1 && spdup == true)) {
+    if (inventoryToDraw[i][7] > playerMoney || (inventoryToDraw[i][9] == 1 && spdup == true)) {
         col = c_red; // Not affordable or conditions not met
-        inventory[i][8] = 0; // Mark as unavailable
+        inventoryToDraw[i][8] = 0; // Mark as unavailable
     } else {
         col = c_white; // Affordable and conditions met
-        inventory[i][8] = 1; // Mark as available
+        inventoryToDraw[i][8] = 1; // Mark as available
     }
 
     // Draw the sprite
-    draw_sprite_stretched(inventory[i][2], inventory[i][3], xx, yy, 64, 64);
-    if (!inventory[i][4] == 0) {
-        draw_sprite_stretched_ext(inventory[i][2], inventory[i][4], xx, yy, 64, 64, inventory[i][5], 1);
+    draw_sprite_stretched(inventoryToDraw[i][2], inventoryToDraw[i][3], xx, yy, 64, 64);
+    if (!inventoryToDraw[i][4] == 0) {
+        draw_sprite_stretched_ext(inventoryToDraw[i][2], inventoryToDraw[i][4], xx, yy, 64, 64, inventoryToDraw[i][5], 1);
     }
 
     // Draw text directly beneath the sprite
     draw_text_color(
         xx, yy + 64 + 8, // Leave space for the sprite and position text below
-        string(inventory[i][7]), col, col, col, col, 1
+        string(inventoryToDraw[i][7]), col, col, col, col, 1
     );
 
     // Check if the mouse is hovering over the inventory slot or text
     if (mouse_x >= xx && mouse_x <= xx + 64 && mouse_y >= yy && mouse_y <= yy + 64 + 16) {
         // Draw a grey rectangle around the hovered inventory slot
         draw_set_color(c_gray);
-        draw_rectangle(xx - 2, yy - 2, xx +64, yy + 64, true);
+        draw_rectangle(xx - 2, yy - 2, xx + 64, yy + 64, true);
         draw_set_color(c_white); // Reset color to white for other drawings
 
         // Update hovered and selected slots
@@ -114,12 +136,18 @@ for (var i = 0; i < array_length(inventory); i++) {
         selected_slot = i;
 
         // Check if the left mouse button is released and the item can be afforded
-        if (mouse_check_button_released(mb_left) && inventory[i][8] == 1) {
+        if (mouse_check_button_released(mb_left) && inventoryToDraw[i][8] == 1) {
             whatsHovered(); // Trigger logic for hovered item
         }
-		if (hovered_slot >= 0 && hovered_slot < array_length(inventory)) {
+    }
+
+
+    
+
+
+		if (hovered_slot >= 0 && hovered_slot < array_length(inventoryToDraw)) {
     // Define the description text
-    var desc_text = inventory[hovered_slot][11];
+    var desc_text = inventoryToDraw[hovered_slot][11];
 
     // Define the position and dimensions for the text box
     var text_x = 50; // Starting x position
@@ -138,7 +166,7 @@ for (var i = 0; i < array_length(inventory); i++) {
     }
 }
    
-}
+
  
 function regenerate(){
 global.cage += global.regen 
@@ -151,16 +179,16 @@ tTimer = 0
 		
 function purchasePlus() {
     // Add the current price to the total spent money
-    spentMoney += inventory[hovered_slot][7];
+    spentMoney += inventoryToDraw[hovered_slot][7];
 
     // Increase the current price by the price increase
-    inventory[hovered_slot][7] += inventory[hovered_slot][10]; // Current price + Price increase
+    inventoryToDraw[hovered_slot][7] += inventoryToDraw[hovered_slot][10]; // Current price + Price increase
 
     // Increase the item's quantity
-    inventory[hovered_slot][1] += 1;
+    inventoryToDraw[hovered_slot][1] += 1;
 }   
 function whatsHovered() {
-    switch (inventory[hovered_slot][0]) { // Use the item name from the inventory
+    switch (inventoryToDraw[hovered_slot][0]) { // Use the item name from the inventoryToDraw
         case "Restart":
 		error()
             purchasePlus()
@@ -212,7 +240,7 @@ function whatsHovered() {
            purchasePlus()
             break;
 			
-		case "Pacify":
+		case "Calm Slime":
 		pacify()
 	purchasePlus()
 		break;
@@ -224,7 +252,7 @@ function whatsHovered() {
 	   
 	   default:
             // Handle unknown item
-            show_debug_message("Unknown item: " + inventory[hovered_slot][0]);
+            show_debug_message("Unknown item: " + inventoryToDraw[hovered_slot][0]);
             break;
     }
 }
@@ -273,16 +301,47 @@ function update_motivation(){
     }
 }
 	
+   
 function menuButtons() {    
     var spw = xr; // Keep the button width the same
     var sph = sprite_get_height(spr_button1); // Use the sprite's original height
     var y_position = yb - (sph * 6 * 4) - (24 * 3); // Adjust overall position to fit all buttons
     
+    var button_texts = ["Consumables", "Upgrades", "Quests", "Pay Debt"]; // Define button labels
+
     for (var ii = 0; ii < 4; ii++) {
         var x_position = xr / 2 - spw / 2; // Center the buttons horizontally
         var current_y = y_position + ii * (sph * 6 + 24); // Stack vertically with 24px spacing
+        
+        // Check if the mouse is hovering over the button
+        var hover = point_in_rectangle(mouse_x, mouse_y, x_position + 50, current_y, x_position + 50 + (spw - 100), current_y + (sph * 6));
 
-        // Draw the sprite stretched with the assigned color
-        draw_sprite_stretched_ext(spr_button1, 0, x_position, current_y, spw, sph * 6, global.colors[ii], 1);
+        // Increase size if hovered
+        var scale_x = hover ? 1.1 : 1.0;
+        var scale_y = hover ? 1.1 : 1.0;
+        var text_scale = hover ? 1.2 : 1.0; // Scale text when hovered
+
+        // Draw the sprite stretched with zoom effect when hovered
+        draw_sprite_stretched_ext(spr_button1, 0, x_position + 50 - ((spw - 100) * (scale_x - 1) / 2), current_y - ((sph * 6) * (scale_y - 1) / 2), (spw - 100) * scale_x, (sph * 6) * scale_y, global.colors[ii], 1);
+
+        // Set text alignment
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+
+        // Draw the text centered and scaled when hovered
+        draw_text_transformed(x_position + 50 + (spw - 100) / 2, current_y + (sph * 3), button_texts[ii], text_scale, text_scale, 0);
+
+        // Check for mouse click
+        if (hover && mouse_check_button_pressed(mb_left)) {
+            selectedType = ii; // Set selectedType based on button index
+			visable = true
+			
+		
+        }
+		// reset text alignment
+			
+		draw_set_halign(fa_left); 
+		draw_set_valign(fa_left);
     }
 }
+
