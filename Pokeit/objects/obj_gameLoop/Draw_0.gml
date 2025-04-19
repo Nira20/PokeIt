@@ -7,7 +7,15 @@ draw_text(116,44,string(playerMoney))
 
 
 drawJars()
-if visable = true {drawInventory()}
+if visable = true {drawInventory()
+
+
+// Check for Click
+if (mouse_check_button_pressed(mb_left)) {
+    if (mouse_x > x && mouse_x < x + 100 && mouse_y > y && mouse_y < y + 40) {
+        visable = false; // Set the variable to false
+    }
+}}
 if visable = false {menuButtons()}
 
 

@@ -9,3 +9,8 @@ updatePacify()
 if keyboard_check_released(ord("I")) {
     visable = !visable;
 }
+
+if keyboard_check_released(vk_escape){
+setToInvisable()
+
+}

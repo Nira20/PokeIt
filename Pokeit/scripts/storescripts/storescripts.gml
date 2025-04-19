@@ -175,7 +175,13 @@ for (var i = 0; i < array_length(inventoryToDraw); i++) {
 }
 }
    
+function setToInvisable(){
+visable = false
+selectedType = -1}
 
+function setToVisable(){
+visable = true
+}
  
 function regenerate(){
 global.cage += global.regen 

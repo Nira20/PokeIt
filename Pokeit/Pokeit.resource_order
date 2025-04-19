@@ -1,9 +1,21 @@
 {
   "FolderOrderSettings":[
+    {"name":"Extensions","order":1,"path":"folders/Extensions.yy",},
+    {"name":"Fonts","order":2,"path":"folders/Fonts.yy",},
+    {"name":"Notes","order":3,"path":"folders/Notes.yy",},
+    {"name":"Objects","order":4,"path":"folders/Objects.yy",},
+    {"name":"Paths","order":5,"path":"folders/Paths.yy",},
+    {"name":"Rooms","order":13,"path":"folders/Rooms.yy",},
+    {"name":"Scripts","order":6,"path":"folders/Scripts.yy",},
     {"name":"Pets","order":1,"path":"folders/Scripts/Pets.yy",},
+    {"name":"Shaders","order":7,"path":"folders/Shaders.yy",},
+    {"name":"Sounds","order":8,"path":"folders/Sounds.yy",},
+    {"name":"Sprites","order":9,"path":"folders/Sprites.yy",},
     {"name":"inventory","order":14,"path":"folders/Sprites/inventory.yy",},
     {"name":"PetSprites","order":15,"path":"folders/Sprites/PetSprites.yy",},
     {"name":"SetPieces","order":8,"path":"folders/Sprites/SetPieces.yy",},
+    {"name":"Tile Sets","order":10,"path":"folders/Tile Sets.yy",},
+    {"name":"Timelines","order":11,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_eventManager","order":2,"path":"objects/obj_eventManager/obj_eventManager.yy",},
