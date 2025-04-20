@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"DebtScripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DebtScripts",
+  "parent":{
+    "name":"Pets",
+    "path":"folders/Scripts/Pets.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

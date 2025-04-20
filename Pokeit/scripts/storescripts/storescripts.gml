@@ -78,7 +78,7 @@ switch (selectedType) {
 		
 	case 3:
 	//something about paying off debt
-	
+	payDebt()
 	break;
 	
     default:
@@ -354,36 +354,7 @@ function menuButtons() {
 		// reset text alignment
 			
 		draw_set_halign(fa_left); 
-		draw_set_valign(fa_left);
+		draw_set_valign(fa_top);
     }
 }
-function payDebt(){
-    var button_labels = ["Max", "Min", "100", "Other"];
-    var button_width = 120;
-    var button_height = 50;
-    var spacing = 20;
-    var start_x = (room_width - (button_width * 4 + spacing * 3)) / 2;
-    var start_y = room_height - 100;
 
-    for (var i = 0; i < 4; i++) {
-        var x_position = start_x + i * (button_width + spacing);
-        var y_position = start_y;
-
-        // Draw button background
-        draw_sprite_stretched(spr_button, 0, x_position, y_position, button_width, button_height);
-
-        // Draw button text centered
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_middle);
-        draw_text(x_position + button_width / 2, y_position + button_height / 2, button_labels[i]);
-    
-}
-
-if (selectedButton == "Max") {
-    pay = global.playerMoney; // Set pay to the total player money
-    global.playerMoney = 0; // Set player money to 0
-    global.playerMoneySpent += pay; // Add the amount spent to the total spent tracker
-	global.debt = -pay
-}
-
-}

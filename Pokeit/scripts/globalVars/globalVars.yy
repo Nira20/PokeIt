@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"globalVars",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"globalVars",
+  "parent":{
+    "name":"MainGame",
+    "path":"folders/Scripts/MainGame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
