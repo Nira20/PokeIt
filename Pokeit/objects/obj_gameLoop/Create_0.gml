@@ -10,5 +10,5 @@ spentMoney= 0;
 totalMoney = 0
 createColors()
 createStore();
-
+ipay = 0;
 debugging = instance_number(obj_slime)

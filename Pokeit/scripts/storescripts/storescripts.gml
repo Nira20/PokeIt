@@ -89,14 +89,15 @@ switch (selectedType) {
 
 update_motivation();
 
-var total_rows = (inventory_slots+ 4) div 5; // Round up every 5 items
+
+
+if selectedType = 0 || selectedType = 1
+{
+	var total_rows = (inventory_slots+ 4) div 5; // Round up every 5 items
 var new_height = max(100, total_rows * 100); // Ensure height is not too small
 
 // Draw the background stretch for inventory slots
 draw_sprite_stretched(spr_button, 0, 50, room_height / 3, room_width - 100, new_height);
-
-if selectedType = 0 || selectedType = 1
-{
 for (var i = 0; i < array_length(inventoryToDraw); i++) {
     // Calculate row and column based on index
     var row = i div 6; // Determine the row number
