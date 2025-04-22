@@ -12,3 +12,5 @@ createColors()
 createStore();
 ipay = 0;
 debugging = instance_number(obj_slime)
+othr = false
+hslot = -1

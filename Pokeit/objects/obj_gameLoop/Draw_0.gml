@@ -3,12 +3,13 @@ draw_sprite_stretched(spr_rmBg,1,0,0,room_width,room_height)
 draw_set_font (fn_arialBig)
 draw_sprite(spr_kkoin,0,64,64)
 draw_sprite(spr_kkoin,0,64,64)
-draw_text(116,44,string(playerMoney))
+draw_text(116,44,string(hslot))
 
 
 drawJars()
 if visable = true {drawInventory()
-
+if othr = true {draw_interface()
+	}
 
 // Check for Click
 if (mouse_check_button_pressed(mb_left)) {

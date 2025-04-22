@@ -133,9 +133,9 @@ for (var i = 0; i < array_length(inventoryToDraw); i++) {
     // Check if the mouse is hovering over the inventory slot or text
     if (mouse_x >= xx && mouse_x <= xx + 64 && mouse_y >= yy && mouse_y <= yy + 64 + 16) {
         // Draw a grey rectangle around the hovered inventory slot
-        draw_set_color(c_gray);
-        draw_rectangle(xx - 2, yy - 2, xx + 64, yy + 64, true);
-        draw_set_color(c_white); // Reset color to white for other drawings
+       
+        draw_rectangle_color(xx - 2, yy - 2, xx + 64, yy + 64,c_glowingLime,c_glossyWhite, c_gray,c_gray,true);
+        
 
         // Update hovered and selected slots
         hovered_slot = i;
@@ -208,62 +208,74 @@ function whatsHovered() {
         case "Restart":
 		error()
             purchasePlus()
+			visable = false
             break;
 
         case "Motivate":
 			motivate()
             purchasePlus()
+			visable = false
             break;
 
         case "Hire":
             global.acq +=1
 			purchasePlus()
+			visable = false
            
             break;
 
         case "Market":
 		 global.acamount += global.acamount
            purchasePlus()
+		   visable = false
             break;
 
         case "Split":
 				split()
           purchasePlus()
+		  visable = false
             break;
 			
 		case "Upgrade Cage":
 		global.maxPlatformHP +=50
 		purchasePlus()
+		visable = false
 			break;
 			
 		 case "Fix Cage 10%":
 			fixCage(10)
            purchasePlus()
+		   visable = false
             break;
 			
 			case "Fix Cage 30%":
 			fixCage(30)
           purchasePlus()
+		  visable = false
             break;
 			
 			case "Fix Cage 50%":
 			fixCage(50)
            purchasePlus()
+		   visable = false
             break;
 			
 			case "Fix Cage 80%":
 			fixCage(80)
            purchasePlus()
+		   visable = false
             break;
 			
 		case "Calm Slime":
 		pacify()
 	purchasePlus()
+	visable = false
 		break;
 		
 		case "Upgrade Hires":
        improveHirelings();
 	 purchasePlus()
+	 visable = false
 	   break;
 	   
 	   default:

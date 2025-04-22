@@ -12,8 +12,8 @@ function payDebt() {
         // Check if the mouse is hovering over the current button
         if (mouse_x > start_x && mouse_x < start_x + button_width && mouse_y > button_y && mouse_y < button_y + button_height) {
             // Highlight the button
-            draw_set_color(c_white);
-            draw_rectangle(start_x - 2, button_y - 2, start_x + button_width + 2, button_y + button_height + 2, false);
+        
+            draw_rectangle_color(start_x - 2, button_y - 2, start_x + button_width + 2, button_y + button_height + 2,c_white,c_white,c_white,c_white, false);
 
             // Handle button click
             if (mouse_check_button_pressed(mb_left)) {
@@ -30,7 +30,8 @@ function payDebt() {
                         pay = 100; // Pay a fixed amount of 100
                         break;
                     case "Other":
-                      draw_interface()
+                      othr = true
+					  visable = false
                             break;
                         
                        
@@ -54,35 +55,75 @@ function payDebt() {
         draw_text(start_x + button_width / 2, button_y + button_height / 2, button_labels[i]); // Draw button text
     }
 }
+function checkDebt(payment){
+if payment >= playerMoney {
+payment = playerMoney
+}
+
+}
+
+function debtIncrements(buttons, hslot) {
+    switch (buttons[hslot]) {
+        case "<<<":
+            ipay += 100;
+            break;
+
+        case "<<":
+            ipay += 10;
+            break;
+
+        case "<":
+            ipay += 1;
+            break;
+
+        case "iPay":
+            // No increment for "iPay" button
+            break;
+
+        case ">":
+            ipay -= 1;
+            break;
+
+        case ">>":
+            ipay -= 10;
+            break;
+
+        case ">>>":
+            ipay -= 100;
+            break;
+    }
+}
 function draw_interface() {
-  
-    
+    // Define button settings
+    var spacing = 20; // Gap between buttons
+    var buttons = ["<<<", "<<", "<", "iPay", ">", ">>", ">>>"];
+    var button_width = (room_width - ((array_length(buttons) + 1) * spacing)) / array_length(buttons);
+    var button_height = 64; // Button height
+    var start_x = 30; // Starting X position for buttons
+    var start_y = yb - 300; // Starting Y position for all buttons
 
-    // Button layout properties
-    var buttons = [
-        {x: 200, y: 300, text: "Decrease by 1", value: -1},
-        {x: 200, y: 350, text: "Decrease by 10", value: -10},
-        {x: 200, y: 400, text: "Decrease by 100", value: -100},
-        {x: 600, y: 300, text: "Increase by 1", value: 1},
-        {x: 600, y: 350, text: "Increase by 10", value: 10},
-        {x: 600, y: 400, text: "Increase by 100", value: 100}
-    ];
-
-    // Draw interface
-    draw_set_color(c_white);
-    draw_text(room_width / 2 - 50, 100, "Player Money: " + string(playerMoney));
-    draw_text(room_width / 2 - 50, 150, "ipay: " + string(ipay));
-
-    // Draw and check button functionality
+    // Iterate through the buttons
     for (var i = 0; i < array_length(buttons); i++) {
-        var btn = buttons[i];
-        draw_rectangle(btn.x - 10, btn.y - 10, btn.x + 120, btn.y + 40, false); // Button background
-        draw_text(btn.x, btn.y, btn.text); // Button text
+        var button_x = start_x + i * (button_width + spacing); // Calculate X position for each button
 
-        // Check for mouse click interaction
-        if (mouse_check_button_pressed(mb_left) &&
-            point_in_rectangle(mouse_x, mouse_y, btn.x - 10, btn.y - 10, btn.x + 120, btn.y + 40)) {
-            ipay += btn.value; // Adjust ipay based on button click
+        // Draw button background
+        draw_rectangle_color(button_x , start_y , button_x + button_width , start_y + button_height, c_gray, c_gray, c_gray, c_gray, false);
+
+        // Display button text
+        var button_text = (buttons[i] == "iPay") ? string(ipay) : string(buttons[i]);
+        draw_text_color(button_x -30 +( button_width / 2), start_y + button_height / 2, button_text, c_black, c_black, c_black, c_black, 1);
+
+        // Check for hover interaction
+        if (mouse_x >= button_x && mouse_x <= button_x + button_width && mouse_y >= start_y && mouse_y <= start_y + button_height) {
+            hslot = i; // Highlight the hovered button
+
+            // Draw highlight rectangle
+            draw_rectangle_color(button_x - 2, start_y - 2, button_x + button_width + 2, start_y + button_height + 2, c_blue, c_brightCyan, c_dullCyan, c_vividWhite, true);
+
+            // Check for mouse click interaction
+            if (mouse_check_button_pressed(mb_left)) {
+                debtIncrements(buttons, hslot); // Pass buttons and hslot to the function
+            }
         }
     }
 }
