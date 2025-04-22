@@ -55,25 +55,27 @@ function payDebt() {
         draw_text(start_x + button_width / 2, button_y + button_height / 2, button_labels[i]); // Draw button text
     }
 }
-function checkDebt(payment){
-if payment >= playerMoney {
-payment = playerMoney
-}
-
-}
-
 function debtIncrements(buttons, hslot) {
     switch (buttons[hslot]) {
         case "<<<":
             ipay += 100;
+			if ipay >= playerMoney {
+			ipay = playerMoney
+			}
             break;
 
         case "<<":
             ipay += 10;
+			if ipay >= playerMoney {
+			ipay = playerMoney
+			}
             break;
 
         case "<":
             ipay += 1;
+			if ipay >= playerMoney {
+			ipay = playerMoney
+			}
             break;
 
         case "iPay":
@@ -82,14 +84,23 @@ function debtIncrements(buttons, hslot) {
 
         case ">":
             ipay -= 1;
+			if ipay <= 0 {
+			ipay = 0
+			}
             break;
 
         case ">>":
             ipay -= 10;
+			if ipay <= 0 {
+			ipay = 0
+			}
             break;
 
         case ">>>":
             ipay -= 100;
+			if ipay <= 0 {
+			ipay = 0
+			}
             break;
     }
 }

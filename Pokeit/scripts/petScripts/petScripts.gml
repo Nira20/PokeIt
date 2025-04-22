@@ -1,4 +1,3 @@
-
 function petArray(){
 pets = [
     ["Glowstoat", "Lumen Slime", spr_stout, "A sleek, ferret-like creature with softly glowing fur in enchanting hues of blue, green, or purple. Absorbs magical energy by day and emits gentle light by night, making it a charming companion and a living magical detector."],
@@ -10,7 +9,6 @@ pets = [
 ]
 
 }
-
 function createPets() {
     global.pet = noone;
 	global.slime = noone
@@ -44,7 +42,7 @@ function draw_wrapped_text(x, y, text, max_width) {
         draw_text(x, y, current_line);
     }
 }
-function drawPets() {
+function drawPets(){
     var screen_width = room_width; // Get screen width
     var screen_height = room_height; // Get screen height
 
@@ -59,8 +57,7 @@ function drawPets() {
 
         // Draw "Are you sure?" text below the sprite
         draw_set_halign(fa_center); // Center-align the text
-		draw_set_color(c_white)
-        draw_text(screen_width / 2, sprite_y + 220, "Are you sure?");
+		draw_text_color(screen_width / 2, sprite_y + 220, "Are you sure?",c_white,c_white,c_white,c_white,1);
         
         // Draw "Yes" and "No" buttons
         var button_width = 100; // Button width
@@ -85,8 +82,8 @@ function drawPets() {
         // Check if the mouse is hovering over the "No" button
         if (mouse_x > no_x && mouse_x < no_x + button_width && mouse_y > button_y && mouse_y < button_y + button_height) {
             // Draw a rectangle over the "No" button
-            draw_set_color(c_white); // Set rectangle color
-            draw_rectangle(no_x - 2, button_y - 2, no_x + button_width + 2, button_y + button_height + 2, false);
+          
+            draw_rectangle_color(no_x - 2, button_y - 2, no_x + button_width + 2, button_y + button_height + 2,c_white,c_white,c_white,c_white, false);
             
             // Check if the mouse clicks the "No" button
             if (mouse_check_button_pressed(mb_left)) {
@@ -94,20 +91,15 @@ function drawPets() {
             }
         }
 
-        // Draw the "Yes" button
-        draw_set_color(c_green);
-        draw_rectangle(yes_x, button_y, yes_x + button_width, button_y + button_height, false);
-        draw_set_color(c_white);
-        draw_text(yes_x + button_width / 2, button_y + button_height / 2 - 10, "Yes");
+       // Draw the "Yes" button
+draw_rectangle_color(yes_x, button_y, yes_x + button_width, button_y + button_height, c_green,c_green,c_green,c_green, false);
+draw_text_color(yes_x + button_width / 2, button_y + button_height / 2 - 10, "Yes", c_white,c_white,c_white,c_white,1);
 
-        // Draw the "No" button
-        draw_set_color(c_red);
-        draw_rectangle(no_x, button_y, no_x + button_width, button_y + button_height, false);
-        draw_set_color(c_white);
-        draw_text(no_x + button_width / 2, button_y + button_height / 2 - 10, "No");
+// Draw the "No" button
+draw_rectangle_color(no_x, button_y, no_x + button_width, button_y + button_height, c_red,c_red,c_red,c_red, false);
+draw_text_color(no_x + button_width / 2, button_y + button_height / 2 - 10, "No", c_white, c_white,c_white,c_white,1);
 
-        // Reset color
-        draw_set_color(c_white);
+// Reset color (Not needed as we specify colors in each function)
     } else {
         // Regular pets drawing logic here (unchanged)
         var column1_x = 30; // X position for the first column
@@ -130,9 +122,9 @@ function drawPets() {
             draw_sprite(pets[i][2], 0, x_pos, y_pos);
 
             if (mouse_x > x_pos && mouse_x < x_pos + 128 && mouse_y > y_pos && mouse_y < y_pos + 128) {
-                draw_set_color(c_white);
+            
                 draw_set_alpha(0.5);
-                draw_rectangle(x_pos, y_pos, x_pos + 128, y_pos + 128, true);
+                draw_rectangle_color(x_pos, y_pos, x_pos + 128, y_pos + 128, c_white, c_white,c_white,c_white,true);
                 draw_set_alpha(1);
                 
                 hovered_slot = i;
