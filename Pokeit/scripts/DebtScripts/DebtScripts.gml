@@ -10,10 +10,10 @@ function payDebt() {
         var button_y = start_y + i * (button_height + spacing); // Calculate Y position of each button
 
         // Check if the mouse is hovering over the current button
-        if (mouse_x > start_x && mouse_x < start_x + button_width && mouse_y > button_y && mouse_y < button_y + button_height) {
+        if is_hovered(start_x,button_y, button_width, button_height) {
             // Highlight the button
         
-            draw_rectangle_color(start_x - 2, button_y - 2, start_x + button_width + 2, button_y + button_height + 2,c_white,c_white,c_white,c_white, false);
+         drawHighlight(start_x, button_y, button_width, button_height )
 
             // Handle button click
             if (mouse_check_button_pressed(mb_left)) {
@@ -125,11 +125,12 @@ function draw_interface() {
         draw_text_color(button_x -30 +( button_width / 2), start_y + button_height / 2, button_text, c_black, c_black, c_black, c_black, 1);
 
         // Check for hover interaction
-        if (mouse_x >= button_x && mouse_x <= button_x + button_width && mouse_y >= start_y && mouse_y <= start_y + button_height) {
+      if is_hovered(button_x,start_y,button_width,button_height) {
             hslot = i; // Highlight the hovered button
 
             // Draw highlight rectangle
-            draw_rectangle_color(button_x - 2, start_y - 2, button_x + button_width + 2, start_y + button_height + 2, c_blue, c_brightCyan, c_dullCyan, c_vividWhite, true);
+			drawHighlight(button_x,start_y, button_width,button_height)
+           // draw_rectangle_color(button_x - 2, start_y - 2, button_x + button_width + 2, start_y + button_height + 2, c_blue, c_brightCyan, c_dullCyan, c_vividWhite, true);
 
             // Check for mouse click interaction
             if (mouse_check_button_pressed(mb_left)) {

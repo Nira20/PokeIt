@@ -20,28 +20,7 @@ function createPets() {
     inventory_slots = array_length(pets);
     text1 = "Select your Slime Base";
 }
-function draw_wrapped_text(x, y, text, max_width) {
-    var words = string_split(text, " "); // Split the text into words
-    var current_line = "";
-    var line_height = 20; // Adjust as needed for text spacing
 
-    for (var i = 0; i < array_length(words); i++) {
-        var test_line = current_line + (current_line == "" ? "" : " ") + words[i];
-        if (string_width(test_line) > max_width) {
-            // Draw the current line if the width exceeds max_width
-            draw_text(x, y, current_line);
-            y += line_height; // Move to the next line
-            current_line = words[i]; // Start a new line
-        } else {
-            // Add the word to the current line
-            current_line = test_line;
-        }
-    }
-    // Draw the last line
-    if (current_line != "") {
-        draw_text(x, y, current_line);
-    }
-}
 function drawPets(){
     var screen_width = room_width; // Get screen width
     var screen_height = room_height; // Get screen height
@@ -59,31 +38,47 @@ function drawPets(){
         draw_set_halign(fa_center); // Center-align the text
 		draw_text_color(screen_width / 2, sprite_y + 220, "Are you sure?",c_white,c_white,c_white,c_white,1);
         
-        // Draw "Yes" and "No" buttons
-        var button_width = 100; // Button width
-        var button_height = 50; // Button height
-        var yes_x = screen_width / 2 - 120; // Position for "Yes" button
-        var no_x = screen_width / 2 + 20; // Position for "No" button
-        var button_y = sprite_y + 280; // Y position for buttons (below the text)
+       // Draw "Yes" and "No" buttons
+var button_width = 100; 
+var button_height = 50; 
+var yes_x = screen_width / 2 - 120; 
+var no_x = screen_width / 2 + 20; 
+var button_y = sprite_y + 280; 
 
-        // Check if the mouse is hovering over the "Yes" button
-        if (mouse_x > yes_x && mouse_x < yes_x + button_width && mouse_y > button_y && mouse_y < button_y + button_height) {
-            // Draw a rectangle over the "Yes" button
-            draw_set_color(c_white); // Set rectangle color
-            draw_rectangle(yes_x - 2, button_y - 2, yes_x + button_width + 2, button_y + button_height + 2, false);
-            
-            // Check if the mouse clicks the "Yes" button
-            if (mouse_check_button_pressed(mb_left)) {
-                global.pet = pets[selected_slot][0]; // Update global.pet
-                room_goto_next(); // Go to the next room
-            }
-        }
+// Check if the mouse is hovering over the "Yes" button
+if (is_hovered(yes_x, button_y, button_width, button_height)) {
+    drawHighlight(yes_x, button_y, button_width, button_height);
+
+    // Check if the mouse clicks the "Yes" button
+    if (mouse_check_button_pressed(mb_left)) {
+        global.pet = pets[selected_slot][0]; 
+        room_goto_next(); 
+    }
+}
+
+// Check if the mouse is hovering over the "No" button
+if (is_hovered(no_x, button_y, button_width, button_height)) {
+    drawHighlight(no_x, button_y, button_width, button_height);
+
+    // Check if the mouse clicks the "No" button
+    if (mouse_check_button_pressed(mb_left)) {
+        selected_slot = backButtonA(selected_slot); // Reset selection using function
+    }
+}
+
+// Draw "Yes" button
+draw_rectangle_color(yes_x, button_y, yes_x + button_width, button_y + button_height, c_green, c_green, c_green, c_green, false);
+draw_text_color(yes_x + button_width / 2, button_y + button_height / 2 - 10, "Yes", c_white, c_white, c_white, c_white, 1);
+
+// Draw "No" button
+draw_rectangle_color(no_x, button_y, no_x + button_width, button_y + button_height, c_red, c_red, c_red, c_red, false);
+draw_text_color(no_x + button_width / 2, button_y + button_height / 2 - 10, "No", c_white, c_white, c_white, c_white, 1);
 
         // Check if the mouse is hovering over the "No" button
-        if (mouse_x > no_x && mouse_x < no_x + button_width && mouse_y > button_y && mouse_y < button_y + button_height) {
+        if is_hovered(no_x, button_y,button_width,button_height) {
             // Draw a rectangle over the "No" button
           
-            draw_rectangle_color(no_x - 2, button_y - 2, no_x + button_width + 2, button_y + button_height + 2,c_white,c_white,c_white,c_white, false);
+            drawHighlight(no_x, button_y,button_width,button_height) 
             
             // Check if the mouse clicks the "No" button
             if (mouse_check_button_pressed(mb_left)) {
@@ -121,11 +116,11 @@ draw_text_color(no_x + button_width / 2, button_y + button_height / 2 - 10, "No"
 
             draw_sprite(pets[i][2], 0, x_pos, y_pos);
 
-            if (mouse_x > x_pos && mouse_x < x_pos + 128 && mouse_y > y_pos && mouse_y < y_pos + 128) {
-            
-                draw_set_alpha(0.5);
-                draw_rectangle_color(x_pos, y_pos, x_pos + 128, y_pos + 128, c_white, c_white,c_white,c_white,true);
-                draw_set_alpha(1);
+     
+            if is_hovered(x_pos, y_pos, 128,128){
+               
+                
+               drawHighlight(x_pos,y_pos,128, 128)
                 
                 hovered_slot = i;
 

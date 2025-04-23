@@ -112,18 +112,32 @@
 // Bottom Left: (xt, yb)
 // Bottom Middle: (xm, yb)
 // Bottom Right: (xr, yb)
-function timeCounter(){
-// Step Event
-global.elapsed_time += delta_time / 1000000; // Add real-world seconds passed
-if (global.elapsed_time >= 40) {
-    global.hcounter += 1; // Increase counter by 1
-	global.elapsed_time -= 40; // Reset elapsed time, keeping any overflow
-	
+function timeCounter() {
+    // Step Event
+    global.elapsed_time += delta_time * 0.000001; // Convert microseconds to seconds
+
+    while (global.elapsed_time >= 40) {
+        global.hcounter += 1; // Increase counter by 1
+        global.elapsed_time -= 40; // Reset elapsed time, keeping any overflow
+    }
+
+    while (global.hcounter >= 24) {
+        global.dcounter += 1; // Increase day counter by 1
+        global.hcounter -= 24; // Reset hour counter, keeping overflow
+    }
 }
 
-if (global.hcounter >= 24) {
-    global.dcounter += 1; // Increase counter by 1
-    global.hcounter -= 24; // Reset elapsed time, keeping any overflow 
-	
+
+function drawClock() {
+    var hh = global.hcounter; // Get the current hour in military time
+
+    // Set the position for the clock display
+    var x_pos = 100;
+    var y_pos = 100;
+
+   
+    // Draw the military time on the screen
+     draw_text(x_pos, y_pos,string(hh) + ":" + string(global.elapsed_time))
+
 }
-}
+

@@ -14,3 +14,4 @@ ipay = 0;
 debugging = instance_number(obj_slime)
 othr = false
 hslot = -1
+instance_create_depth(x,y,depth -10, obj_timeKeeper)
