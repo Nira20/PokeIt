@@ -78,7 +78,7 @@ createAnger()
 
 
 function createAnger(){
-angerMax =100
+angerMax =200
 angerTimer = 0
 
 
@@ -112,15 +112,15 @@ y =room_width *.4
 
 function sizeUpdate(){
 if global.slimeSizeCounter >= 30 {
-sizeMultiplier = 4 + (global.slimeSizeCounter * .01)}
-else {sizeMultiplier = 4 + (30 * .01)}
+sizeMultiplier = 1 + (global.slimeSizeCounter * .01)}
+else {sizeMultiplier = 1 + (30 * .01)}
 image_xscale =sizeMultiplier
 image_yscale =sizeMultiplier
 
 }
 function slimeAttack() {
     if (!attacking) {
-        global.cage -= (global.slimeSizeCounter + global.angerCounter);
+        global.cage -= ((global.slimeSizeCounter /5) + global.angerCounter);
         attacking = true;
         spr = attack_sprite; // Play attack animation
         subbed = 0; // Reset animation frame tracker

@@ -42,7 +42,10 @@
   },
   "name":"Pokeit",
   "resources":[
+    {"id":{"name":"fn_abbadon","path":"fonts/fn_abbadon/fn_abbadon.yy",},},
     {"id":{"name":"fn_arialBig","path":"fonts/fn_arialBig/fn_arialBig.yy",},},
+    {"id":{"name":"fn_paintDrips","path":"fonts/fn_paintDrips/fn_paintDrips.yy",},},
+    {"id":{"name":"fn_ratInefested","path":"fonts/fn_ratInefested/fn_ratInefested.yy",},},
     {"id":{"name":"obj_eventManager","path":"objects/obj_eventManager/obj_eventManager.yy",},},
     {"id":{"name":"obj_gameLoop","path":"objects/obj_gameLoop/obj_gameLoop.yy",},},
     {"id":{"name":"obj_money","path":"objects/obj_money/obj_money.yy",},},

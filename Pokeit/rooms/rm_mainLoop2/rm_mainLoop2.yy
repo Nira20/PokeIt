@@ -17,8 +17,8 @@
   ],
   "name":"rm_mainLoop2",
   "parent":{
-    "name":"Notes",
-    "path":"folders/Notes.yy",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

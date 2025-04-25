@@ -26,6 +26,7 @@ global.pacifyCounter = 0
 global.debt = 100000
 global.regen = 1
 createColors()
+global.mcounter =0
 
 }
 
