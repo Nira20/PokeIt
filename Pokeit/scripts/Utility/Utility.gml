@@ -44,6 +44,62 @@ function draw_wrapped_text(x, y, text, max_width) {
     }
 }
 	
+function yn(){
+var button_width = 100; 
+var button_height = 50; 
+var yes_x = room_width / 2 - 120; 
+var no_x = room_width / 2 + 20; 
+var button_y = sprite_y + 280; 
+
+// Check if the mouse is hovering over the "Yes" button
+if (is_hovered(yes_x, button_y, button_width, button_height)) {
+    drawHighlight(yes_x, button_y, button_width, button_height);
+
+    // Check if the mouse clicks the "Yes" button
+    if (mouse_check_button_pressed(mb_left)) {
+        global.pet = pets[selected_slot][0]; 
+        room_goto_next(); 
+    }
+}
+
+// Check if the mouse is hovering over the "No" button
+if (is_hovered(no_x, button_y, button_width, button_height)) {
+    drawHighlight(no_x, button_y, button_width, button_height);
+
+    // Check if the mouse clicks the "No" button
+    if (mouse_check_button_pressed(mb_left)) {
+        selected_slot = backButtonA(selected_slot); // Reset selection using function
+    }
+}
+
+// Draw "Yes" button
+draw_rectangle_color(yes_x, button_y, yes_x + button_width, button_y + button_height, c_green, c_green, c_green, c_green, false);
+draw_text_color(yes_x + button_width / 2, button_y + button_height / 2 - 10, "Yes", c_white, c_white, c_white, c_white, 1);
+
+// Draw "No" button
+draw_rectangle_color(no_x, button_y, no_x + button_width, button_y + button_height, c_red, c_red, c_red, c_red, false);
+draw_text_color(no_x + button_width / 2, button_y + button_height / 2 - 10, "No", c_white, c_white, c_white, c_white, 1);
+
+        // Check if the mouse is hovering over the "No" button
+        if is_hovered(no_x, button_y,button_width,button_height) {
+            // Draw a rectangle over the "No" button
+          
+            drawHighlight(no_x, button_y,button_width,button_height) 
+            
+            // Check if the mouse clicks the "No" button
+            if (mouse_check_button_pressed(mb_left)) {
+                selected_slot = -1; // Reset selected_slot
+            }
+        }
+
+       // Draw the "Yes" button
+draw_rectangle_color(yes_x, button_y, yes_x + button_width, button_y + button_height, c_green,c_green,c_green,c_green, false);
+draw_text_color(yes_x + button_width / 2, button_y + button_height / 2 - 10, "Yes", c_white,c_white,c_white,c_white,1);
+
+// Draw the "No" button
+draw_rectangle_color(no_x, button_y, no_x + button_width, button_y + button_height, c_red,c_red,c_red,c_red, false);
+draw_text_color(no_x + button_width / 2, button_y + button_height / 2 - 10, "No", c_white, c_white,c_white,c_white,1);
+}
 
 
 function drawButtons(buttons, start_x, start_y, button_width, button_height, spacing) {
