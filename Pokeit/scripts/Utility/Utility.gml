@@ -57,8 +57,7 @@ if (is_hovered(yes_x, button_y, button_width, button_height)) {
 
     // Check if the mouse clicks the "Yes" button
     if (mouse_check_button_pressed(mb_left)) {
-        global.pet = pets[selected_slot][0]; 
-        room_goto_next(); 
+      
     }
 }
 
@@ -68,7 +67,7 @@ if (is_hovered(no_x, button_y, button_width, button_height)) {
 
     // Check if the mouse clicks the "No" button
     if (mouse_check_button_pressed(mb_left)) {
-        selected_slot = backButtonA(selected_slot); // Reset selection using function
+        
     }
 }
 
@@ -88,7 +87,7 @@ draw_text_color(no_x + button_width / 2, button_y + button_height / 2 - 10, "No"
             
             // Check if the mouse clicks the "No" button
             if (mouse_check_button_pressed(mb_left)) {
-                selected_slot = -1; // Reset selected_slot
+                
             }
         }
 
