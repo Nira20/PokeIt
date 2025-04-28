@@ -65,6 +65,7 @@
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
     {"id":{"name":"petScripts","path":"scripts/petScripts/petScripts.yy",},},
     {"id":{"name":"platforms","path":"scripts/platforms/platforms.yy",},},
+    {"id":{"name":"playerScripts","path":"scripts/playerScripts/playerScripts.yy",},},
     {"id":{"name":"slimeScripts","path":"scripts/slimeScripts/slimeScripts.yy",},},
     {"id":{"name":"storescripts","path":"scripts/storescripts/storescripts.yy",},},
     {"id":{"name":"Utility","path":"scripts/Utility/Utility.yy",},},

@@ -36,6 +36,7 @@
     {"name":"jars","order":4,"path":"scripts/jars/jars.yy",},
     {"name":"macros","order":5,"path":"scripts/macros/macros.yy",},
     {"name":"platforms","order":6,"path":"scripts/platforms/platforms.yy",},
+    {"name":"playerScripts","order":10,"path":"scripts/playerScripts/playerScripts.yy",},
     {"name":"slimeScripts","order":7,"path":"scripts/slimeScripts/slimeScripts.yy",},
     {"name":"storescripts","order":8,"path":"scripts/storescripts/storescripts.yy",},
     {"name":"Utility","order":2,"path":"scripts/Utility/Utility.yy",},

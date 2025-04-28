@@ -1,12 +1,12 @@
 function autoClickerSetup(){
 radiusDirection = 1;
-radius = (obj_slime.spriteWidth*obj_slime.sizeMultiplier)
+radius = (sprite_get_width(spr_field))
 angle =0
 xx = 0
 yy= 0
 click = false
-touched = false
-istouch = false
+touched = 0
+istouch = 0
 }
 
 function drawClickers() {
@@ -23,23 +23,14 @@ function drawClickers() {
 
         radius += radiusDirection * global.acspeed;
 		
+touched ++
 
+if touched <= global.acspeed = 100
 
-if  point_in_rectangle(xx, yy, obj_slime.bbox_left, obj_slime.bbox_top, obj_slime.bbox_right, obj_slime.bbox_bottom)
-
-{
-	istouch = true
-	if istouch && !touched {
-	 radiusDirection = 1;
-    money()
-	poke()
-	touched = true
+{touched = 0 
+	global.acspeed = 100
+	poke()}
 	
-	}
-} else {istouch = false
-	touched = false}
-
-
 
 
    for (i = 0; i < global.acq; i++) {
@@ -76,18 +67,3 @@ global.Counter +=global.acamount * global.acq;
 anger()
 }
 
-
-function sMouseCheck(){
-	
-	if (mouse_check_button_released(mb_left)) {
-    // Check if the mouse click is within the boundaries of the sprite
-    if (point_in_rectangle(mouse_x, mouse_y,bbox_left,bbox_top,bbox_right, bbox_bottom)) {
-        // Increase global counter by 1
-        global.Counter += global.acamount 
-		anger()
-		money()
-        
-       
-    }
-}
-	}

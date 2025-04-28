@@ -1,9 +1,9 @@
 function globalVars(){
-	global.rTimer =1
+global.rTimer =1
 global.Counter = 100
 global.acamount = 1
 global.maxPlatformHP = 100
-global.acspeed = 1
+global.acspeed = 100
 global.accost = 1
 global.acq = 1
 global.pYScale = 3
