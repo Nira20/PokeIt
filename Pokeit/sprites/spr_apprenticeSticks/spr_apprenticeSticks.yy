@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":1,
   "parent":{
-    "name":"inventory",
-    "path":"folders/Sprites/inventory.yy",
+    "name":"Depreciated",
+    "path":"folders/Depreciated.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"jars",
+  "%Name":"shockingScript",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"jars",
+  "name":"shockingScript",
   "parent":{
-    "name":"Depreciated",
-    "path":"folders/Depreciated.yy",
+    "name":"MainGame",
+    "path":"folders/Scripts/MainGame.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

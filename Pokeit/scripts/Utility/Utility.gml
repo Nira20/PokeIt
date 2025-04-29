@@ -158,3 +158,18 @@ function drawHighlight(button_x, start_y, button_width, button_height ) {
 
 
 }
+
+// Function to increase anger-related counters
+function anger() {
+    global.slimeSizeCounter++; // Increment the slime size counter
+    global.angerCounter++;     // Increment the anger counter
+}
+
+// Function to handle poking interactions
+function poke() {
+    // Increase the global counter based on auto-click amount and quantity
+    global.Counter += global.acamount * global.acq;
+    
+    // Call the anger function to update related variables
+    anger();
+}

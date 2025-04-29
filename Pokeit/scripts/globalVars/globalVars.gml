@@ -1,9 +1,10 @@
 function globalVars(){
+global.acCapSpeed = 600
 global.rTimer =1
 global.Counter = 100
 global.acamount = 1
 global.maxPlatformHP = 100
-global.acspeed = 100
+global.acspeed = 1
 global.accost = 1
 global.acq = 1
 global.pYScale = 3
@@ -27,7 +28,7 @@ global.debt = 100000
 global.regen = 1
 createColors()
 global.mcounter =0
-
+global.acCapSpeed =100
 }
 
 function createColors(){

@@ -10,9 +10,6 @@ function platformCreate(){
     shimmer_color_cycle = 0;  // Initialize shimmer cycle variable
 	platformHPPercent = 0
 }
-
-
-
 function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3, col4,) {
     // Increment and cycle shimmer_color_cycle continuously between 0 and 1
     shimmer_color_cycle = (shimmer_color_cycle + shimmer_speed) % 1;
@@ -27,6 +24,7 @@ function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3,
         return lerp_color(col4, col1, (shimmer_color_cycle - 0.75) * 4); // Between col4 and back to col1
     }
 }
+
 
 
 function drawPlatforms(){
@@ -58,8 +56,7 @@ function drawPlatforms(){
     draw_clear_alpha(c_black, 0);
     surface_reset_target();
     draw_surface(shimmer_surface, 0, 0);
-draw_set_color(c_black)
-	draw_circle(tr_mid_x , tr_mid_u_y *1.5, 52,0)
+
 	draw_set_color(c_white) 
     draw_sprite_ext(spr_arcanePlatform, 0, x, y, global.pXScale, global.pYScale, 0, c_white, 1);
 	
@@ -67,7 +64,7 @@ draw_set_color(c_black)
 	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
                         x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, rpulse);
 	draw_sprite_ext(spr_field, 0, x, y-80, global.pXScale, global.pYScale, 0, hcolor, rpulse);
-	draw_radial_progress(tr_mid_x , tr_mid_u_y*1.5, platformHPPercent, 50, hcolor, 50);
+
 	
 }
 

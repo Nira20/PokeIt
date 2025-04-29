@@ -7,7 +7,7 @@ draw_text(116,48,string(playerMoney))
 draw_text(xr - string_width(global.debt) -100,48 ,string(global.debt))
 
 
-drawJars()
+
 if visable = true {drawInventory()
 if othr = true {draw_interface()
 	}
@@ -19,7 +19,4 @@ if (mouse_check_button_pressed(mb_left)) {
     }
 }}
 if visable = false {menuButtons()}
-
-
-
 

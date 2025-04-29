@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"jars",
+  "%Name":"AutoClickerOld",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"jars",
+  "name":"AutoClickerOld",
   "parent":{
     "name":"Depreciated",
     "path":"folders/Depreciated.yy",

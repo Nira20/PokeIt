@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"autoClicker",
+  "%Name":"radialScreens",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"autoClicker",
+  "name":"radialScreens",
   "parent":{
-    "name":"MainGame",
-    "path":"folders/Scripts/MainGame.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

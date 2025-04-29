@@ -70,7 +70,7 @@ color4 = noone; // Fourth color
 acolor = c_white
 image_speed = .25
 depth = -10
-autoClickerSetup()
+
 platformCreate()
 createAnger()
 

@@ -2,6 +2,8 @@ sizeUpdate()
 sMouseCheck()
 updatePacify()
 angerGenerate()
+shockCounter()
+danger = calculateDanger()
 posUpdate()
 platformHPPercent = global.cage/global.maxPlatformHP
 subindex =  sprite_get_number(spr)
@@ -15,6 +17,9 @@ if (attacking) {
 		
     }
 }
+
+if shock = true {
+shockScript()}
 
 timer += 1;
 if (timer >= increment * fpss) {
