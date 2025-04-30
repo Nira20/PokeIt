@@ -8,7 +8,7 @@ scroll_speed = 2;
 y_pos = room_height/3 
 motiveCounter = 0
 inventoryToDraw = noone
-
+staY = room_height / 3 +100
 slimeJars = [//color,	 size,	value
 			// 0		1		2
 ]
@@ -94,10 +94,10 @@ update_motivation();
 if selectedType = 0 || selectedType = 1
 {
 	var total_rows = (inventory_slots+ 4) div 5; // Round up every 5 items
-var new_height = max(100, total_rows * 100); // Ensure height is not too small
+var new_height = max(100, total_rows * 200); // Ensure height is not too small
 
 // Draw the background stretch for inventory slots
-draw_sprite_stretched(spr_button, 0, 50, room_height / 3, room_width - 100, new_height);
+draw_sprite_stretched(spr_button, 0, 50, staY -20, room_width - 100, new_height);
 for (var i = 0; i < array_length(inventoryToDraw); i++) {
     // Calculate row and column based on index
     var row = i div 6; // Determine the row number
@@ -105,7 +105,7 @@ for (var i = 0; i < array_length(inventoryToDraw); i++) {
 
     // Calculate horizontal and vertical positions for each sprite
     xx = 60 + column * 90; // Horizontal spacing for sprites
-    yy = (room_height / 3) + (row * (64 + 72 + 16)); // Vertical spacing for rows, accounting for sprite and text
+    yy = staY + (row * (114)); // Vertical spacing for rows, accounting for sprite and text
 
     var col = c_white;
 
@@ -297,6 +297,7 @@ function fixCage(amount) {
         global.cage = global.maxPlatformHP;
     }
 }
+
 function money(){
 
 var middle_x = room_width / 2;

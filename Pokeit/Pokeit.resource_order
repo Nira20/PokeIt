@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings":[
+    {"name":"Depreciated","order":14,"path":"folders/Depreciated.yy",},
     {"name":"Extensions","order":2,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":3,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":4,"path":"folders/Notes.yy",},
@@ -7,7 +8,6 @@
     {"name":"Paths","order":6,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":13,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":7,"path":"folders/Scripts.yy",},
-    {"name":"Depreciated","order":14,"path":"folders/Depreciated.yy",},
     {"name":"Pets","order":1,"path":"folders/Scripts/Pets.yy",},
     {"name":"Shaders","order":8,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":9,"path":"folders/Sounds.yy",},
