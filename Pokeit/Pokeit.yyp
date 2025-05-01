@@ -49,7 +49,6 @@
     {"id":{"name":"fn_ratInefested","path":"fonts/fn_ratInefested/fn_ratInefested.yy",},},
     {"id":{"name":"obj_eventManager","path":"objects/obj_eventManager/obj_eventManager.yy",},},
     {"id":{"name":"obj_gameLoop","path":"objects/obj_gameLoop/obj_gameLoop.yy",},},
-    {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},},
     {"id":{"name":"obj_money","path":"objects/obj_money/obj_money.yy",},},
     {"id":{"name":"obj_slime","path":"objects/obj_slime/obj_slime.yy",},},
     {"id":{"name":"obj_timeKeeper","path":"objects/obj_timeKeeper/obj_timeKeeper.yy",},},

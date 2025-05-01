@@ -30,7 +30,7 @@ color4 = noone; // Fourth color
             color4 = c_white;
             break;
 
-        case "Whimwhisker":
+        case "SeaBunny":
             idle_sprite = spr_rabbitIdle;
             attack_sprite = spr_rabbitAttack;
             color1 = c_gold;

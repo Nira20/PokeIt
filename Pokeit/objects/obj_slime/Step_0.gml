@@ -5,6 +5,7 @@ angerGenerate()
 shockCounter()
 danger = calculateDanger()
 posUpdate()
+
 platformHPPercent = global.cage/global.maxPlatformHP
 subindex =  sprite_get_number(spr)
 // Add this to the Step Event

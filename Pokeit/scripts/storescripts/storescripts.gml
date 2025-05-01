@@ -21,18 +21,18 @@ inventoryConsumables= [
     ["Fix Cage 50%",  0,                 spr_shieldGlif, 0,           1,             c_deepPurple,  16,         16,            true,    false,      15,"restore 50% of your shields durability",0],  // Mid-tier repair, balanced
     ["Fix Cage 80%",  0,                 spr_shieldGlif, 0,           1,             c_desertAmber,  32,         32,            true,    false,      20,"restore 80% of your shields durability",0],  // Significant repair, premium cost
 	["Calm Slime",    0,				 spr_priceUp,    0,           0,           c_white ,  5,          5,             true,    true,       5, "Calm down slime for a time",0 ],   // Temporary effect, reasonable cost
-    ["Motivate",      0,                 spr_gem,		 0,           1,             c_white,  5,          5,             true,    true,       5, "Make your men work faster",0]   // Short boost, affordable for early use
+    ["Overcharge",      0,                 spr_gem,		 0,           1,             c_white,  5,          5,             true,    true,       5, "Make your men work faster",0]   // Short boost, affordable for early use
 
 ];
 
 
 inventoryUpgrades  = [
-	["Hire",          0,                 spr_gem,		 0,           1,             c_softSaffron,  10,         10,            true,    false,      10, "Hire another person",1],  // Scales well with `global.acamount`
-	["Upgrade Hires", 0,                 spr_gem,		0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Give your men better pokers",1],   // Long-term investment, adjusted to fairer scaling
-    ["Upgrade Cage",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase shields durability",1],  // High-cost upgrade for lasting impact
+	["More Zaps",          0,                 spr_gem,		 0,           1,             c_softSaffron,  10,         10,            true,    false,      10, "Increase your Zapper Points",1],  // Scales well with `global.acamount`
+	["Upgrade Zaps", 0,                 spr_gem,		0,           1,             c_desertAmber,  10,         10,            true,    false,      15, "Increase the irritability of your zaps",1],   // Long-term investment, adjusted to fairer scaling
+    ["Upgrade Forcefield",  0,                 spr_shieldGlif, 0,           2,              c_maroon,  50,         50,            true,    false,      50, "increase forcefields durability",1],  // High-cost upgrade for lasting impact
     ["Market",        0,                 spr_priceUp,    0,           0,             c_white,  15,         15,            true,    false,      12, "improve market price" ,1],  // Boosts income, balanced cost
     ["Split",         0,                 spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "split your slime",1],  // High impact, higher cost
-   ["Improve Regen",         0,          spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "improve shield regeneration rate",1]
+	["Improve Regen",         0,          spr_priceUp,    0,           0,             c_white,  30,         30,            true,    false,      30, "improve shield regeneration rate",1]
 ];
 
 activeQuests = [//quest name, description, prize, script
@@ -134,7 +134,7 @@ for (var i = 0; i < array_length(inventoryToDraw); i++) {
     if (mouse_x >= xx && mouse_x <= xx + 64 && mouse_y >= yy && mouse_y <= yy + 64 + 16) {
         // Draw a grey rectangle around the hovered inventory slot
        
-        draw_rectangle_color(xx - 2, yy - 2, xx + 64, yy + 64,c_glowingLime,c_glossyWhite, c_gray,c_gray,true);
+        draw_rectangle_color(xx - 2, yy - 2, xx + 64, yy + 64,c_glossyWhite,c_glossyWhite, c_glossyWhite,c_glossyWhite,true);
         
 
         // Update hovered and selected slots
@@ -208,74 +208,79 @@ function whatsHovered() {
         case "Restart":
 		error()
             purchasePlus()
-			visable = false
+			
             break;
 
-        case "Motivate":
+case "Improve Regen":
+global.regen += 1 
+
+ purchasePlus()
+break; 
+
+        case "Overcharge":
 			motivate()
             purchasePlus()
-			visable = false
+			
             break;
 
-        case "Hire":
+        case "More Zaps":
             global.acq +=1
 			purchasePlus()
-			visable = false
+			
            
             break;
 
         case "Market":
 		 global.acamount += global.acamount
            purchasePlus()
-		   visable = false
+		  
             break;
 
         case "Split":
-				split()
+		  split()
           purchasePlus()
-		  visable = false
+		  
             break;
 			
-		case "Upgrade Cage":
+		case "Upgrade Forcefield":
 		global.maxPlatformHP +=50
 		purchasePlus()
-		visable = false
+		
 			break;
 			
 		 case "Fix Cage 10%":
 			fixCage(10)
            purchasePlus()
-		   visable = false
+		   
             break;
 			
 			case "Fix Cage 30%":
 			fixCage(30)
           purchasePlus()
-		  visable = false
+		  
             break;
 			
 			case "Fix Cage 50%":
 			fixCage(50)
            purchasePlus()
-		   visable = false
+		   
             break;
 			
 			case "Fix Cage 80%":
 			fixCage(80)
            purchasePlus()
-		   visable = false
+		   
             break;
 			
 		case "Calm Slime":
 		pacify()
 	purchasePlus()
-	visable = false
+	
 		break;
 		
-		case "Upgrade Hires":
+		case "Upgrade Zaps":
        improveHirelings();
 	 purchasePlus()
-	 visable = false
 	   break;
 	   
 	   default:

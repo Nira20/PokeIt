@@ -1,3 +1,5 @@
+
+
 drawRadial()
 drawPlatforms()
 draw_sprite_ext(spr,subbed,x,y,sizeMultiplier, sizeMultiplier,0,c_white,1)
@@ -6,8 +8,7 @@ if attacking {draw_sprite_ext(spr_slimeSlime,subbed,x,y,3,3,0,c_white,1)
 if shock = true{
 lightning()
 }
-
-
+azsDraw()
 //Debugging Text Block
 //draw_text(50, 30, "sc " + string(sc))
 //draw_text(50 , 30 *2, "schock " + string(shock))

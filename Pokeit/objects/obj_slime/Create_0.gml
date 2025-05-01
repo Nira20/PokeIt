@@ -11,4 +11,4 @@ subbed = 0
 subinsl =0
 danger = 0
 createShock()
-
+azs()

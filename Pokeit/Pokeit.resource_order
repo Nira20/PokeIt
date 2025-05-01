@@ -24,7 +24,6 @@
     {"name":"fn_ratInefested","order":3,"path":"fonts/fn_ratInefested/fn_ratInefested.yy",},
     {"name":"obj_eventManager","order":2,"path":"objects/obj_eventManager/obj_eventManager.yy",},
     {"name":"obj_gameLoop","order":1,"path":"objects/obj_gameLoop/obj_gameLoop.yy",},
-    {"name":"obj_grid","order":2,"path":"objects/obj_grid/obj_grid.yy",},
     {"name":"obj_money","order":3,"path":"objects/obj_money/obj_money.yy",},
     {"name":"obj_timeKeeper","order":4,"path":"objects/obj_timeKeeper/obj_timeKeeper.yy",},
     {"name":"obj_titleScreen","order":1,"path":"objects/obj_titleScreen/obj_titleScreen.yy",},
