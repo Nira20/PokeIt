@@ -79,6 +79,7 @@
     {"name":"spr_shrewIdle","order":16,"path":"sprites/spr_shrewIdle/spr_shrewIdle.yy",},
     {"name":"spr_slimeAttack","order":12,"path":"sprites/spr_slimeAttack/spr_slimeAttack.yy",},
     {"name":"spr_slimebase","order":2,"path":"sprites/spr_slimebase/spr_slimebase.yy",},
+    {"name":"spr_slimebunny","order":16,"path":"sprites/spr_slimebunny/spr_slimebunny.yy",},
     {"name":"spr_slimeCore","order":9,"path":"sprites/spr_slimeCore/spr_slimeCore.yy",},
     {"name":"spr_slimeSlime","order":13,"path":"sprites/spr_slimeSlime/spr_slimeSlime.yy",},
     {"name":"spr_storePlaceholder","order":10,"path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},

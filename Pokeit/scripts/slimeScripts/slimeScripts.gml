@@ -5,6 +5,7 @@ button_pressed = false
 sizeMultiplier =0
 idle_sprite = noone; // Variable for idle sprite
 attack_sprite = noone; // Variable for attack sprite
+damage_sprite = noone; 
 color1 = noone; // First color
 color2 = noone; // Second color
 color3 = noone; // Third color
@@ -15,6 +16,7 @@ color4 = noone; // Fourth color
         case "Glowstoat":
             idle_sprite = spr_stoutIdle;
             attack_sprite = spr_stoutAttack; // Example attack sprite
+			damage_sprite = spr_slimeSlime; 
             color1 = c_blue;
             color2 = c_green;
             color3 = c_purple;
@@ -24,6 +26,7 @@ color4 = noone; // Fourth color
         case "Ashclaw":
             idle_sprite = spr_crestedGeckoIdle;
             attack_sprite = spr_crestedGeckoAttack;
+			damage_sprite = spr_slimeSlime;
             color1 = c_orange;
             color2 = c_red;
             color3 = c_black;
@@ -33,6 +36,7 @@ color4 = noone; // Fourth color
         case "SeaBunny":
             idle_sprite = spr_rabbitIdle;
             attack_sprite = spr_rabbitAttack;
+			damage_sprite = spr_slimebunny;
             color1 = c_gold;
             color2 = c_silver;
             color3 = c_white;
@@ -42,6 +46,7 @@ color4 = noone; // Fourth color
         case "Dustmew":
             idle_sprite = spr_catIdle;
             attack_sprite = spr_catAttack;
+			damage_sprite = spr_slimeSlime;
             color1 = c_gray;
             color2 = c_black;
             color3 = c_silver;
@@ -51,6 +56,7 @@ color4 = noone; // Fourth color
         case "Skelpling":
             idle_sprite = spr_shrewIdle;
             attack_sprite = spr_shrewAttack;
+			damage_sprite = spr_slimeSlime;
             color1 = c_black;
             color2 = c_white;
             color3 = c_gray;
@@ -60,6 +66,7 @@ color4 = noone; // Fourth color
         case "Inkpecker":
             idle_sprite = spr_crowIdle;
             attack_sprite = spr_crowAttack;
+			damage_sprite = spr_slimeSlime;
             color1 = c_inkBlack;
             color2 = c_iridescentBlue;
             color3 = c_glossyWhite;

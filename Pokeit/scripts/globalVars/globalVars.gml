@@ -24,11 +24,16 @@ global.oacspeed = 1
 global.motivate_timer =0
 global.pacify = false
 global.pacifyCounter = 0
-global.debt = 100000
+global.debt = 6000
+global.nextPay = 400
+global.intrest = 1.6
 global.regen = 1
 createColors()
 global.mcounter =0
 global.acCapSpeed =100
+global.remainingPayments = 14
+global.totalPayments = 14
+global.paymentsMade = 0
 }
 
 function createColors(){

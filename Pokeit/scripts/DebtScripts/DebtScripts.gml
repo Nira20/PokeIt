@@ -104,6 +104,7 @@ function debtIncrements(buttons, hslot) {
             break;
     }
 }
+
 function draw_interface() {
     // Define button settings
     var spacing = 20; // Gap between buttons
@@ -112,7 +113,7 @@ function draw_interface() {
     var button_height = 64; // Button height
     var start_x = 30; // Starting X position for buttons
     var start_y = yb - 300; // Starting Y position for all buttons
-
+    yn(applyPayment(),denyPayment(),"Accept","Decline")
     // Iterate through the buttons
     for (var i = 0; i < array_length(buttons); i++) {
         var button_x = start_x + i * (button_width + spacing); // Calculate X position for each button
@@ -138,4 +139,28 @@ function draw_interface() {
             }
         }
     }
+}
+function createTables() {
+global.paymentNum = global.totalPayments - global.paymentsMade
+global.nextPay = global.debt/global.paymentNum
+}
+
+function applyIntrest(){
+global.debt = global.debt*global.intrest
+}
+
+function increaseIntrest(){
+global.intrest +=.1
+}
+
+function decreaseIntrest(){
+global.intrest -=.1
+}
+
+function applyPayment(){
+
+}
+function denyPayment(){
+othr = false
+					  visable = true
 }

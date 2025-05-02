@@ -109,6 +109,7 @@
     {"id":{"name":"spr_shrewIdle","path":"sprites/spr_shrewIdle/spr_shrewIdle.yy",},},
     {"id":{"name":"spr_slimeAttack","path":"sprites/spr_slimeAttack/spr_slimeAttack.yy",},},
     {"id":{"name":"spr_slimebase","path":"sprites/spr_slimebase/spr_slimebase.yy",},},
+    {"id":{"name":"spr_slimebunny","path":"sprites/spr_slimebunny/spr_slimebunny.yy",},},
     {"id":{"name":"spr_slimeCore","path":"sprites/spr_slimeCore/spr_slimeCore.yy",},},
     {"id":{"name":"spr_slimeSlime","path":"sprites/spr_slimeSlime/spr_slimeSlime.yy",},},
     {"id":{"name":"spr_storePlaceholder","path":"sprites/spr_storePlaceholder/spr_storePlaceholder.yy",},},
