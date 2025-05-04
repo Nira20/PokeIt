@@ -22,7 +22,7 @@ function payDebt() {
                 }
 
                 if (playerMoney >= pay && pay > 0) {
-                    playerMoney -= pay;
+                    
                     spentMoney += pay;
                     global.debt -= pay;
                 } else if (pay > 0) {
@@ -93,7 +93,7 @@ function decreaseInterest() {
 
 function applyPayment() {
 	if (playerMoney >= iPay && iPay > 0) {
-                    playerMoney -= iPay;
+                 
                     spentMoney += iPay;
                     global.debt -= iPay;
 					global.nextPayTotal += iPay;

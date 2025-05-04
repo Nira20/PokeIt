@@ -19,3 +19,7 @@ othr = false
 if keyboard_check_released(ord("G")){
 changegState("gameOverS")
 }
+
+if global.gState == "initialize" {
+changegState("playing")
+}

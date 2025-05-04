@@ -1,50 +1,63 @@
-function globalVars(){
-global.acCapSpeed = 600
-global.acamount = 1
-global.Counter = 100
-global.maxPlatformHP = 100
-global.acspeed = 1
-global.accost = 1
-global.acq = 1
-global.acCapSpeed =100
+function globalVars() {
+    // Gameplay Mechanics
+    global.acCapSpeed = 100; // Max Auto Clicker Speed
+    global.acamount = 1; // amount to increase with each auto click
+    global.acspeed = 1; // Base action speed
+    global.oacspeed = 1; // Original action speed
+    global.accost = 1; // Action cost
+    global.acq = 1; // Auto Clicker Quantity
+    global.Counter = 100; // General counter
 
+    // Environmental Properties
+    global.cage = 100; // Cage health or restriction limit
+    global.maxPlatformHP = 100; // Maximum platform HP
 
-global.rTimer =1
-global.pYScale = 3
-global.pXScale = 3
-global.jarred = 0
-global.slimeSizeCounter = 1
-global.angerCounter = 0
-global.sAttackCounter =0
-global.slimeColor = c_white
-global.gState = "initialize" 
-global.hcounter = 0;
-global.elapsed_time = 0;
-global.dcounter =0;
-global.pause = 0
-global.cage = 100
-global.oacspeed = 1
-global.motivate_timer =0
-global.pacify = false
-global.pacifyCounter = 0
-global.debt = 6000
-global.nextPay = 400
-global.intrest = 1.6
-global.regen = 1
-createColors()
-global.mcounter =0
-global.paymentNum = 0 
-global.totalPayments=0 
-global.paymentsMade=0
-global.nextPayDue =0
+    // Timers & Time Tracking
+    global.rTimer = 1; // General reset timer
+    global.elapsed_time = 0; // Total elapsed time
+    global.motivate_timer = 0; // Motivation timer
 
-global.nextPayRemaining =0
-global.nextPayDue=0
-global.nextPayTotal=0
+    // Scaling & Transformations
+    global.pYScale = 3; // Player Y-axis scale
+    global.pXScale = 3; // Player X-axis scale
 
-global.remainingPayments = 14
-global.totalPayments = 14
-global.paymentsMade = 0
+    // Entity Attributes
+    global.jarred = 0; // Indicates if entity is jarred
+    global.slimeSizeCounter = 1; // Tracks slime size
+    global.angerCounter = 0; // Tracks entity anger level
+    global.sAttackCounter = 0; // Special attack counter
+    global.slimeColor = c_white; // Defines slime color
+
+    // Game State & Control
+    global.gState = "initialize"; // Current game state
+    global.pause = 0; // Pause state tracker
+
+    // Behavior & AI
+    global.pacify = false; // Defines pacification state
+    global.pacifyCounter = 0; // Pacification effect duration
+
+    // Financial System
+    global.debt = 6000; // Total outstanding debt
+    global.nextPay = 400; // Next required payment
+    global.intrest = 1.6; // Interest rate
+    global.regen = 1; // Regeneration factor
+
+    // Payment Tracking
+    global.paymentNum = 0; // Current payment number
+    global.totalPayments = 14; // Total payments required
+    global.paymentsMade = 0; // Number of payments completed
+    global.remainingPayments = 14; // Remaining payments
+    global.nextPayDue = 0; // Due date for next payment
+    global.nextPayRemaining = 0; // Amount left for next payment
+    global.nextPayTotal = 0; // Total next payment amount
+
+    // Time Counters
+    global.hcounter = 0; // H counter
+    global.dcounter = 0; // D counter
+    global.mcounter = 0; // M counter
+
+    // Color Setup
+    createColors(); // Initializes custom colors
 }
 
 function createColors(){
