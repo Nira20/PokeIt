@@ -1,43 +1,26 @@
 function payDebt() {
     var button_labels = ["Max", "Min", "100", "Other"];
-    var button_width = 120; // Button width
-    var button_height = 50; // Button height
-    var spacing = 20; // Gap between buttons
-    var start_x = (room_width - button_width) / 2; // Center the buttons horizontally
-    var start_y = room_height -400 ; // Starting Y position for the first button
+    var button_width = 120, button_height = 50;
+    var spacing = 20;
+    var start_x = (room_width - button_width) / 2;
+    var start_y = room_height - 400;
 
     for (var i = 0; i < array_length(button_labels); i++) {
-        var button_y = start_y + i * (button_height + spacing); // Calculate Y position of each button
+        var button_y = start_y + i * (button_height + spacing);
 
-        // Check if the mouse is hovering over the current button
-        if is_hovered(start_x,button_y, button_width, button_height) {
-            // Highlight the button
-        
-         drawHighlight(start_x, button_y, button_width, button_height )
+        if (is_hovered(start_x, button_y, button_width, button_height)) {
+            drawHighlight(start_x, button_y, button_width, button_height);
 
-            // Handle button click
             if (mouse_check_button_pressed(mb_left)) {
                 var pay = 0;
 
                 switch (button_labels[i]) {
-                    case "Max":
-                        pay = playerMoney; // Pay all available money
-                        break;
-                    case "Min":
-                        pay = 10; // Set a minimum pay amount (example)
-                        break;
-                    case "100":
-                        pay = 100; // Pay a fixed amount of 100
-                        break;
-                    case "Other":
-                      othr = true
-					  visable = false
-                            break;
-                        
-                       
+                    case "Max": pay = playerMoney; break;
+                    case "Min": pay = 10; break;
+                    case "100": pay = 100; break;
+                    case "Other": othr = true; visable = false; break;
                 }
 
-                // Ensure playerMoney does not go below 0
                 if (playerMoney >= pay && pay > 0) {
                     playerMoney -= pay;
                     spentMoney += pay;
@@ -48,119 +31,79 @@ function payDebt() {
             }
         }
 
-        // Draw button background and text
-        draw_sprite_stretched(spr_button, 0, start_x, button_y, button_width, button_height); // Draw button background
+        draw_sprite_stretched(spr_button, 0, start_x, button_y, button_width, button_height);
         draw_set_halign(fa_center);
         draw_set_valign(fa_middle);
-        draw_text(start_x + button_width / 2, button_y + button_height / 2, button_labels[i]); // Draw button text
+        draw_text(start_x + button_width / 2, button_y + button_height / 2, button_labels[i]);
     }
 }
+
 function debtIncrements(buttons, hslot) {
-    switch (buttons[hslot]) {
-        case "<<<":
-            ipay += 100;
-			if ipay >= playerMoney {
-			ipay = playerMoney
-			}
-            break;
-
-        case "<<":
-            ipay += 10;
-			if ipay >= playerMoney {
-			ipay = playerMoney
-			}
-            break;
-
-        case "<":
-            ipay += 1;
-			if ipay >= playerMoney {
-			ipay = playerMoney
-			}
-            break;
-
-        case "iPay":
-            // No increment for "iPay" button
-            break;
-
-        case ">":
-            ipay -= 1;
-			if ipay <= 0 {
-			ipay = 0
-			}
-            break;
-
-        case ">>":
-            ipay -= 10;
-			if ipay <= 0 {
-			ipay = 0
-			}
-            break;
-
-        case ">>>":
-            ipay -= 100;
-			if ipay <= 0 {
-			ipay = 0
-			}
-            break;
+    var increments = [100, 10, 1, 0, -1, -10, -100];
+    if (buttons[hslot] != "iPay") {
+        iPay += increments[hslot];
+        iPay = clamp(iPay, 0, playerMoney);
     }
 }
 
 function draw_interface() {
-    // Define button settings
-    var spacing = 20; // Gap between buttons
+    var spacing = 20;
     var buttons = ["<<<", "<<", "<", "iPay", ">", ">>", ">>>"];
     var button_width = (room_width - ((array_length(buttons) + 1) * spacing)) / array_length(buttons);
-    var button_height = 64; // Button height
-    var start_x = 30; // Starting X position for buttons
-    var start_y = yb - 300; // Starting Y position for all buttons
-    yn(applyPayment(),denyPayment(),"Accept","Decline")
-    // Iterate through the buttons
+    var button_height = 64;
+    var start_x = 30;
+    var start_y = yb - 300;
+
+ yn(applyPayment, denyPayment, "Accept", "Decline");
+
     for (var i = 0; i < array_length(buttons); i++) {
-        var button_x = start_x + i * (button_width + spacing); // Calculate X position for each button
+        var button_x = start_x + i * (button_width + spacing);
 
-        // Draw button background
-        draw_rectangle_color(button_x , start_y , button_x + button_width , start_y + button_height, c_gray, c_gray, c_gray, c_gray, false);
+        draw_rectangle_color(button_x, start_y, button_x + button_width, start_y + button_height, c_gray, c_gray, c_gray, c_gray, false);
+        draw_text_color(button_x - 30 + (button_width / 2), start_y + button_height / 2, buttons[i] == "iPay" ? string(iPay) : buttons[i], c_black, c_black, c_black, c_black, 1);
 
-        // Display button text
-        var button_text = (buttons[i] == "iPay") ? string(ipay) : string(buttons[i]);
-        draw_text_color(button_x -30 +( button_width / 2), start_y + button_height / 2, button_text, c_black, c_black, c_black, c_black, 1);
+        if (is_hovered(button_x, start_y, button_width, button_height)) {
+            hslot = i;
+            drawHighlight(button_x, start_y, button_width, button_height);
 
-        // Check for hover interaction
-      if is_hovered(button_x,start_y,button_width,button_height) {
-            hslot = i; // Highlight the hovered button
-
-            // Draw highlight rectangle
-			drawHighlight(button_x,start_y, button_width,button_height)
-           // draw_rectangle_color(button_x - 2, start_y - 2, button_x + button_width + 2, start_y + button_height + 2, c_blue, c_brightCyan, c_dullCyan, c_vividWhite, true);
-
-            // Check for mouse click interaction
             if (mouse_check_button_pressed(mb_left)) {
-                debtIncrements(buttons, hslot); // Pass buttons and hslot to the function
+                debtIncrements(buttons, hslot);
             }
         }
     }
 }
+
 function createTables() {
-global.paymentNum = global.totalPayments - global.paymentsMade
-global.nextPay = global.debt/global.paymentNum
+    global.paymentNum = global.totalPayments - global.paymentsMade;
+    global.nextPayDue = global.debt / global.paymentNum;
+    global.nextPayRemaining = global.nextPayDue - global.nextPayTotal;
 }
 
-function applyIntrest(){
-global.debt = global.debt*global.intrest
+function applyInterest() {
+    global.debt *= global.intrest;
 }
 
-function increaseIntrest(){
-global.intrest +=.1
+function increaseInterest() {
+    global.intrest += 0.1;
 }
 
-function decreaseIntrest(){
-global.intrest -=.1
+function decreaseInterest() {
+    global.intrest -= 0.1;
 }
 
-function applyPayment(){
+function applyPayment() {
+	if (playerMoney >= iPay && iPay > 0) {
+                    playerMoney -= iPay;
+                    spentMoney += iPay;
+                    global.debt -= iPay;
+					global.nextPayTotal += iPay;
+                }
 
+ iPay =0
 }
-function denyPayment(){
-othr = false
-					  visable = true
+
+function denyPayment() {
+    iPay =0 
+	othr = false
+	visable = false
 }

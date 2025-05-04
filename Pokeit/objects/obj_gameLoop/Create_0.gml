@@ -1,16 +1,18 @@
-/// @description Creates the variables to spawn in
-// create slime and base tables
-instance_create_depth(x,y,depth -10, obj_slime)
-globalVars();
-x=room_width/2
-y=room_height/3
-inventoryOpen = false
+instance_create_depth(room_width / 2, room_height / 3, depth -10, obj_slime);
+instance_create_depth(room_width / 2, room_height / 3, depth -10, obj_timeKeeper);
+
+// Initialize global and local variables
+globalVars();  // Ensure global variables are initialized
+createColors(); // Setup colors
+createStore();  // Setup store variables
+
+// Player financials
 playerMoney = 0;
-spentMoney= 0;
-totalMoney = 0
-createColors()
-createStore();
-ipay = 0;
-othr = false
-hslot = -1
-instance_create_depth(x,y,depth -10, obj_timeKeeper)
+spentMoney = 0;
+totalMoney = 0;
+iPay = 0;
+
+// UI and interaction variables
+inventoryOpen = false;
+othr = false;
+hslot = -1;

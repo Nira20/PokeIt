@@ -1,12 +1,15 @@
 function globalVars(){
 global.acCapSpeed = 600
-global.rTimer =1
-global.Counter = 100
 global.acamount = 1
+global.Counter = 100
 global.maxPlatformHP = 100
 global.acspeed = 1
 global.accost = 1
 global.acq = 1
+global.acCapSpeed =100
+
+
+global.rTimer =1
 global.pYScale = 3
 global.pXScale = 3
 global.jarred = 0
@@ -30,7 +33,15 @@ global.intrest = 1.6
 global.regen = 1
 createColors()
 global.mcounter =0
-global.acCapSpeed =100
+global.paymentNum = 0 
+global.totalPayments=0 
+global.paymentsMade=0
+global.nextPayDue =0
+
+global.nextPayRemaining =0
+global.nextPayDue=0
+global.nextPayTotal=0
+
 global.remainingPayments = 14
 global.totalPayments = 14
 global.paymentsMade = 0

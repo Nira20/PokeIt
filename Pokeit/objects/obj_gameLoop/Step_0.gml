@@ -15,3 +15,7 @@ if keyboard_check_released(vk_escape){
 setToInvisable()
 othr = false
 }
+
+if keyboard_check_released(ord("G")){
+changegState("gameOverS")
+}

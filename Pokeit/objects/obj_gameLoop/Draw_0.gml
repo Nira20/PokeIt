@@ -1,5 +1,5 @@
-
-draw_sprite_stretched(spr_rmBg,1,0,0,room_width,room_height)
+if global.gState = "playing" || global.gState = "initialize"
+{draw_sprite_stretched(spr_rmBg,1,0,0,room_width,room_height)
 draw_set_font (fn_arialBig)
 draw_sprite(spr_kkoin,0,64,64)
 
@@ -20,3 +20,12 @@ if (mouse_check_button_pressed(mb_left)) {
 }}
 if visable = false {menuButtons()}
 
+}
+/// Function to wrap text into separate lines
+
+
+// Inside Draw Event
+// Inside Draw Event
+if (global.gState == "gameOverS") {
+    gameOVerSlime()
+}

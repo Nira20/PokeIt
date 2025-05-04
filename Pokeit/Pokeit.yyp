@@ -60,6 +60,7 @@
     {"id":{"name":"DebtScripts","path":"scripts/DebtScripts/DebtScripts.yy",},},
     {"id":{"name":"effects","path":"scripts/effects/effects.yy",},},
     {"id":{"name":"eventManager","path":"scripts/eventManager/eventManager.yy",},},
+    {"id":{"name":"gameOver","path":"scripts/gameOver/gameOver.yy",},},
     {"id":{"name":"globalVars","path":"scripts/globalVars/globalVars.yy",},},
     {"id":{"name":"jars","path":"scripts/jars/jars.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},

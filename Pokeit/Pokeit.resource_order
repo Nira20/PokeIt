@@ -32,6 +32,7 @@
     {"name":"DebtScripts","order":1,"path":"scripts/DebtScripts/DebtScripts.yy",},
     {"name":"effects","order":2,"path":"scripts/effects/effects.yy",},
     {"name":"eventManager","order":3,"path":"scripts/eventManager/eventManager.yy",},
+    {"name":"gameOver","order":12,"path":"scripts/gameOver/gameOver.yy",},
     {"name":"globalVars","order":9,"path":"scripts/globalVars/globalVars.yy",},
     {"name":"jars","order":3,"path":"scripts/jars/jars.yy",},
     {"name":"macros","order":5,"path":"scripts/macros/macros.yy",},
