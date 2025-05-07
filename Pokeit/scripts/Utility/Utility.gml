@@ -103,3 +103,50 @@ function poke() {
     global.Counter += global.acamount * global.acq;
     anger();
 }
+	
+	function adjust_screen_ui() {
+   
+    var screen_width = display_get_width();
+    var screen_height = display_get_height();
+
+    // Calculate scaling factors
+    var scale_x = screen_width / room_width;
+    var scale_y = screen_height / room_height;
+    
+    // Choose the smaller scale factor to maintain aspect ratio
+    var final_scale = min(scale_x, scale_y);
+
+    // Apply scaling to the view
+    view_xport[0] = 0;
+    view_yport[0] = 0;
+    view_wport[0] = room_width * final_scale;
+    view_hport[0] = room_height * final_scale;
+
+    // Adjust the camera or GUI scaling
+    display_set_gui_size(room_width, room_height);
+}
+
+function adjust_screen_ui_web() {
+   
+
+
+    // Calculate scaling factors
+    var scale_x = browser_width / room_width;
+    var scale_y = browser_height / room_height;
+
+    // Choose the smaller scale to maintain aspect ratio
+    var final_scale = min(scale_x, scale_y);
+
+    // Adjust viewport dynamically
+    view_xport[0] = 0;
+    view_yport[0] = 0;
+    view_wport[0] = room_width * final_scale;
+    view_hport[0] = room_height * final_scale;
+
+    // Adjust HTML5 canvas scaling (IMPORTANT for web)
+    display_set_gui_size(room_width * final_scale, room_height * final_scale);
+    
+    // Ensuring full-screen adaptability
+    window_set_size(room_width * final_scale, room_height * final_scale);
+}
+	

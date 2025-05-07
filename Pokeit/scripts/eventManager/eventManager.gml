@@ -1,7 +1,7 @@
 function checkContainment() {
    
     if (global.cage <=0 ){ // If slime grows too large
-        triggerGameOver()
+        changegState("gameOVerSlime")
     }
     
 }

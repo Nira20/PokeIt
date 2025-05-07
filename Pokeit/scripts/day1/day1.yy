@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"day1",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"day1",
+  "parent":{
+    "name":"DayScripts",
+    "path":"folders/Scripts/Pets/DayScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

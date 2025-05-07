@@ -57,142 +57,117 @@ spr = spr_button
 xx =0
 yy=0
 }
-	
 function drawInventory() {
-   inventory_slots = array_length(inventoryToDraw);
+    inventory_slots = array_length(inventoryToDraw);
+    
+    switch (selectedType) {
+        case 1: // Upgrades
+            inventoryToDraw = inventoryUpgrades;
+            break;
+            
+        case 0: // Consumables
+            inventoryToDraw = inventoryConsumables;
+            break;
 
-switch (selectedType) {
-    case 1: // When selecting Upgrades
-        inventoryToDraw = inventoryUpgrades;
+        case 2: // Quests
+            inventoryToDraw = activeQuests;
+            break;
 
-        break;
-        
-    case 0: // When selecting Consumables
-        inventoryToDraw = inventoryConsumables;
- 
-        break;
-  case 2: // When selecting Upgrades
-        inventoryToDraw = activeQuests;
- 
-        break;
-		
-	case 3:
-	//something about paying off debt
-	payDebt()
-	break;
-	
-    default:
-        inventoryToDraw = []; // Handle cases where selectedType is undefined or unexpected
-        break;
-}
+        case 3: // Paying Debt
+            payDebt();
+			return;
+            
+          
 
-
-update_motivation();
-
-
-
-if selectedType = 0 || selectedType = 1
-{
-	var total_rows = (inventory_slots+ 4) div 5; // Round up every 5 items
-var new_height = max(100, total_rows * 200); // Ensure height is not too small
-
-// Draw the background stretch for inventory slots
-draw_sprite_stretched(spr_button, 0, 50, staY -20, room_width - 100, new_height);
-for (var i = 0; i < array_length(inventoryToDraw); i++) {
-    // Calculate row and column based on index
-    var row = i div 6; // Determine the row number
-    var column = i mod 6; // Determine the column number
-
-    // Calculate horizontal and vertical positions for each sprite
-    xx = 60 + column * 90; // Horizontal spacing for sprites
-    yy = staY + (row * (114)); // Vertical spacing for rows, accounting for sprite and text
-
-    var col = c_white;
-
-    // Determine color and availability logic for inventory item
-    if (inventoryToDraw[i][7] > playerMoney || (inventoryToDraw[i][9] == 1 && spdup == true)) {
-        col = c_red; // Not affordable or conditions not met
-        inventoryToDraw[i][8] = 0; // Mark as unavailable
-    } else {
-        col = c_white; // Affordable and conditions met
-        inventoryToDraw[i][8] = 1; // Mark as available
+        default:
+            inventoryToDraw = []; // Handle unexpected cases
+            break;
     }
 
-    // Draw the sprite
-    draw_sprite_stretched(inventoryToDraw[i][2], inventoryToDraw[i][3], xx, yy, 64, 64);
-    if (!inventoryToDraw[i][4] == 0) {
-        draw_sprite_stretched_ext(inventoryToDraw[i][2], inventoryToDraw[i][4], xx, yy, 64, 64, inventoryToDraw[i][5], 1);
-    }
+    update_motivation();
 
-    // Draw text directly beneath the sprite
-    draw_text_color(
-        xx, yy + 64 + 8, // Leave space for the sprite and position text below
-        string(inventoryToDraw[i][7]), col, col, col, col, 1
-    );
 
-    // Check if the mouse is hovering over the inventory slot or text
-    if (mouse_x >= xx && mouse_x <= xx + 64 && mouse_y >= yy && mouse_y <= yy + 64 + 16) {
-        // Draw a grey rectangle around the hovered inventory slot
-       
-        draw_rectangle_color(xx - 2, yy - 2, xx + 64, yy + 64,c_glossyWhite,c_glossyWhite, c_glossyWhite,c_glossyWhite,true);
-        
 
-        // Update hovered and selected slots
-        hovered_slot = i;
-        selected_slot = i;
+    // Calculate inventory slot width and height as a percentage of room
+    var slot_width = room_width * 0.12;  // Each item takes up 12% of room width
+    var slot_height = room_height * 0.1; // Each item takes up 10% of room height
 
-        // Check if the left mouse button is released and the item can be afforded
-        if (mouse_check_button_released(mb_left) && inventoryToDraw[i][8] == 1) {
-            whatsHovered(); // Trigger logic for hovered item
+    var total_rows = (inventory_slots + 4) div 5; // Round up for every 5 items
+    var inventory_height = max(100, total_rows * (slot_height + 16)); // Ensure height is not too small
+
+    var start_x = room_width * 0.05;  // 5% margin from left
+    var start_y = ym +  0.2; // Start at 20% of room height
+
+    // Draw background panel
+    draw_sprite_stretched(spr_button, 0, start_x, start_y - 50, room_width * 0.9, inventory_height +100);
+
+    for (var i = 0; i < array_length(inventoryToDraw); i++) {
+        var row = i div 5;  // 5 items per row
+        var column = i mod 5; // Determine the column number
+
+        // Calculate positions dynamically
+        var xx = start_x + column * (slot_width + 40);
+        var yy = start_y + row * (slot_height + 24);
+
+        var col = c_white;
+
+        // Determine if the item is affordable or meets conditions
+        if (inventoryToDraw[i][7] > playerMoney || (inventoryToDraw[i][9] == 1 && spdup == true)) {
+            col = c_red;
+            inventoryToDraw[i][8] = 0; // Mark as unavailable
+        } else {
+            col = c_white;
+            inventoryToDraw[i][8] = 1; // Mark as available
+        }
+
+        // Draw item sprite with scaled size
+        draw_sprite_stretched(inventoryToDraw[i][2], inventoryToDraw[i][3], xx, yy, slot_width, slot_height);
+
+        if (!inventoryToDraw[i][4] == 0) {
+            draw_sprite_stretched_ext(inventoryToDraw[i][2], inventoryToDraw[i][4], xx, yy, slot_width, slot_height, inventoryToDraw[i][5], 1);
+        }
+
+        // Draw item cost
+        draw_text_color(xx, yy + slot_height + 8, string(inventoryToDraw[i][7]), col, col, col, col, 1);
+
+        // Mouse interaction
+        if (point_in_rectangle(mouse_x, mouse_y, xx, yy, xx + slot_width, yy + slot_height)) {
+            draw_rectangle_color(xx - 2, yy - 2, xx + slot_width, yy + slot_height, c_glossyWhite, c_glossyWhite, c_glossyWhite, c_glossyWhite, true);
+
+            hovered_slot = i;
+            selected_slot = i;
+
+            if (mouse_check_button_released(mb_left) && inventoryToDraw[i][8] == 1) {
+                whatsHovered(); // Trigger item selection
+            }
+        }
+
+        // Item description display when hovered
+        if (hovered_slot >= 0 && hovered_slot < array_length(inventoryToDraw)) {
+            var desc_text = inventoryToDraw[hovered_slot][11];
+            var text_x = room_width * 0.05;
+            var text_y = room_height * 0.85;
+            var text_width = room_width * 0.9;
+
+            draw_set_color(c_white);
+            draw_text_ext(text_x, text_y, desc_text, -1, text_width);
+            draw_set_color(c_white);
         }
     }
-
-
-    
-
-
-		if (hovered_slot >= 0 && hovered_slot < array_length(inventoryToDraw)) {
-    // Define the description text
-    var desc_text = inventoryToDraw[hovered_slot][11];
-
-    // Define the position and dimensions for the text box
-    var text_x = 50; // Starting x position
-    var text_y = room_height - 100; // Near the bottom of the screen
-    var text_width = room_width - 100; // Width of the word wrap area
-
-    // Set the color for the text
-    draw_set_color(c_white);
-
-    // Draw the text with word wrapping
-    draw_text_ext(text_x, text_y, desc_text, -1, text_width);
-
-    // Reset color to default (white)
-    draw_set_color(c_white);
 }
-    } 
-
-} else if selectedType = 2 {
-} else if selectedType = 3 {
-}
-}
-   
 function setToInvisable(){
 visable = false
 selectedType = -1}
-
 function setToVisable(){
 visable = true
 }
- 
-function regenerate(){
+ function regenerate(){
 global.cage += global.regen 
 tTimer = 0
   if (global.cage > global.maxPlatformHP) {
         global.cage = global.maxPlatformHP;
     }
-}
-				
-		
+}		
 function purchasePlus() {
     // Add the current price to the total spent money
     spentMoney += inventoryToDraw[hovered_slot][7];
@@ -302,7 +277,6 @@ function fixCage(amount) {
         global.cage = global.maxPlatformHP;
     }
 }
-
 function money(){
 
 var middle_x = room_width / 2;
@@ -334,46 +308,3 @@ function update_motivation(){
         }
     }
 }
-function menuButtons() {    
-    var spw = xr; // Keep the button width the same
-    var sph = sprite_get_height(spr_button1); // Use the sprite's original height
-    var y_position = yb - (sph * 6 * 4) - (24 * 3); // Adjust overall position to fit all buttons
-    
-    var button_texts = ["Consumables", "Upgrades", "Quests", "Pay Debt"]; // Define button labels
-
-    for (var ii = 0; ii < 4; ii++) {
-        var x_position = xr / 2 - spw / 2; // Center the buttons horizontally
-        var current_y = y_position + ii * (sph * 6 + 24); // Stack vertically with 24px spacing
-        
-        // Check if the mouse is hovering over the button
-        var hover = point_in_rectangle(mouse_x, mouse_y, x_position + 50, current_y, x_position + 50 + (spw - 100), current_y + (sph * 6));
-
-        // Increase size if hovered
-        var scale_x = hover ? 1.1 : 1.0;
-        var scale_y = hover ? 1.1 : 1.0;
-        var text_scale = hover ? 1.2 : 1.0; // Scale text when hovered
-
-        // Draw the sprite stretched with zoom effect when hovered
-        draw_sprite_stretched_ext(spr_button1, 0, x_position + 50 - ((spw - 100) * (scale_x - 1) / 2), current_y - ((sph * 6) * (scale_y - 1) / 2), (spw - 100) * scale_x, (sph * 6) * scale_y, global.colors[ii], 1);
-
-        // Set text alignment
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_middle);
-
-        // Draw the text centered and scaled when hovered
-        draw_text_transformed(x_position + 50 + (spw - 100) / 2, current_y + (sph * 3), button_texts[ii], text_scale, text_scale, 0);
-
-        // Check for mouse click
-        if (hover && mouse_check_button_pressed(mb_left)) {
-            selectedType = ii; // Set selectedType based on button index
-			visable = true
-			
-		
-        }
-		// reset text alignment
-			
-		draw_set_halign(fa_left); 
-		draw_set_valign(fa_top);
-    }
-}
-

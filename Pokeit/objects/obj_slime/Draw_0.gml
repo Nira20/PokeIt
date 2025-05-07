@@ -10,7 +10,6 @@ lightning()
 }
 azsDraw()
 //Debugging Text Block
-draw_text(50, 30, string(global.gState))
-//draw_text(50 , 30 *2, "schock " + string(shock))
+
 //draw_text(50 , 30 *3, "shook phase " + string(shockphase))
 //draw_text(50, 30 *4, "Dam " + string((global.slimeSizeCounter + global.angerCounter)))

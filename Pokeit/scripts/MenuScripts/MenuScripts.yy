@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MenuScripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MenuScripts",
+  "parent":{
+    "name":"Pets",
+    "path":"folders/Scripts/Pets.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -73,13 +73,11 @@ repeat(numLines)
 //set alpha back to full
 draw_set_alpha(1);
 }
-
 function createShock(){
 sc =0
 shock = false
 shockphase = 0
 }
-
 function shockCounter(){
 	if shock = false{
 sc += global.acspeed
@@ -98,7 +96,6 @@ xx = 0
 yy= 0
 
 }
-
 function azsDraw(){
   // Loop through all auto-click instances
     for (var i = 0; i < global.acq; i++) {
@@ -120,9 +117,6 @@ function azsDraw(){
             draw_sprite_ext(spr_gem, 3, xx, yy, 1, 1, rot, c_white, 1);
         }
     }
-
-
-
 function shockScript(){
 shockphase ++ 
  if shockphase >= 10 {
@@ -133,8 +127,7 @@ shockphase ++
 		
       
     } }
-	
-	function lightning() {
+function lightning() {
 
 	{ for (var i = 0; i < global.acq; i++) {
         // Calculate angle for placement

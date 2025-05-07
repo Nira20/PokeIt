@@ -38,7 +38,7 @@ function globalVars() {
 
     // Financial System
     global.debt = 6000; // Total outstanding debt
-    global.nextPay = 400; // Next required payment
+    global.nextPay = 0; // Next required payment
     global.intrest = 1.6; // Interest rate
     global.regen = 1; // Regeneration factor
 
@@ -55,7 +55,9 @@ function globalVars() {
     global.hcounter = 0; // H counter
     global.dcounter = 0; // D counter
     global.mcounter = 0; // M counter
-
+    global.activeCounter = false; 
+    global.daySwitch =false
+   
     // Color Setup
     createColors(); // Initializes custom colors
 }

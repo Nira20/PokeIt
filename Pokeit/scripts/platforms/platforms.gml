@@ -24,9 +24,6 @@ function get_shimmer_color(shimmer_color_cycle, shimmer_speed, col1, col2, col3,
         return lerp_color(col4, col1, (shimmer_color_cycle - 0.75) * 4); // Between col4 and back to col1
     }
 }
-
-
-
 function drawPlatforms(){
     // Update rpulse based on ppulse
     rpulse += ppulse;
@@ -67,9 +64,6 @@ function drawPlatforms(){
 
 	
 }
-
-
-
 function lerp_color(color1, color2, t) {
     // Extract RGB components of color1 and color2
     var r1 = color_get_red(color1);

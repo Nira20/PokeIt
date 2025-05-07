@@ -1,42 +1,3 @@
-function payDebt() {
-    var button_labels = ["Max", "Min", "100", "Other"];
-    var button_width = 120, button_height = 50;
-    var spacing = 20;
-    var start_x = (room_width - button_width) / 2;
-    var start_y = room_height - 400;
-
-    for (var i = 0; i < array_length(button_labels); i++) {
-        var button_y = start_y + i * (button_height + spacing);
-
-        if (is_hovered(start_x, button_y, button_width, button_height)) {
-            drawHighlight(start_x, button_y, button_width, button_height);
-
-            if (mouse_check_button_pressed(mb_left)) {
-                var pay = 0;
-
-                switch (button_labels[i]) {
-                    case "Max": pay = playerMoney; break;
-                    case "Min": pay = 10; break;
-                    case "100": pay = 100; break;
-                    case "Other": othr = true; visable = false; break;
-                }
-
-                if (playerMoney >= pay && pay > 0) {
-                    
-                    spentMoney += pay;
-                    global.debt -= pay;
-                } else if (pay > 0) {
-                    show_message("Not enough money to pay!");
-                }
-            }
-        }
-
-        draw_sprite_stretched(spr_button, 0, start_x, button_y, button_width, button_height);
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_middle);
-        draw_text(start_x + button_width / 2, button_y + button_height / 2, button_labels[i]);
-    }
-}
 
 function debtIncrements(buttons, hslot) {
     var increments = [100, 10, 1, 0, -1, -10, -100];
@@ -46,7 +7,8 @@ function debtIncrements(buttons, hslot) {
     }
 }
 
-function draw_interface() {
+function debtPaymentsInterface() {
+	
     var spacing = 20;
     var buttons = ["<<<", "<<", "<", "iPay", ">", ">>", ">>>"];
     var button_width = (room_width - ((array_length(buttons) + 1) * spacing)) / array_length(buttons);
@@ -73,9 +35,9 @@ function draw_interface() {
     }
 }
 
-function createTables() {
+function paymentManager() {
     global.paymentNum = global.totalPayments - global.paymentsMade;
-    global.nextPayDue = global.debt / global.paymentNum;
+    global.nextPayDue =  global.debt / global.paymentNum; 
     global.nextPayRemaining = global.nextPayDue - global.nextPayTotal;
 }
 
