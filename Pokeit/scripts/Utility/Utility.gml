@@ -1,7 +1,3 @@
-/// Functions for resetting variables
-function backButtonF(variableToReset) { return 0; }
-function backButtonT(variableToReset) { return 1; }
-function backButtonA(variableToReset) { return -1; }
 function word_wrap(text, max_width) {
     var words = string_split(text, " ");
     var result = [];
@@ -39,30 +35,34 @@ function draw_wrapped_text(x, y, text, max_width) {
 }
 
 /// Function to draw Yes/No selection buttons
-function yn(yscr, noscr, t1, t2) {
+function yn(yscr, noscr) {
     var button_width = 100, button_height = 50;
     var yes_x = room_width / 2 - 120, no_x = room_width / 2 + 20;
-    var button_y = room_height / 2; // Fixed undefined variable `ym`
+    var button_y = room_height / 2;
+
+    var yes_hovered = is_hovered(yes_x, button_y, button_width, button_height);
+    var no_hovered = is_hovered(no_x, button_y, button_width, button_height);
 
     // Handle "Yes" button interaction
-    if (is_hovered(yes_x, button_y, button_width, button_height)) {
+    if (yes_hovered) {
         drawHighlight(yes_x, button_y, button_width, button_height);
         if (mouse_check_button_pressed(mb_left)) yscr();
     }
 
     // Handle "No" button interaction
-    if (is_hovered(no_x, button_y, button_width, button_height)) {
+    if (no_hovered) {
         drawHighlight(no_x, button_y, button_width, button_height);
         if (mouse_check_button_pressed(mb_left)) noscr();
     }
 
-    // Draw Yes and No buttons
-    draw_rectangle_color(yes_x, button_y, yes_x + button_width, button_y + button_height, c_green, c_green, c_green, c_green, false);
-    draw_text_color(yes_x, button_y, string(t1), c_white, c_white, c_white, c_white, 1);
-
-    draw_rectangle_color(no_x, button_y, no_x + button_width, button_y + button_height, c_red, c_red, c_red, c_red, false);
-    draw_text_color(no_x, button_y, string(t2), c_white, c_white, c_white, c_white, 1);
+    // Draw Yes and No buttons with hover effects
+   
+    draw_rectangle_color(yes_x , button_y , yes_x + button_width , button_y + button_height, c_amethystPurple,c_amethystPurple,c_amethystPurple,c_amethystPurple, 0);
+    draw_rectangle_color(no_x , button_y , no_x + button_width, button_y + button_height, c_dustyRose,c_dustyRose,c_dustyRose,c_dustyRose,0);
+    draw_sprite_ext(spryn, 0, no_x, button_y, 1, 1, 0, c_red, 1);
+	 draw_sprite_ext(spryn, 1, yes_x, button_y, 1,1, 0, c_green, 1);
 }
+
 
 /// Function to draw multiple buttons with hover interactions
 function drawButtons(buttons, start_x, start_y, button_width, button_height, spacing) {
@@ -103,8 +103,7 @@ function poke() {
     global.Counter += global.acamount * global.acq;
     anger();
 }
-	
-	function adjust_screen_ui() {
+function adjust_screen_ui() {
    
     var screen_width = display_get_width();
     var screen_height = display_get_height();
@@ -149,4 +148,23 @@ function adjust_screen_ui_web() {
     // Ensuring full-screen adaptability
     window_set_size(room_width * final_scale, room_height * final_scale);
 }
+	function singleButton(sX,sY,spr,scr){
+	var sX2 = sprite_get_width(spr)
+	var sY2 = sprite_get_height(spr)
+	var sX3 = sX + sX2
+	var sY3 = sY + sY2
 	
+draw_sprite(spr,0,sX, sY)
+draw_rectangle(sX, sY,sX3,sY3,1)
+
+ if (is_hovered(sX, sY, sX2, sY2)) {
+            
+            drawHighlight(sX, sY, sX2, sY2);
+
+            if (mouse_check_button_pressed(mb_left)) {
+				scr()
+              
+
+
+
+}}}

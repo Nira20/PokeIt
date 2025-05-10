@@ -1,6 +1,6 @@
 function menuCreate(){
 	menu =0 
-	selectedButton = "None"
+	selectedType = -1
 	
 }
 
@@ -10,7 +10,7 @@ menuSwitch()
 
 }
 
-  function drawMenu() {
+ function drawMenu() {
     // Define button properties
     var button_width = room_width * 0.4;
     var button_height = room_height * 0.1;
@@ -32,7 +32,7 @@ menuSwitch()
         var text_scale = hover ? 1.2 : 1.0;
 
         draw_sprite_stretched_ext(spr_button1, 0, x_position - (button_width * (scale_x - 1) / 2), current_y - (button_height * (scale_y - 1) / 2), button_width * scale_x, button_height * scale_y, global.colors[ii], 1);
-        draw_text_transformed(x_position + button_width / 2, current_y + button_height / 2, button_texts[ii], text_scale, text_scale, 0);
+        draw_text_transformed(x_position, current_y , button_texts[ii], text_scale, text_scale, 0);
 
         if (hover && mouse_check_button_pressed(mb_left)) {
             selectedType = ii; }
@@ -42,22 +42,39 @@ menuSwitch()
 
 function menuSwitch(){
 	switch(menu){
+		case -1: 
+	break;
 		
 	case 0: 
 	drawMenu()
+	break;
+	
 	case 1:
+	selectedType = -1
+	break;
+	
 	
 	case 2:
+	selectedType = -1
+	break;
 	
 	case 3:
-	
+	selectedType = -1
+	break;
+
 	case 4:
 	debtPaymentsInterface()
+	selectedType = -1
+	break;
+	
 	case 5:
+	break;
 	
 	case 6:
+	break;
 	
 	case 7:
+	break;
 	}
 
 
@@ -67,30 +84,7 @@ function menuStart(){
 menu= 0
 }
 
-function selectedTypeSwitch(){switch (selectedType) {
-			case 0: 
-			//consumables 
-			menu =1
-			break; 
-			
-			case 1:
-			//permanents 
-			menu =2
-			break;
-			
-			case 2: 
-			//quests
-			menu =3
-			break;
-			
-			case 3:
-			//payments 
-			menu =4
-			break; 
-			
-				
-			}
-        }
+
 		
 		
 		

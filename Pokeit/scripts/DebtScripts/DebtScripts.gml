@@ -11,12 +11,12 @@ function debtPaymentsInterface() {
 	
     var spacing = 20;
     var buttons = ["<<<", "<<", "<", "iPay", ">", ">>", ">>>"];
-    var button_width = (room_width - ((array_length(buttons) + 1) * spacing)) / array_length(buttons);
+    var button_width = ((room_width - 100) - ((array_length(buttons) + 1) * spacing)) / array_length(buttons);
     var button_height = 64;
-    var start_x = 30;
+    var start_x = 0+( (array_length(buttons) + 1) * spacing) / array_length(buttons)
     var start_y = yb - 300;
 
- yn(applyPayment, denyPayment, "Accept", "Decline");
+ yn(applyPayment, denyPayment);
 
     for (var i = 0; i < array_length(buttons); i++) {
         var button_x = start_x + i * (button_width + spacing);
@@ -34,6 +34,7 @@ function debtPaymentsInterface() {
         }
     }
 }
+
 
 function paymentManager() {
     global.paymentNum = global.totalPayments - global.paymentsMade;
@@ -66,6 +67,4 @@ function applyPayment() {
 
 function denyPayment() {
     iPay =0 
-	othr = false
-	visable = false
 }

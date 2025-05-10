@@ -5,7 +5,7 @@ playerMoney = totalMoney - spentMoney
 paymentManager()
 checkContainment()
 updatePacify()
-
+selectedTypeSwitch()
 if keyboard_check_released(ord("G")){
 changegState("gameOverS")
 }

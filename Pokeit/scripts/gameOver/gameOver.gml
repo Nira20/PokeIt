@@ -1,7 +1,7 @@
  function gameOverSlime(){
  draw_clear(c_black);
     draw_set_font(fn_paintDrips);
-
+menu = -1
     var txt = "The Slime has broken free, it destroyed everything";
     var max_width = 400;
     var line_height = string_height("A"); // Get font height
@@ -47,7 +47,7 @@
 function GameOverM(){
 	 draw_clear(c_black);
     draw_set_font(fn_abbadon);
-
+menu = -1
     var txt = "You have disrepected me for the first and final time. Your soul is forfiet.";
     var max_width = 400;
     var line_height = string_height("A"); // Get font height
