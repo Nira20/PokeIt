@@ -57,7 +57,7 @@ spr = spr_button
 xx =0
 yy=0
 }
-function drawInventory() {
+function drawInventory1() {
     inventory_slots = array_length(inventoryToDraw);
     
     switch (selectedType) {

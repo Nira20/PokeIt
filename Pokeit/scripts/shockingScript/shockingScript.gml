@@ -139,9 +139,9 @@ function lightning() {
 	draw_lightning_continuous(
 x, y, xx,yy,
     c_brightCyan,        // color1 - Bright starting color
-    c_yellow,       // color2 - Electric yellow glow at the tips
+    c_paleGold,       // color2 - Electric yellow glow at the tips
     0.2, 0.8,       // alpha1, alpha2 - Makes parts of lightning more transparent
-    1, 2,           // minSize, maxSize - Varying thickness for realism
+    2, 4,           // minSize, maxSize - Varying thickness for realism
     angle, irandom_range(0,360),         // angle1, angle2 - Allows dramatic arcs
     2            // numLines - Mult iple lightning bolts for intensity
 );

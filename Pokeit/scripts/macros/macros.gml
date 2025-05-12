@@ -76,7 +76,7 @@
 #macro c_antiqueGold #D4AF37
 #macro c_vividWhite #FFFFFF
 
-
+#macro c_burntCienna #E97451
 
 #macro xt 0
 #macro yt 0

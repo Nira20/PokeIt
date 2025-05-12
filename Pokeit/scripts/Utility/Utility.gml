@@ -148,14 +148,16 @@ function adjust_screen_ui_web() {
     // Ensuring full-screen adaptability
     window_set_size(room_width * final_scale, room_height * final_scale);
 }
-	function singleButton(sX,sY,spr,scr){
+
+function singleButton(sX,sY,spr,scr){
 	var sX2 = sprite_get_width(spr)
 	var sY2 = sprite_get_height(spr)
 	var sX3 = sX + sX2
 	var sY3 = sY + sY2
-	
+
+draw_rectangle(sX, sY,sX3,sY3,0)	
 draw_sprite(spr,0,sX, sY)
-draw_rectangle(sX, sY,sX3,sY3,1)
+
 
  if (is_hovered(sX, sY, sX2, sY2)) {
             

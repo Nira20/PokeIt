@@ -50,6 +50,7 @@ function menuSwitch(){
 	break;
 	
 	case 1:
+	drawInventory(inventoryConsumables)
 	selectedType = -1
 	break;
 	

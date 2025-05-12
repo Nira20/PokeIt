@@ -4,7 +4,7 @@ menuCreate()
 // Initialize global and local variables
 globalVars();  // Ensure global variables are initialized
 createColors(); // Setup colors
-
+createConsumables()
 // Player financials
 playerMoney = 0;
 spentMoney = 0;
