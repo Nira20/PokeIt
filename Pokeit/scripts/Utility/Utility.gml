@@ -88,8 +88,8 @@ function is_hovered(button_x, start_y, button_width, button_height) {
 
 /// Function to draw a highlight effect around a button
 function drawHighlight(button_x, start_y, button_width, button_height) {
-    draw_rectangle_color(button_x - 2, start_y - 2, button_x + button_width + 2, start_y + button_height + 2, c_white, c_white, c_white, c_white, true);
-    draw_rectangle_color(button_x - 4, start_y - 4, button_x + button_width + 4, start_y + button_height + 4, c_black, c_black, c_black, c_black, true);
+    draw_rectangle_color(button_x , start_y , button_x + button_width, start_y + button_height , c_white, c_white, c_white, c_white, true);
+    draw_rectangle_color(button_x , start_y , button_x + button_width , start_y + button_height , c_black, c_black, c_black, c_black, true);
 }
 
 /// Function to increase anger-related counters
