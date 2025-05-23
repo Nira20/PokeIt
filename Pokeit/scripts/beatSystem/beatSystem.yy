@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"beatSystem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"beatSystem",
+  "parent":{
+    "name":"Pets",
+    "path":"folders/Scripts/Pets.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

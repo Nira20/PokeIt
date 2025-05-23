@@ -1,2 +1,3 @@
-background()
-draw_points_grid(100, 100, 300, 300);
+beatSystem();
+drawSpiral(xm, ym, 1, 3, 1);
+

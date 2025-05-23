@@ -138,7 +138,7 @@ function drawInventory1() {
             selected_slot = i;
 
             if (mouse_check_button_released(mb_left) && inventoryToDraw[i][8] == 1) {
-                whatsHovered(); // Trigger item selection
+                whatsHovered(item_array, selected_slot); // Trigger item selection
             }
         }
 
@@ -178,92 +178,7 @@ function purchasePlus() {
     // Increase the item's quantity
     inventoryToDraw[hovered_slot][1] += 1;
 }   
-function whatsHovered() {
-    switch (inventoryToDraw[hovered_slot][0]) { // Use the item name from the inventoryToDraw
-        case "Restart":
-		error()
-            purchasePlus()
-			
-            break;
 
-case "Improve Regen":
-global.regen += 1 
-
- purchasePlus()
-break; 
-
-        case "Overcharge":
-			motivate()
-            purchasePlus()
-			
-            break;
-
-        case "More Zaps":
-            global.acq +=1
-			purchasePlus()
-			
-           
-            break;
-
-        case "Market":
-		 global.acamount += global.acamount
-           purchasePlus()
-		  
-            break;
-
-        case "Split":
-		  split()
-          purchasePlus()
-		  
-            break;
-			
-		case "Upgrade Forcefield":
-		global.maxPlatformHP +=50
-		purchasePlus()
-		
-			break;
-			
-		 case "Fix Cage 10%":
-			fixCage(10)
-           purchasePlus()
-		   
-            break;
-			
-			case "Fix Cage 30%":
-			fixCage(30)
-          purchasePlus()
-		  
-            break;
-			
-			case "Fix Cage 50%":
-			fixCage(50)
-           purchasePlus()
-		   
-            break;
-			
-			case "Fix Cage 80%":
-			fixCage(80)
-           purchasePlus()
-		   
-            break;
-			
-		case "Calm Slime":
-		pacify()
-	purchasePlus()
-	
-		break;
-		
-		case "Upgrade Zaps":
-       improveHirelings();
-	 purchasePlus()
-	   break;
-	   
-	   default:
-            // Handle unknown item
-            show_debug_message("Unknown item: " + inventoryToDraw[hovered_slot][0]);
-            break;
-    }
-}
 function pacify(){
     global.pacify = true; // Activate pacify
     global.pacifyCounter = room_speed * 10; // Set pacify duration (10 seconds)

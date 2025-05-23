@@ -11,6 +11,6 @@ menuSwitch()
 
 
 gstateSwitch()
-menuSwitch()
+
 singleButton(xm,yb - 100,spr_back,menuStart)
 singleButton(xm -100 ,yb - 100,spr_koin,game_restart)

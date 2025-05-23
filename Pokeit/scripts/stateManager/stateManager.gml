@@ -12,5 +12,12 @@ switch (global.gState) {
         // Insert payment logic here if needed
         break;
 
+case "dayStart":
+
+break;
+
+case "updatePayments": 
+
+break; 
 
 }}

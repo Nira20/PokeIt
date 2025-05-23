@@ -56,7 +56,8 @@ function drawPlatforms(){
 
 	draw_set_color(c_white) 
     draw_sprite_ext(spr_arcanePlatform, 0, x, y, global.pXScale, global.pYScale, 0, c_white, 1);
-	
+	draw_sprite_ext(spr_pillars,0, x, y, 1, 1, 0, c_gray, 1);	
+	draw_sprite_ext(spr_pillars,0, x, y, 1, 1, 0, c_burntCienna, 1);
 
 	draw_sprite_general(spr_funnelRunes, 0, 0, 0, sprite_get_width(spr_funnelRunes), sprite_get_height(spr_funnelRunes), 
                         x - 80, y - 286, 3, 3, 0, col1, col2, col3, col4, rpulse);
