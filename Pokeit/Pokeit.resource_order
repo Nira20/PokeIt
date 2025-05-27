@@ -48,6 +48,7 @@
     {"name":"platforms","order":6,"path":"scripts/platforms/platforms.yy",},
     {"name":"playerScripts","order":10,"path":"scripts/playerScripts/playerScripts.yy",},
     {"name":"radialScreens","order":3,"path":"scripts/radialScreens/radialScreens.yy",},
+    {"name":"Script28","order":7,"path":"scripts/Script28/Script28.yy",},
     {"name":"shockingScript","order":11,"path":"scripts/shockingScript/shockingScript.yy",},
     {"name":"slimeScripts","order":7,"path":"scripts/slimeScripts/slimeScripts.yy",},
     {"name":"startOfDay","order":1,"path":"scripts/startOfDay/startOfDay.yy",},
