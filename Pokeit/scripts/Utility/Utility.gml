@@ -36,7 +36,7 @@ function draw_wrapped_text(x, y, text, max_width) {
 
 /// Function to draw Yes/No selection buttons
 function yn(yscr, noscr) {
-    var button_width = 100, button_height = 50;
+    var button_width = sprite_get_width(spr_yes), button_height = sprite_get_height(spr_yes);
     var yes_x = room_width / 2 - 120, no_x = room_width / 2 + 20;
     var button_y = room_height / 2;
 
@@ -59,8 +59,8 @@ function yn(yscr, noscr) {
    
     draw_rectangle_color(yes_x , button_y , yes_x + button_width , button_y + button_height, c_amethystPurple,c_amethystPurple,c_amethystPurple,c_amethystPurple, 0);
     draw_rectangle_color(no_x , button_y , no_x + button_width, button_y + button_height, c_dustyRose,c_dustyRose,c_dustyRose,c_dustyRose,0);
-    draw_sprite_ext(spryn, 0, no_x, button_y, 1, 1, 0, c_red, 1);
-	 draw_sprite_ext(spryn, 1, yes_x, button_y, 1,1, 0, c_green, 1);
+    draw_sprite(spr_no, 0, no_x, button_y);
+	 draw_sprite(spr_yes, 0, yes_x, button_y);
 }
 
 
