@@ -1,0 +1,19 @@
+
+# Define the URL for the VC_redist.x64.exe download
+$vcRedistUrl = "https://aka.ms/vs/17/release/vc_redist.x64.exe"
+$destination = "$env:TEMP\vc_redist.x64.exe"
+
+# Download the installer
+Write-Host "Downloading VC_redist.x64.exe..."
+Invoke-WebRequest -Uri $vcRedistUrl -OutFile $destination -UseBasicParsing
+
+# Install the package silently
+Write-Host "Installing VC_redist.x64.exe..."
+Start-Process -FilePath $destination -ArgumentList "/install", "/passive", "/norestart" -Wait
+
+# Clean up
+Write-Host "Cleaning up..."
+Remove-Item -Path $destination -Force
+
+Write-Host "Installation of VC_redist.x64.exe completed successfully!"
+
