@@ -87,6 +87,7 @@
     {"name":"spr_markings","order":6,"path":"sprites/spr_markings/spr_markings.yy",},
     {"name":"spr_namePlate","order":21,"path":"sprites/spr_namePlate/spr_namePlate.yy",},
     {"name":"spr_no","order":19,"path":"sprites/spr_no/spr_no.yy",},
+    {"name":"spr_photoframe","order":22,"path":"sprites/spr_photoframe/spr_photoframe.yy",},
     {"name":"spr_pillars","order":20,"path":"sprites/spr_pillars/spr_pillars.yy",},
     {"name":"spr_priceUp","order":1,"path":"sprites/spr_priceUp/spr_priceUp.yy",},
     {"name":"spr_rabbit","order":3,"path":"sprites/spr_rabbit/spr_rabbit.yy",},

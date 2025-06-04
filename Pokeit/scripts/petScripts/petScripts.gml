@@ -43,9 +43,10 @@ function drawPets()
 
         // Draw the selected pet sprite with scaling
         draw_sprite_ext(pets[selected_slot][2], 0, sprite_x - 130, sprite_y - 180, 3, 3, 0, c_white, 1);
-
+        draw_sprite_ext(spr_photoframe, 0, sprite_x - 130, sprite_y - 180, 3, 3, 0, c_silver, 1 );
         // Center-align the confirmation text
         draw_set_halign(fa_center);
+		
         draw_text_color(screen_width / 2, sprite_y + 220, "Are you sure?", c_white, c_white, c_white, c_white, 1);
 yn(ypet,npet)
      
@@ -59,7 +60,7 @@ yn(ypet,npet)
 
         // Define title position
         var title_x = xm;
-        var title_y = 10;
+        var title_y = yb/10;
 
         // Draw title centered
         draw_set_halign(fa_center);
@@ -77,6 +78,7 @@ yn(ypet,npet)
 
             // Draw pet sprite
             draw_sprite(pets[i][2], 0, x_pos + ((xm - xten -15)/2) - 64, y_pos );
+			 draw_sprite_ext(spr_photoframe, 0, x_pos + ((xm - xten -15)/2) - 64, y_pos,1,1,0,c_silverSparkle,1 );
 
             // Check for hover and selection
             if (is_hovered(x_pos, y_pos , x_pos + ((xm - xten -15)/2) - 64, 128)) 
