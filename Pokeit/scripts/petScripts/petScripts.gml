@@ -98,16 +98,21 @@ yn(ypet,npet)
             draw_text_color(x_pos + (((xm - xten -15)/2) - (string_width(pets[i][0])/2)), y_pos + ( (sprite_get_height(spr_namePlate)/2)- (string_height(pets[i][0])/2))+ 130, pets[i][0],c_black,c_black,c_black,c_black,1)
         }
 
-   /*     // If a pet is hovered and has additional information, display it
+      // If a pet is hovered and has additional information, display it
         if (hovered_slot != -1 && pets[hovered_slot][3] != noone) 
         {
-            var x_draw = screen_width * 2 / 3;
+			draw_set_color(c_burntGold)
+			draw_set_alpha(.2)
+			draw_set_font(fn_abbadon)
+            var x_draw = xten;
             var y_draw = top_offset + 30;
-            var max_text_width = screen_width / 3 - 20;
+            var max_text_width = xr -( xten *2);
 
             draw_wrapped_text(x_draw, y_draw, string(pets[hovered_slot][3]), max_text_width);
-        }*/
-    }
+        }
+    }draw_set_color(c_black)
+			draw_set_alpha(1)
+			draw_set_font(fn_arialBig)
 
     // Restore text alignment to left
     draw_set_halign(fa_left);
