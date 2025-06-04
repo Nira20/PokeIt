@@ -35,7 +35,7 @@
     {"name":"test","order":2,"path":"rooms/test/test.yy",},
     {"name":"beatSystem","order":5,"path":"scripts/beatSystem/beatSystem.yy",},
     {"name":"colorPalletArrays","order":1,"path":"scripts/colorPalletArrays/colorPalletArrays.yy",},
-    {"name":"colors","order":3,"path":"scripts/colors/colors.yy",},
+    {"name":"colors","order":8,"path":"scripts/colors/colors.yy",},
     {"name":"consumables","order":5,"path":"scripts/consumables/consumables.yy",},
     {"name":"DebtScripts","order":1,"path":"scripts/DebtScripts/DebtScripts.yy",},
     {"name":"effects","order":2,"path":"scripts/effects/effects.yy",},

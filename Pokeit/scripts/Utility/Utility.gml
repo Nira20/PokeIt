@@ -57,8 +57,6 @@ function yn(yscr, noscr) {
 
     // Draw Yes and No buttons with hover effects
    
-    draw_rectangle_color(yes_x , button_y , yes_x + button_width , button_y + button_height, c_amethystPurple,c_amethystPurple,c_amethystPurple,c_amethystPurple, 0);
-    draw_rectangle_color(no_x , button_y , no_x + button_width, button_y + button_height, c_dustyRose,c_dustyRose,c_dustyRose,c_dustyRose,0);
     draw_sprite(spr_no, 0, no_x, button_y);
 	 draw_sprite(spr_yes, 0, yes_x, button_y);
 }
