@@ -10,8 +10,8 @@
   "name":"obj_title",
   "overriddenProperties":[],
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Core Objects",
+    "path":"folders/Objects/Core Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

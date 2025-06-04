@@ -101,7 +101,7 @@
 #macro tr_mid_x (xm + xr) / 2    // Midpoint X of top-right quadrant
 #macro tr_mid_y (yt + ym) / 2    // Midpoint Y of top-right quadrant
 #macro tr_mid_u_y (yt + ym) - tr_mid_y    // Midpoint Y of top-right quadrant
-
+#macro xten xr/10
 /// Positions in the room with their coordinates:
 // Top Left: (xt, yt)
 // Middle Top: (xm, yt)

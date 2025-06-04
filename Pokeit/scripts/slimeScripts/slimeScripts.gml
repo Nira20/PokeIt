@@ -13,7 +13,7 @@ color4 = noone; // Fourth color
 
   // Set attributes based on global.pet
     switch (global.pet) {
-        case "Glowstoat":
+        case "GlowStoat":
             idle_sprite = spr_stoutIdle;
             attack_sprite = spr_stoutAttack; // Example attack sprite
 			damage_sprite = spr_slimeSlime; 
@@ -23,7 +23,7 @@ color4 = noone; // Fourth color
             color4 = c_white;
             break;
 
-        case "Ashclaw":
+        case "AshClaw":
             idle_sprite = spr_crestedGeckoIdle;
             attack_sprite = spr_crestedGeckoAttack;
 			damage_sprite = spr_slimeSlime;
@@ -43,7 +43,7 @@ color4 = noone; // Fourth color
             color4 = c_gray;
             break;
 
-        case "Dustmew":
+        case "DustMew":
             idle_sprite = spr_catIdle;
             attack_sprite = spr_catAttack;
 			damage_sprite = spr_slimeSlime;

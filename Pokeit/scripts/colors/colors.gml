@@ -2,7 +2,7 @@ function background(){
 var rectangle_width = xr * .0250
 var rectangle_height = yb * .0250
 
-var c1 = c_burntCienna
+var c1 = c_burntGold
 var c2 = c_brightGold
 
 draw_rectangle_color(0,0,xr,rectangle_height,c2,c2,c2,c2,0)
