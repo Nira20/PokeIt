@@ -94,6 +94,7 @@
     {"name":"spr_rabbitAttack","order":15,"path":"sprites/spr_rabbitAttack/spr_rabbitAttack.yy",},
     {"name":"spr_rabbitIdle","order":14,"path":"sprites/spr_rabbitIdle/spr_rabbitIdle.yy",},
     {"name":"spr_rmBg","order":7,"path":"sprites/spr_rmBg/spr_rmBg.yy",},
+    {"name":"spr_roundButton","order":5,"path":"sprites/spr_roundButton/spr_roundButton.yy",},
     {"name":"spr_runes","order":5,"path":"sprites/spr_runes/spr_runes.yy",},
     {"name":"spr_shelf","order":3,"path":"sprites/spr_shelf/spr_shelf.yy",},
     {"name":"spr_shieldGlif","order":10,"path":"sprites/spr_shieldGlif/spr_shieldGlif.yy",},

@@ -11,4 +11,5 @@ sprSFS = sprite_get_number(sprS)
 bp = false
 xS = xT
 yS = ym/2 + (sprW + (sprite_get_height(sprS)/2))  
+adjust_screen_ui_web()
 
