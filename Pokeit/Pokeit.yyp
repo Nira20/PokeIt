@@ -129,6 +129,7 @@
     {"id":{"name":"spr_runes","path":"sprites/spr_runes/spr_runes.yy",},},
     {"id":{"name":"spr_shelf","path":"sprites/spr_shelf/spr_shelf.yy",},},
     {"id":{"name":"spr_shieldGlif","path":"sprites/spr_shieldGlif/spr_shieldGlif.yy",},},
+    {"id":{"name":"spr_shopButton","path":"sprites/spr_shopButton/spr_shopButton.yy",},},
     {"id":{"name":"spr_shrew","path":"sprites/spr_shrew/spr_shrew.yy",},},
     {"id":{"name":"spr_shrewAttack","path":"sprites/spr_shrewAttack/spr_shrewAttack.yy",},},
     {"id":{"name":"spr_shrewIdle","path":"sprites/spr_shrewIdle/spr_shrewIdle.yy",},},

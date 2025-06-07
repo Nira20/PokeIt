@@ -15,8 +15,8 @@ function createConsumables(){
 }
 function drawInventory(item_array) {
 	
-    var button_height = string_height("Sample Text  ") + 10;
-    var button_width = string_width("Fix Cage 80%  ");
+    var button_height = sprite_get_height(spr_shopButton) +10;
+    var button_width = string_width("Fix Cage 80% ");
     
     for (var i = 0; i < array_length(item_array); i++) {
         var start_x = tr_mid_x / 4; 
@@ -26,7 +26,8 @@ function drawInventory(item_array) {
         draw_set_color(canBuy ? c_white : c_red);
         
         draw_text(start_x, start_y, string(item_array[i][0]));
-        draw_text(start_x + button_width + string_width("x"), start_y, "$" + string(item_array[i][3]));
+		draw_sprite(spr_shopButton,0,start_x + button_width + string_width("x"), start_y)
+        draw_text(start_x + button_width  + (sprite_get_width(spr_shopButton)/2) - ( string_width( "$" + string(item_array[i][3]))/2), start_y, "$" + string(item_array[i][3]));
         
         if (is_hovered(start_x, start_y, button_width, button_height)) {
             drawHighlight(start_x, start_y, button_width, button_height);

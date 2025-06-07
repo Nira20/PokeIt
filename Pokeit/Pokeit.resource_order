@@ -98,6 +98,7 @@
     {"name":"spr_runes","order":5,"path":"sprites/spr_runes/spr_runes.yy",},
     {"name":"spr_shelf","order":3,"path":"sprites/spr_shelf/spr_shelf.yy",},
     {"name":"spr_shieldGlif","order":10,"path":"sprites/spr_shieldGlif/spr_shieldGlif.yy",},
+    {"name":"spr_shopButton","order":23,"path":"sprites/spr_shopButton/spr_shopButton.yy",},
     {"name":"spr_shrew","order":2,"path":"sprites/spr_shrew/spr_shrew.yy",},
     {"name":"spr_shrewAttack","order":17,"path":"sprites/spr_shrewAttack/spr_shrewAttack.yy",},
     {"name":"spr_shrewIdle","order":16,"path":"sprites/spr_shrewIdle/spr_shrewIdle.yy",},
