@@ -34,4 +34,5 @@ function createPlatforms(){
 	
 	case "broken":
 	nspr = spr_inactiveNode
+	break;
 		}}
