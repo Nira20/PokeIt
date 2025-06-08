@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script28",
+  "%Name":"roundPlatform",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script28",
+  "name":"roundPlatform",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

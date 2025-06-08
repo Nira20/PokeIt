@@ -32,7 +32,7 @@ function drawPets()
     var screen_height = room_height;
     
     // Set the font for text rendering
-    draw_set_font(fn_arialBig);
+ draw_set_font(fn_abbadon)
 
     // Check if a pet is selected (not -1)
     if (selected_slot != -1) 
@@ -47,7 +47,7 @@ function drawPets()
         // Center-align the confirmation text
         draw_set_halign(fa_center);
 		
-        draw_text_color(screen_width / 2, sprite_y + 220, "Are you sure?", c_white, c_white, c_white, c_white, 1);
+        draw_text_color(screen_width / 2, sprite_y + 320, "Are you sure?", c_white, c_white, c_white, c_white, 1);
 yn(ypet,npet)
      
     } 
@@ -74,16 +74,19 @@ yn(ypet,npet)
         for (var i = 0; i < inventory_slots; i++) 
         {
             var x_pos = (i % 2 == 0) ? column1_x : column2_x; // Alternates columns
-            var y_pos = top_offset + 10 + (floor(i / 2) * spacing_y); // Adjust Y position
+            var y_pos = top_offset + 20 + (floor(i / 2) * spacing_y) +title_y; // Adjust Y position
 
             // Draw pet sprite
             draw_sprite(pets[i][2], 0, x_pos + ((xm - xten -15)/2) - 64, y_pos );
 			 draw_sprite_ext(spr_photoframe, 0, x_pos + ((xm - xten -15)/2) - 64, y_pos,1,1,0,c_silverSparkle,1 );
-
+var pbx = x_pos 
+var pby = y_pos + 130
+var pbxx = xm - xten -15
+var pbyy = sprite_get_height(spr_namePlate)
             // Check for hover and selection
-            if (is_hovered(x_pos, y_pos , x_pos + ((xm - xten -15)/2) - 64, 128)) 
+            if (is_hovered(pbx, pby,pbxx, pbyy)) 
             {
-                drawHighlight(x_pos, y_pos,  x_pos + ((xm - xten -15)/2) - 64, 128); // Highlight hovered pet
+                drawHighlight(pbx, pby,pbxx, pbyy); // Highlight hovered pet
                 hovered_slot = i;
 
                 if (mouse_check_button_pressed(mb_left)) 
@@ -95,7 +98,7 @@ yn(ypet,npet)
             // Draw pet name below sprite
 			draw_sprite_stretched(spr_namePlate, 0, x_pos, y_pos + 130, xm - xten -15,sprite_get_height(spr_namePlate));
 
-			draw_set_font(fn_abbadon)
+			
 		
             draw_text_color(x_pos + (((xm - xten -15)/2) - (string_width(pets[i][0])/2)), y_pos + ( (sprite_get_height(spr_namePlate)/2)- (string_height(pets[i][0])/2))+ 130, pets[i][0],c_black,c_black,c_black,c_black,1)
         }
@@ -107,7 +110,7 @@ yn(ypet,npet)
 			draw_set_alpha(.2)
 			draw_set_font(fn_abbadon)
             var x_draw = xten;
-            var y_draw = top_offset + 30;
+            var y_draw = yb /10 *8;
             var max_text_width = xr -( xten *2);
 
             draw_wrapped_text(x_draw, y_draw, string(pets[hovered_slot][3]), max_text_width);

@@ -126,9 +126,8 @@ az2 *= -1
 
         // Ensure `spr_gem` exists before drawing
 
-            draw_sprite_ext(spr_gem, 0, xx,  yy+az1 , 2, 2, rot, c_white, 1);
-            draw_sprite_ext(spr_gem, 1, xx,  yy+az1 , 2, 2, rot, c_white, 1);
-			draw_sprite_ext(spr_gem, 2, xx,  yy+az1 , 2, 2, ral, c_white, 1);
+            draw_sprite_ext(spr_activeNode, 0, xx,  yy+az1 , 2, 2, rot, c_white, 1);
+      
             
         }
     }
