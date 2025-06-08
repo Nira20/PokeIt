@@ -11,7 +11,19 @@ function createPlatforms(){
 	[6,"inactive",3,3 ], 
 	[7,"inactive",3,3 ]
 	
-];
+];}
+	function eyeLocation(){
+
+
+// Calculate position for spr_inactiveNode (top middle)
+var node_x = platform_x;
+var node_y = platform_y - (sprite_get_height(spr_arcanePlatform) / 2) - (sprite_get_height(spr_inactiveNode) / 2);
+
+draw_sprite(spr_inactiveNode, 0, node_x, node_y);
+
+
+	
+	
 	}
 	function calculateMaxHP(){
 	
