@@ -124,7 +124,6 @@
     {"id":{"name":"spr_rabbitAttack","path":"sprites/spr_rabbitAttack/spr_rabbitAttack.yy",},},
     {"id":{"name":"spr_rabbitIdle","path":"sprites/spr_rabbitIdle/spr_rabbitIdle.yy",},},
     {"id":{"name":"spr_rmBg","path":"sprites/spr_rmBg/spr_rmBg.yy",},},
-    {"id":{"name":"spr_roundButton","path":"sprites/spr_roundButton/spr_roundButton.yy",},},
     {"id":{"name":"spr_runes","path":"sprites/spr_runes/spr_runes.yy",},},
     {"id":{"name":"spr_shopButton","path":"sprites/spr_shopButton/spr_shopButton.yy",},},
     {"id":{"name":"spr_shrew","path":"sprites/spr_shrew/spr_shrew.yy",},},
