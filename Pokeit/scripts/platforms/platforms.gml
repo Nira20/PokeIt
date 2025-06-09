@@ -30,7 +30,7 @@ function drawPlatforms(){
    // draw_sprite_ext(spr_funnel, 0, x, y - 86, 3, 3, 0, c_white, 1);
   
 	eyeLocation()
-    draw_sprite_ext(spr_arcanePlatform, 0, x, y, 2, 2,0,c_white,1);
+    draw_sprite_ext(spr_arcanePlatform, 0, x, y, 1, 1,0,c_white,1);
 
 	
 }

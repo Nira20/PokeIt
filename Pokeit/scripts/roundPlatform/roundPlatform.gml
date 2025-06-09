@@ -1,30 +1,33 @@
-function createPlatforms(){
-	global.activeNodes =1 
-	hpNodes = [
- 	// number, state, maxhp, currenthp,x,y			
-    [0,"active",3,3 ],
-	[1,"inactive",3,3 ],
-	[2,"inactive",3,3 ],
-	[3,"inactive",3,3 ],
-	[4,"inactive",3,3 ], 
-	[5,"inactive",3,3 ], 
-	[6,"inactive",3,3 ], 
-	[7,"inactive",3,3 ]
-	
-];}
-	function eyeLocation(){
+function createPlatforms() {
+    global.activeNodes = 1;
+    hpNodes = [
+        // number, state, maxhp, currenthp, x, y
+        [0, "active", 3, 3, -59, 21],
+        [1, "inactive", 3, 3, 115, 21],
+        [2, "inactive", 3, 3,- 21, 59],
+        [3, "inactive", 3, 3, 154, 60],
+        [4, "inactive", 3, 3, 0, 0], // Default x,y to prevent errors
+        [5, "inactive", 3, 3, 0, 0],
+        [6, "inactive", 3, 3, 0, 0],
+        [7, "inactive", 3, 3, 0, 0]
+    ];
+}
 
+function eyeLocation() {
+    var start_x = xm;
+    var start_y = yb * 0.2;
+    var radius = (sprite_get_height(spr_arcanePlatform)/2) -16
+	draw_sprite(spr_arcanePlatform, 0, start_x, start_y);
+    for (var i = 0; i < 8; i++) {
+		  var angle =(i / 8) *2 * pi;
+        
+            var xx = start_x + cos(angle) * radius;
+            var yy =start_y + sin(angle) * radius;
+                 
+            draw_sprite(spr_inactiveNode, 0, xx, yy);
+        }
+    }
 
-// Calculate position for spr_inactiveNode (top middle)
-var node_x = platform_x;
-var node_y = platform_y - (sprite_get_height(spr_arcanePlatform) / 2) - (sprite_get_height(spr_inactiveNode) / 2);
-
-draw_sprite(spr_inactiveNode, 0, node_x, node_y);
-
-
-	
-	
-	}
 	function calculateMaxHP(){
 	
 	}

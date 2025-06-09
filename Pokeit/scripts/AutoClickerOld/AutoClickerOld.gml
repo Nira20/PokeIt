@@ -37,7 +37,7 @@ function drawClickers() {
     // Loop through all auto-click instances
     for (var i = 0; i < global.acq; i++) {
         // Calculate angle for placement
-       angle = (i / global.acq) * 2 * pi;
+       angle = (i / 8) * 2 * pi;
         
         // Move towards origin `(0,0)`
         if (xx > 0) { xx -= global.acspeed; }

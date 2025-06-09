@@ -1,4 +1,5 @@
 slimeCreate()
+createPlatforms()
 rTimer =0
 can_grow = true
 timer = 0;

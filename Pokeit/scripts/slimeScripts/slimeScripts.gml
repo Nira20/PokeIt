@@ -114,7 +114,7 @@ function resetSlimeState() {
 
 function posUpdate(){
 x =room_width/2
-y =room_width *.4
+y =room_height *.2
 }
 
 function sizeUpdate(){
