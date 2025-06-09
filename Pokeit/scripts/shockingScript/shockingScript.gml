@@ -75,62 +75,26 @@ draw_set_alpha(1);
 }
 function createShock(){
 sc =0
-shock = false
+global.shock = false
 shockphase = 0
 }
 function shockCounter(){
-	if shock = false{
+	if global.shock = false{
 sc += global.acspeed
 	}
 if sc >= global.acCapSpeed
 {sc =0 
-	shock = true
+	global.shock = true
 	
 }
-}
-function azs(){
-az1 =0
-az2 = .1
-radius = (sprite_get_width(spr_field))
-angle =0
-xx = 0
-yy= 0
-ral = 0
-ral2 = 1
-}
-function azsDraw(){
-az1 += az2
-ral += ral2 
-
-if ral >= 360 || ral <=0 {
-ral2 *=-1}
-if az1 >= 4 || az1 <= -4{
-az2 *= -1
 }
 
 
 	
-  // Loop through all auto-click instances
-    for (var i = 0; i < global.acq; i++) {
-        // Calculate angle for placement
-  angle = (i / global.acq) * 2 * pi;
-         
-         xx = x + cos(angle) * radius;
-         yy = y + sin(angle) * radius;
-        
+  
 
-     
-
-           // Determine rotation angle
-        var rot = point_direction(xx, yy, x, y) - 90;
-
-        // Ensure `spr_gem` exists before drawing
-
-            draw_sprite_ext(spr_activeNode, 0, xx,  yy+az1 , 2, 2, rot, c_white, 1);
-      
             
-        }
-    }
+        
 function shockScript(){
 shockphase ++ 
  if shockphase >= 10 {
@@ -141,25 +105,5 @@ shockphase ++
 		
       
     } }
-function lightning() {
 
-	{ for (var i = 0; i < global.acq; i++) {
-        // Calculate angle for placement
-  angle = (i / global.acq) * 2 * pi;
-         
-         xx = x + cos(angle) * radius;
-         yy = y + sin(angle) * radius;
-          
-	draw_lightning_continuous(
-x, y, xx,yy,
-    c_brightCyan,        // color1 - Bright starting color
-    c_paleGold,       // color2 - Electric yellow glow at the tips
-    0.2, 0.8,       // alpha1, alpha2 - Makes parts of lightning more transparent
-    2, 4,           // minSize, maxSize - Varying thickness for realism
-    angle, irandom_range(0,360),         // angle1, angle2 - Allows dramatic arcs
-    2            // numLines - Mult iple lightning bolts for intensity
-);
-
-
-}}}
 	

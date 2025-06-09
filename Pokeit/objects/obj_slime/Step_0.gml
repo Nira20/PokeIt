@@ -19,7 +19,7 @@ if (attacking) {
     }
 }
 
-if shock = true {
+if global.shock = true {
 shockScript()}
 
 timer += 1;
@@ -29,6 +29,6 @@ if (timer >= increment * fpss) {
 }
 
 rTimer += global.rTimer; 
-if rTimer >= room_speed 
+if rTimer >= fpss
 {regenerate()
 	rTimer =0}
