@@ -1,9 +1,9 @@
 function petArray() {
     pets = [
-        ["GlowStout", "Lumen Slime", spr_stout, "Absorbs magical energy by day and emits gentle light by night, making it a charming companion and a living magical detector."],
-        ["AshClaw", "Ember Slime", spr_crestedGecko, "Born of the blood of Chuthga during the first cleave. Burns with both frost and flame, prized companions of high ranking giants and trained for hunting tasks"],
-        ["SeaBunny ", "Fortune Slime", spr_rabbit, "Konrads estimed pet, a lucky rabbit taken into the sea in ages past, elegant, poised, they draw his chariots through the waves."],
-        ["DustMew", "Veil Slime", spr_cat, " Known for phasing through thin barriers like fabric or mist, these aloof, nocturnal creatures are prized by those seeking a touch of mystery."],
+        ["Glowstout", "Lumen Slime", spr_stout, "Absorbs magical energy by day and emits gentle light by night, making it a charming companion and a living magical detector."],
+        ["Ashclaw", "Ember Slime", spr_crestedGecko, "Born of the blood of Chuthga during the first cleave. Burns with both frost and flame, prized companions of high ranking giants and trained for hunting tasks"],
+        ["Seabunny ", "Fortune Slime", spr_rabbit, "Konrads estimed pet, a lucky rabbit taken into the sea in ages past, elegant, poised, they draw his chariots through the waves."],
+        ["Dustmew", "Veil Slime", spr_cat, " Known for phasing through thin barriers like fabric or mist, these aloof, nocturnal creatures are prized by those seeking a touch of mystery."],
         ["Skelpling", "Mirebone Slime", spr_shrew, "Immune to necrotic magic, it instinctively seeks out cursed or undead areas, making it a favored as a magical warning or detoxifier."],
         ["Inkpecker", "Script Slime", spr_crow, "Its beak continuously drips magical ink. Intelligent and mischievous, it’s a favorite among scribes and arcane researchers for both companionship and a sustainable source of ink."]
     ];
