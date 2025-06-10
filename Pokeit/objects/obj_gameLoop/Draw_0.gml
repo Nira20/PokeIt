@@ -1,6 +1,6 @@
 
 if global.gState = "playing" || global.gState = "initialize"
-{background()
+{drawBackground()
 draw_set_font (fn_arialBig)
 draw_sprite(spr_kkoin,0,64,64)
 

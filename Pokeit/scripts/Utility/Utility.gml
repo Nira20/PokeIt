@@ -33,7 +33,10 @@ function draw_wrapped_text(x, y, text, max_width) {
     
     if (current_line != "") draw_text(x, y, current_line);
 }
-
+//drawscrollbackground 
+function drawBackground(){
+draw_sprite_stretched(spr_scroll,0,0,0,xr,yb)
+}
 /// Function to draw Yes/No selection buttons
 function yn(yscr, noscr) {
     var button_width = sprite_get_width(spr_yes), button_height = sprite_get_height(spr_yes);

@@ -24,7 +24,7 @@ function drawInventory(item_array) {
         
         var canBuy = playerMoney >= item_array[i][3];
         draw_set_color(canBuy ? c_white : c_red);
-        
+        draw_sprite_stretched(spr_scroll,0,start_x - 20,start_y,start_x + button_width + string_width("x") + 20,button_height)
         draw_text(start_x, start_y, string(item_array[i][0]));
 		draw_sprite(spr_shopButton,0,start_x + button_width + string_width("x"), start_y)
         draw_text(start_x + button_width  + (sprite_get_width(spr_shopButton)/2) - ( string_width( "$" + string(item_array[i][3]))/2), start_y, "$" + string(item_array[i][3]));
